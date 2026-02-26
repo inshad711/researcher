@@ -196,7 +196,7 @@ export default function SingleBlog({ post, sidebarPosts, prevPost, nextPost }: a
                     <span className="text-zinc-400">{post.categories?.[0] || "Story"}</span>
                 </nav>
                 
-                <h1 className="text-2xl md:text-3xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
+                <h1 className="text-2xl md:text-3xl font-medium text-slate-900 mb-8 leading-[1.1] tracking-tight">
                     {decodeHtml(post.title)}
                 </h1>
 
@@ -215,7 +215,7 @@ export default function SingleBlog({ post, sidebarPosts, prevPost, nextPost }: a
             </header>
 
             {/* Main Visual */}
-            <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-20 shadow-2xl">
+            <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden mb-20 shadow-xl">
                 <img 
                     src={post.featured_image} 
                     alt={post.title} 
@@ -231,8 +231,8 @@ export default function SingleBlog({ post, sidebarPosts, prevPost, nextPost }: a
                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-6">In this article</p>
                         <ul className="space-y-4 border-l-2 border-zinc-100">
                             {tocItems.map((item) => (
-                                <li key={item.id} className={`${item.level === 3 ? 'pl-6' : 'pl-4'} -ml-[2px] border-l-2 border-transparent hover:border-purple-600 transition-colors`}>
-                                    <a href={`#${item.id}`} className="text-xs font-bold text-zinc-500 hover:text-purple-600 transition-colors block">
+                                <li key={item.id} className={`${item.level === 3 ? 'pl-6' : 'pl-4'} -ml-[2px] border-l-2 border-gray-200 hover:border-purple-600 transition-colors`}>
+                                    <a href={`#${item.id}`} className="text-xs font-bold text-zinc-700 hover:text-purple-600 transition-colors block">
                                         {decodeHtml(item.text)}
                                     </a>
                                 </li>
@@ -266,7 +266,7 @@ export default function SingleBlog({ post, sidebarPosts, prevPost, nextPost }: a
 
                         <div>
                             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-900 mb-8 flex items-center gap-3">
-                                <span className="w-8 h-[2px] bg-purple-600" /> Latest Reads
+                                <span className="w-5 h-[2px] bg-purple-600" /> Latest Reads
                             </h3>
                             <div className="space-y-8">
                                 {sidebarPosts.map((s: any) => (

@@ -107,7 +107,7 @@ export default function Stat() {
   ];
 
   return (
-    <section className="py-24 px-6 flex items-center">
+    <section className="px-6 pb-12 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         {/* Header Section */}
         <div className="text-center mb-20 space-y-4">
@@ -126,9 +126,9 @@ export default function Stat() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-semibold text-slate-900  tracking-tight"
+            className="text-3xl md:text-5xl font-medium text-slate-900"
           >
-            Our results in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">numbers</span>
+            Our results in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">numbers</span>
           </motion.h2>
           
           <motion.p
@@ -136,7 +136,7 @@ export default function Stat() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg"
+            className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
             We take pride in our growth and the community we've built. Here's a glimpse of what we've achieved together so far.
           </motion.p>

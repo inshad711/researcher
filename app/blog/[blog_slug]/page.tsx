@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ blog_slug: st
   const sidebarPosts = allPosts.filter((p: any) => p.slug !== blog_slug).slice(0, 4);
 
   return (
-    <main className="bg-[#fcfcfc] pt-12 pb-20">
+    <main className="bg-[#fcfcfc] pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-5">
         <SingleBlog 
           post={post} 

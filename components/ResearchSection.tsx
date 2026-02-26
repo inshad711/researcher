@@ -14,19 +14,19 @@ export default function ResearchSection() {
       id="research"
       className="w-full bg-white py-16 md:py-24 overflow-hidden text-stone-900"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="templateContainer">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* --- Left Side: Content --- */}
           <div className="flex flex-col items-start gap-6 order-2 lg:order-1">
             {/* <SectionTag text="Innovation & R&D" /> */}
 
-            <h2 className="text-3xl md:text-[38px] font-normal text-gray-900 leading-tight tracking-tighter">
+            <h2 className="text-3xl md:text-[38px] font-light text-gray-900 leading-tight tracking-tighter">
               Precision <span className="text-purple-800 font-light">Driven by</span>{" "}
               Material  Research
             </h2>
 
-            <p className="text-gray-700 font-light text-base md:text-lg leading-relaxed max-w-xl">
+            {/* <p className="text-gray-700 font-light text-base md:text-lg leading-relaxed max-w-xl">
               Our dedicated research team continuously explores sustainable materials 
               and structural engineering to ensure your packaging is as durable as it 
               is beautiful. 
@@ -41,11 +41,36 @@ export default function ResearchSection() {
                 <Feature text="Sustainable Fiber Sourcing" />
                 <Feature text="Anti-Scuff Coating R&D" />
               </ul>
-            </div>
+            </div> */}
+       <p className="text-gray-600 font-normal text-base md:text-[17px] leading-relaxed max-w-xl">
+  Our dedicated research team continuously explores sustainable materials 
+  and structural engineering to ensure your packaging is as durable as it 
+  is beautiful. 
+</p>
 
-            <a
+{/* --- List Section --- */}
+<div className="space-y-4 mb-4">
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+    <Feature text="Eco-ink Stability Tests" />
+    <Feature text="Structural Stress Analysis" />
+    <Feature text="Sustainable Fiber Sourcing" />
+    <Feature text="Anti-Scuff Coating R&D" />
+  </ul>
+</div>
+
+            {/* <a
               href="/innovation"
-              className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-800 to-purple-600 text-white px-5 py-3 font-medium rounded-xl transition-all hover:shadow-xl active:scale-95"
+              className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-800 to-purple-600 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
+            >
+              <span>Our Research Process</span>
+              <div className="relative w-5 h-5 overflow-hidden">
+                <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-0 -translate-x-6 opacity-0 group-hover:opacity-100" />
+                <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-6 translate-x-0 opacity-100 group-hover:opacity-0" />
+              </div>
+            </a> */}
+              <a
+              href="/innovation"
+              className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-700 to-purple-500 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
             >
               <span>Our Research Process</span>
               <div className="relative w-5 h-5 overflow-hidden">
@@ -53,6 +78,16 @@ export default function ResearchSection() {
                 <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-6 translate-x-0 opacity-100 group-hover:opacity-0" />
               </div>
             </a>
+            {/* <a
+  href="/innovation"
+  className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-700 via-red-600 to-orange-300 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
+>
+  <span>Our Research Process</span>
+  <div className="relative w-5 h-5 overflow-hidden">
+    <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-0 -translate-x-6 opacity-0 group-hover:opacity-100" />
+    <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-6 translate-x-0 opacity-100 group-hover:opacity-0" />
+  </div>
+</a> */}
           </div>
 
           {/* --- Right Side: Image Reveal --- */}
@@ -84,8 +119,12 @@ function SectionTag({ text }: { text: string }) {
 
 function Feature({ text }: { text: string }) {
   return (
-    <li className="flex items-center gap-2 text-md">
-      <span className="w-1.5 h-1.5 bg-purple-900 rounded-full" />
+    // <li className="flex items-center leading-relaxed text-gray-700 font-light text-base md:text-lg  gap-2">
+    //   <span className="w-1.5 h-1.5 bg-purple-900  rounded-full" />
+    //   {text}
+    // </li>
+    <li className="flex items-center gap-2 text-gray-700 font-light text-base md:text-lg leading-relaxed">
+      <span className="w-1.5 h-1.5 bg-purple-900 rounded-full shrink-0" />
       {text}
     </li>
   );

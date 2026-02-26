@@ -346,7 +346,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-white text-black py-16 px-6 md:px-12 lg:px-20 min-h-screen">
+    <section className="bg-white text-black py-16 px-6 md:px-12 lg:px-20 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Left Column: STICKY */}
@@ -361,7 +361,7 @@ const FAQSection: React.FC = () => {
         </div> */}
         <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
   <div className="relative inline-block mb-6">
-    <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-black relative z-10">
+    <h2 className="text-2xl md:text-3xl font-medium leading-relaxed text-slate-900 relative z-10">
       Frequently Ask Questions
     </h2>
 
@@ -381,19 +381,19 @@ const FAQSection: React.FC = () => {
     </svg>
   </div>
 
-  <h3 className="text-xl md:text-xl font-medium leading-tight max-w-sm text-gray-800">
+  <h3 className="text-md md:text-lg font-light leading-tight max-w-sm text-slate-700">
     A knowledge base search feature is a must-have.  A knowledge base search feature is a must-have
   </h3>
 </div>
 
         {/* Right Column: SCROLLING */}
         <div className="lg:col-span-8">
-          <div className="divide-y divide-gray-200">
+          <div className="divide-y divide-slate-300">
             {faqData.map((faq, index) => (
               <div key={index} className="py-2">
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex justify-between cursor-pointer items-center py-6 text-left hover:text-blue-600 transition-colors group focus:outline-none"
+                  className="w-full flex justify-between cursor-pointer items-center py-5 text-left hover:text-blue-600 transition-colors group focus:outline-none"
                 >
                   <span className="text-lg md:text-xl font-light pr-8 text-black">
                     {faq.question}
@@ -410,7 +410,7 @@ const FAQSection: React.FC = () => {
                     openIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  <p className="text-slate-600 text-base md:text-lg ">
                     {faq.answer}
                   </p>
                 </div>

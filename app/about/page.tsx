@@ -4,6 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ChartNoAxesColumn, Compass, Lightbulb, ShieldCheck, Sparkles } from "lucide-react";
 import ProcessSection from "@/components/ProcessSection";
+import MainAbout from "@/components/MainAbout";
+import Stat2 from "@/components/Stat2";
+import Instructor from "@/components/Instructor";
 
 const pillars = [
   {
@@ -54,162 +57,42 @@ const aboutSignals = [
 
 export default function AboutPage() {
   return (
-    <main className="relative overflow-hidden pt-28 bg-[#fcfcfb] text-slate-900">
+    <main className="relative pt-28  text-slate-900">
       {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_4%,rgba(255,140,66,0.14),transparent_26%),radial-gradient(circle_at_90%_10%,rgba(255,203,131,0.14),transparent_30%)]" /> */}
+<div>
+  <MainAbout/>
+</div>
+<div>
+  <Stat2/>
+</div>
 
-      <section className="templateContainer relative">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:p-10">
-          <div className="grid gap-6 lg:grid-cols-12">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-              className="lg:col-span-7"
-            >
-              <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-700">
-                <Sparkles className="h-3.5 w-3.5" />
-                About Researchers
-              </p>
-              <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-                Research that behaves like a decision engine, not a static report.
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                Our team structures evidence, trade-offs, and next actions into a single strategic rhythm leadership
-                teams can use immediately.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
-                >
-                  Talk to Our Team
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-600">
-                  Built for strategic teams
-                </span>
-              </div>
-            </motion.div>
+<div>
+  <Instructor/>
+</div>
 
-            <motion.aside
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.1 }}
-              className="grid gap-3 lg:col-span-5"
-            >
-              <article className="rounded-[1.2rem] border border-slate-200 bg-slate-50 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Framework</p>
-                <h2 className="mt-2 text-xl font-semibold leading-tight">Question to Evidence to Decision</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-600">
-                  We translate open questions into a tested path your team can align on quickly.
-                </p>
-              </article>
-              <article className="rounded-[1.2rem] border border-slate-200 bg-white p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Execution Model</p>
-                <h2 className="mt-2 text-xl font-semibold leading-tight">Fast cycles, clear checkpoints</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-600">
-                  Frequent alignment points keep stakeholders informed and decisions moving forward.
-                </p>
-              </article>
-            </motion.aside>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.15 }}
-            className="mt-6 grid gap-3 sm:grid-cols-3"
-          >
-            {aboutSignals.map((signal) => (
-              <article key={signal.label} className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
-                <p className="text-2xl font-semibold text-slate-900">{signal.value}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.1em] text-slate-500">{signal.label}</p>
-              </article>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* <section className="templateContainer pt-0">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {pillars.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.article
-                  key={item.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  className="rounded-3xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-[0_24px_50px_-35px_rgba(0,0,0,0.45)]"
-                >
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h2 className="mt-4 text-xl font-semibold">{item.title}</h2>
-                  <p className="mt-2 leading-7 text-slate-600">{item.description}</p>
-                </motion.article>
-              );
-            })}
-          </div>
-        </div>
-      </section> */}
 
       <ProcessSection/>
 
-      <section className="templateContainer pt-0">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-[2rem] border border-slate-200 bg-white p-8 lg:col-span-5"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">What We Do</p>
-            <p className="mt-4 leading-8 text-slate-600">
-              We provide end-to-end research: market scans, qualitative and quantitative studies, business intelligence,
-              customer experience analysis, and strategic advisory for teams seeking profitable clarity.
-            </p>
-          </motion.article>
+{/* 
+      <section className="templateContainer">
+        <div className="mx-auto max-w-7xl md:px-16  bg-white">
 
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="rounded-[2rem] border border-orange-200 bg-[#fff4e8] p-8 lg:col-span-7"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Core Values</p>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {values.map((value, index) => (
-                <li key={value} className="rounded-xl border border-orange-200 bg-white p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-orange-500">0{index + 1}</p>
-                  <p className="mt-1 font-medium text-slate-800">{value}</p>
-                </li>
-              ))}
-            </ul>
-          </motion.article>
-        </div>
-      </section>
-
-      <section className="templateContainer pt-0">
-        <div className="mx-auto max-w-6xl rounded-[2.2rem] border border-slate-200 bg-white p-7 md:p-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">How We Work</p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">A rigorous process, tailored to your market context.</h2>
+          <div className="flex flex-col items-center text-center">
+  <p className="text-xs font-bold uppercase tracking-[0.2em] text-purple-500">How We Work</p>
+  <h2 className="mt-3 text-3xl font-medium md:text-[40px] max-w-3xl">
+    A rigorous process, tailored to your market context.
+  </h2>
+</div>
           <ol className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => (
               <li key={step} className="rounded-xl border border-slate-200 bg-[#fcfcfb] p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500">Step {index + 1}</p>
-                <p className="mt-2 text-sm font-medium text-slate-700">{step}</p>
+                <p className="text-md font-bold uppercase tracking-[0.15em] text-slate-500">Step {index + 1}</p>
+                <p className="mt-2 text-sm md:text-[16px] font-medium text-slate-600">{step}</p>
               </li>
             ))}
           </ol>
         </div>
-      </section>
+      </section> */}
 
       <section className="templateContainer pt-0">
         <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8">

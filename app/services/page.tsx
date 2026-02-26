@@ -7,6 +7,9 @@ import {
   Megaphone,
   Sparkles,
 } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
+import MainService from "@/components/MainService";
+import SinglePageService from "@/components/SinglePageService";
 
 const stats = [
   { label: "Projects Completed", value: "500+" },
@@ -89,9 +92,59 @@ export default function ServicesPage() {
   const secondaryFeatured = featuredServices.slice(1);
 
   return (
-    <div className="relative overflow-hidden bg-[#fcfcfb] text-slate-900 pt-28">
+    <div className="relative bg-[#fcfcfb] text-slate-900 pt-28">
 
-      <section className="templateContainer relative">
+      <div>
+        <MainService/>
+      </div>
+
+<ServiceCard/>
+    
+
+       <section className="templateContainer relative pt-0">
+        <div className="">
+       <div className="flex flex-col items-center justify-center text-center space-y-4">
+  {/* Heading */}
+          <h2 className="text-3xl md:text-5xl font-medium text-slate-900">
+          What we do
+          </h2>
+  
+  {/* Description */}
+          <p className="max-w-lg text-slate-600 text-lg leading-relaxed">
+            Explore our curated selection of top-tier collections, designed to bring 
+            style and functionality to your everyday lifestyle.
+          </p>
+        </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {allServices.map((service) => (
+              <article
+                key={service.title}
+                className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  {service.category}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold leading-snug">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
+                <Link
+                  href="/contact"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:gap-3"
+                >
+                  Learn More
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div>
+        <SinglePageService/>
+      </div>
+
+        <section className="templateContainer relative">
         <div className="">
           <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:p-12">
             <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
@@ -197,45 +250,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="templateContainer relative pt-0">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-9">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Main Categories</p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white">All</button>
-            <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
-              Market Research Services
-            </button>
-            <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
-              Business Consulting Services
-            </button>
-            <button className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700">
-              Analytics & Data Services
-            </button>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {allServices.map((service) => (
-              <article
-                key={service.title}
-                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  {service.category}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold leading-snug">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
-                <Link
-                  href="/contact"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:gap-3"
-                >
-                  Learn More
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       <section className="templateContainer relative pt-0">
         <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8">

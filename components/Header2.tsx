@@ -1,418 +1,435 @@
-
-// "use client";
-// import React, { useState, useEffect } from 'react';
-// import { Linkedin, Youtube, Menu, X } from 'lucide-react';
-// import Image from 'next/image';
-// import Link from 'next/link';
-
-
-// const Header2 = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const navLinks = [
-//     { name: 'Home', href: '#' },
-//     { name: 'About me', href: '#' },
-//     { name: 'Services', href: '#' },
-//     { name: 'Blogs', href: '#' },
-//     { name: 'Contact me', href: '#' },
-//   ];
-
-//   return (
-//     <header 
-//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
-//         scrolled ? 'bg-white backdrop-blur-md border-b border-white/5' : 'bg-transparent'
-//       }`}
-//     >
-//       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
-//         {/* Logo Section */}
-      
-//         <div className="group flex flex-shrink-0 cursor-pointer items-center">
-//   <Link href="/" className="relative flex items-center">
-    
-//     <Image
-//       src="/logo/13fb5d9e-e6b4-453a-974c-2ea5bdee18c2.png"   // put your logo inside public folder
-//       alt="Researcher Logo"
-//       width={150}
-//       height={100}
-//       className="invert brightness-0"
-//       priority
-//     />
-
-//   </Link>
-// </div>
-
-//         {/* Desktop Navigation - Pill Shaped */}
-//         <nav className="hidden lg:flex items-center px-12 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-//           <ul className="flex items-center space-x-8">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a 
-//                   href={link.href} 
-//                   className={`text-md font-medium transition-colors hover:text-white/70 ${
-//                     link.name === 'Home' ? 'text-white' : 'text-gray-400'
-//                   }`}
-//                 >
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Right Section: Socials + CTA */}
-//         <div className="flex items-center space-x-4">
-       
-
-//           <button className="hidden sm:block bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">
-//             Book a consultation
-//           </button>
-
-//           {/* Mobile Menu Toggle */}
-//           <button 
-//             className="lg:hidden p-2 text-white"
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//           >
-//             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Mobile Navigation Drawer */}
-//       {isMenuOpen && (
-//         <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6">
-//           <ul className="space-y-6 text-center text-white">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a href={link.href} className="text-xl font-medium block" onClick={() => setIsMenuOpen(false)}>
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//             <div className="pt-6 border-t border-white/10 flex flex-col items-center space-y-6">
-//               <div className="flex space-x-6">
-//                 <a href="#"><Linkedin size={24} /></a>
-//                 <a href="#"><Youtube size={24} /></a>
-//               </div>
-//               <button className="w-full bg-white text-black py-4 rounded-full font-bold">
-//                 Book a consultation
-//               </button>
-//             </div>
-//           </ul>
-//         </div>
-//       )}
-//     </header>
-//   );
-// };
-
-// export default Header2;
-
-
-////////new
-// "use client";
-
-// import React, { useState, useEffect } from "react";
-// import { Linkedin, Youtube, Menu, X } from "lucide-react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
-
-// const Header2 = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-//   const pathname = usePathname();
-//   const isHomePage = pathname === "/";
-
-//   useEffect(() => {
-//     if (!isHomePage) {
-//       setScrolled(false);
-//       return;
-//     }
-
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-
-//     handleScroll();
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, [isHomePage]);
-
-//   const navLinks = [
-//     { name: "Home", href: "/" },
-//     { name: "About us", href: "/about" },
-//     { name: "Services", href: "/services" },
-//     { name: "      Case Studies", href: "/projects" },
-//     { name: "Blogs", href: "/blog" },
-//     { name: "Contact Us", href: "/contact" },
-//   ];
-
-//   return (
-//     <header
-//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
-//         !isHomePage || scrolled
-//           ? "bg-white shadow-md"
-//           : "bg-transparent"
-//       }`}
-//     >
-//       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
-//         {/* Logo */}
-//         <div className="group flex flex-shrink-0 cursor-pointer items-center">
-//           <Link href="/" className="relative flex items-center">
-//             <Image
-//               src="/logo/13fb5d9e-e6b4-453a-974c-2ea5bdee18c2.png"
-//               alt="Researcher Logo"
-//               width={150}
-//               height={100}
-//               className={`transition-all duration-300 ${
-//                 !isHomePage || scrolled
-//                   ? "invert-0 brightness-100"
-//                   : "invert brightness-0"
-//               }`}
-//               priority
-//             />
-//           </Link>
-//         </div>
-
-//         {/* Desktop Navigation */}
-//         <nav
-//           className={`hidden lg:flex items-center px-12 py-2.5 rounded-full border transition-all duration-300 ${
-//             !isHomePage || scrolled
-//               ? "bg-gray-100 border-gray-200"
-//               : "bg-white/5 border-white/10 backdrop-blur-md"
-//           }`}
-//         >
-//           <ul className="flex items-center space-x-8">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a
-//                   href={link.href}
-//                   className={`text-md font-medium transition-colors ${
-//                     !isHomePage || scrolled
-//                       ? "text-gray-700 hover:text-black"
-//                       : "text-gray-300 hover:text-white"
-//                   }`}
-//                 >
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Right Section */}
-//         <div className="flex items-center space-x-4">
-          
-//           {/* CTA Button */}
-//           <button
-//             className={`hidden sm:block px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
-//               !isHomePage || scrolled
-//                 ? "bg-black text-white hover:bg-gray-800"
-//                 : "bg-white text-black hover:bg-gray-200"
-//             }`}
-//           >
-//             Book a consultation
-//           </button>
-
-//           {/* Mobile Toggle */}
-//           <button
-//             className={`lg:hidden p-2 ${
-//               !isHomePage || scrolled ? "text-black" : "text-white"
-//             }`}
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//           >
-//             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Mobile Drawer */}
-//       {isMenuOpen && (
-//         <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6">
-//           <ul className="space-y-6 text-center text-white">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a
-//                   href={link.href}
-//                   className="text-xl font-medium block"
-//                   onClick={() => setIsMenuOpen(false)}
-//                 >
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//             <div className="pt-6 border-t border-white/10 flex flex-col items-center space-y-6">
-//               <div className="flex space-x-6">
-//                 <a href="#"><Linkedin size={24} /></a>
-//                 <a href="#"><Youtube size={24} /></a>
-//               </div>
-//               <button className="w-full bg-white  text-black py-4 rounded-full font-bold">
-//                 Book a consultation
-//               </button>
-//             </div>
-//           </ul>
-//         </div>
-//       )}
-//     </header>
-//   );
-// };
-
-// export default Header2;
-
-
-////////another
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Linkedin, Youtube, Menu, X } from "lucide-react";
+import React, { useEffect, useLayoutEffect, useState, useRef, useCallback } from "react";
+import { ChevronDown, ChevronRight, ArrowLeft, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { servicesMenu, type ServiceMenuItem } from "@/data/servicesMenu";
 
+
+// ─── Desktop: recursive nested flyout panel ───────────────────────────────────
+// Each level is a floating panel. Sub-panels open on hover.
+// useLayoutEffect flips the panel left if it would overflow the right viewport edge.
+function DesktopPanel({
+  items,
+  depth = 0,
+  onClose,
+}: {
+  items: ServiceMenuItem[];
+  depth?: number;
+  onClose: () => void;
+}) {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const ulRef = useRef<HTMLUListElement>(null);
+
+  useLayoutEffect(() => {
+    const el = ulRef.current;
+    if (!el) return;
+    // Reset to default so measurement is accurate
+    el.style.left = depth === 0 ? "0" : "";
+    el.style.right = "";
+    el.style.marginLeft = "";
+    el.style.marginRight = "";
+
+    const rect = el.getBoundingClientRect();
+    const overflow = rect.right - (window.innerWidth - 12);
+    if (overflow > 0) {
+      if (depth === 0) {
+        // Shift the root panel left just enough
+        el.style.left = `${Math.max(-overflow, -rect.left + 12)}px`;
+      } else {
+        // Fly sub-panels out to the LEFT instead
+        el.style.left = "auto";
+        el.style.right = "100%";
+        el.style.marginLeft = "0";
+        el.style.marginRight = "4px";
+      }
+    }
+  });
+
+  const shadow = "shadow-[0_8px_32px_-4px_rgba(15,23,42,0.15)]";
+  const panelCls =
+    depth === 0
+      ? `absolute top-full left-0 z-[70] mt-2 min-w-[260px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`
+      : `absolute top-0 left-full ml-1 z-[75] min-w-[240px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`;
+
+  return (
+    <ul ref={ulRef} className={panelCls}>
+      {items.map((item, i) => {
+        const name = item.name.replace(/\s+/g, " ").trim();
+        const hasChildren = Boolean(item.children?.length);
+        const isHovered = hoveredIdx === i;
+
+        return (
+          <li
+            key={name}
+            className="relative"
+            onMouseEnter={() => setHoveredIdx(i)}
+            onMouseLeave={() => setHoveredIdx(null)}
+          >
+            <div className="flex items-center rounded-xl transition-colors hover:bg-slate-50">
+              {item.href ? (
+                <Link
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  onClick={onClose}
+                  className="block flex-1 px-3.5 py-2.5 text-sm text-slate-700 leading-snug"
+                >
+                  {name}
+                </Link>
+              ) : (
+                <span className="block flex-1 px-3.5 py-2.5 text-sm text-slate-700 leading-snug">
+                  {name}
+                </span>
+              )}
+              {hasChildren && (
+                <ChevronRight className="mr-2.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+              )}
+            </div>
+            {hasChildren && isHovered && (
+              <DesktopPanel items={item.children!} depth={depth + 1} onClose={onClose} />
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+// ─── Mobile: slide-in animation wrapper ──────────────────────────────────────
+// Mounts slightly off-position then transitions to 0, giving a slide-in effect.
+// `dir` controls whether it enters from the right (forward) or left (back).
+function SlidePanel({
+  dir,
+  children,
+}: {
+  dir: "fwd" | "back";
+  children: React.ReactNode;
+}) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setReady(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  return (
+    <div
+      style={{
+        transform: ready ? "translateX(0)" : dir === "fwd" ? "translateX(52px)" : "translateX(-52px)",
+        opacity: ready ? 1 : 0,
+        transition: "transform 230ms cubic-bezier(0.25,0.46,0.45,0.94), opacity 200ms ease",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+// ─── Mobile: stack-based drill-down with slide + back button ─────────────────
+// Mounted fresh each time the Services accordion opens, so stack always resets.
+function MobileDrillDown({ onClose }: { onClose: () => void }) {
+  const [stack, setStack] = useState<{ title: string; items: ServiceMenuItem[] }[]>([]);
+  const [dir, setDir] = useState<"fwd" | "back">("fwd");
+  const [panelKey, setPanelKey] = useState(0);
+
+  const currentItems = stack.length > 0 ? stack[stack.length - 1].items : servicesMenu;
+  const currentTitle = stack.length > 0 ? stack[stack.length - 1].title : null;
+
+  const drillInto = (item: ServiceMenuItem) => {
+    if (!item.children?.length) return;
+    setDir("fwd");
+    setPanelKey((k) => k + 1);
+    setStack((prev) => [
+      ...prev,
+      { title: item.name.replace(/\s+/g, " ").trim(), items: item.children! },
+    ]);
+  };
+
+  const goBack = () => {
+    setDir("back");
+    setPanelKey((k) => k + 1);
+    setStack((prev) => prev.slice(0, -1));
+  };
+
+  return (
+    <div className="overflow-hidden">
+      <SlidePanel key={panelKey} dir={dir}>
+        <div className="pb-3">
+
+          {/* ── Back button + current section title ── */}
+          {currentTitle ? (
+            <div className="flex items-center gap-3 mb-3 pb-3 border-b border-white/10">
+              <button
+                type="button"
+                onClick={goBack}
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors shrink-0"
+                aria-label="Go back"
+              >
+                <ArrowLeft className="w-4 h-4 text-white" />
+              </button>
+              <span className="text-sm font-semibold text-white truncate">{currentTitle}</span>
+            </div>
+          ) : null}
+
+          {/* ── Items for the current level ── */}
+          <ul className="space-y-1">
+            {currentItems.map((item) => {
+              const name = item.name.replace(/\s+/g, " ").trim();
+              const hasChildren = Boolean(item.children?.length);
+
+              // Items WITH children → entire row is a drill-down button
+              if (hasChildren) {
+                return (
+                  <li key={name}>
+                    <button
+                      type="button"
+                      onClick={() => drillInto(item)}
+                      className="w-full flex items-center justify-between gap-3 px-2 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-left group"
+                    >
+                      <span className="flex-1 text-sm text-white/90 leading-snug">{name}</span>
+                      <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-white/60 transition-colors shrink-0" />
+                    </button>
+                  </li>
+                );
+              }
+
+              // Items WITHOUT children → plain link (leaf node)
+              return (
+                <li key={name}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      onClick={onClose}
+                      className="block px-2 py-2.5 text-sm text-white/80 leading-snug rounded-xl hover:bg-white/5 hover:text-white/90 transition-colors"
+                    >
+                      {name}
+                    </Link>
+                  ) : (
+                    <span className="block px-2 py-2.5 text-sm text-white/60 leading-snug">
+                      {name}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+
+        </div>
+      </SlidePanel>
+    </div>
+  );
+}
+
+// ─── Main Header ──────────────────────────────────────────────────────────────
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
+
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
   useEffect(() => {
-    if (!isHomePage) {
-      setScrolled(false);
-      return;
-    }
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (!isHomePage) { setScrolled(false); return; }
+    const handle = () => setScrolled(window.scrollY > 20);
+    handle();
+    window.addEventListener("scroll", handle);
+    return () => window.removeEventListener("scroll", handle);
   }, [isHomePage]);
+
+  // Close mobile services accordion when mobile menu closes
+  useEffect(() => {
+    if (!isMenuOpen) setIsMobileServicesOpen(false);
+  }, [isMenuOpen]);
+
+  const closeServices = useCallback(() => setIsServicesOpen(false), []);
+
+  // Click-outside closes the desktop dropdown
+  useEffect(() => {
+    if (!isServicesOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (!servicesRef.current?.contains(e.target as Node)) closeServices();
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [isServicesOpen, closeServices]);
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "      Case Studies", href: "/projects" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Blogs", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
 
+  const isLightBg = !isHomePage || scrolled;
+  const linkCls = `text-md font-medium transition-colors ${
+    isLightBg ? "text-gray-700 hover:text-black" : "text-gray-300 hover:text-white"
+  }`;
+
+  const closeMobileMenu = () => setIsMenuOpen(false);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
-        !isHomePage || scrolled
-          ? "bg-white shadow-md"
-          : "bg-transparent"
+        isLightBg ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
+      {/* ── Main row ──────────────────────────────────────────────── */}
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between">
+
         {/* Logo */}
-        <div className="group flex flex-shrink-0 cursor-pointer items-center">
-          <Link href="/" className="relative flex items-center">
+        <div className="flex h-full shrink-0 items-center">
+          <Link href="/" onClick={closeServices}>
             <Image
               src="/logo/13fb5d9e-e6b4-453a-974c-2ea5bdee18c2.png"
               alt="Researcher Logo"
               width={150}
               height={100}
               className={`transition-all duration-300 ${
-                !isHomePage || scrolled
-                  ? "invert-0 brightness-100"
-                  : "invert brightness-0"
+                isLightBg ? "invert-0 brightness-100" : "invert brightness-0"
               }`}
               priority
             />
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop nav pill */}
         <nav
-          className={`hidden lg:flex items-center px-12 py-2.5 rounded-full border transition-all duration-300 ${
-            !isHomePage || scrolled
+          className={`hidden lg:flex h-full items-center px-10 py-2.5 rounded-full border transition-all duration-300 ${
+            isLightBg
               ? "bg-gray-100 border-gray-200"
               : "bg-white/5 border-white/10 backdrop-blur-md"
           }`}
         >
-          <ul className="flex items-center space-x-8">
-            {navLinks.map((link) => (
+          <ul className="flex h-full items-center space-x-7">
+            {navLinks.slice(0, 2).map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
-                  className={`text-md font-medium transition-colors ${
-                    !isHomePage || scrolled
-                      ? "text-gray-700 hover:text-black"
-                      : "text-gray-300 hover:text-white"
-                  }`}
-                >
+                <Link href={link.href} className={linkCls} onClick={closeServices}>
                   {link.name}
-                </a>
+                </Link>
+              </li>
+            ))}
+
+            {/* Services — nested dropdown lives inside this <li> */}
+            <li ref={servicesRef} className="relative flex h-full items-center">
+              <button
+                type="button"
+                onClick={() => setIsServicesOpen((p) => !p)}
+                className={`flex items-center gap-1 ${linkCls}`}
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+              >
+                Services
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Nested flyout — self-contained, overflow-safe */}
+              {isServicesOpen && (
+                <DesktopPanel items={servicesMenu} onClose={closeServices} />
+              )}
+            </li>
+
+            {navLinks.slice(2).map((link) => (
+              <li key={link.name}>
+                <Link href={link.href} className={linkCls} onClick={closeServices}>
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* Right Section */}
-        <div className="flex items-center space-x-4">
-          
-          {/* CTA Button */}
+        {/* CTA + Hamburger */}
+        <div className="flex h-full items-center space-x-4">
           <button
             className={`hidden sm:block px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
-              !isHomePage || scrolled
+              isLightBg
                 ? "bg-black text-white hover:bg-gray-800"
                 : "bg-white text-black hover:bg-gray-200"
             }`}
           >
             Book a consultation
           </button>
-
-          {/* Mobile Toggle */}
           <button
-            className={`lg:hidden p-2 ${
-              !isHomePage || scrolled ? "text-black" : "text-white"
-            }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`lg:hidden p-2 ${isLightBg ? "text-black" : "text-white"}`}
+            onClick={() => setIsMenuOpen((p) => !p)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* ── Mobile menu (accordion) ────────────────────────────────── */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6">
-          <ul className="space-y-6 text-center text-white">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
+        <div className="lg:hidden absolute top-full left-0 right-0 max-h-[85vh] overflow-y-auto bg-black/95 backdrop-blur-xl border-t border-white/10 px-5 py-4">
+          <ul className="space-y-1">
+
+            {/* Nav links before Services */}
+            {navLinks.slice(0, 2).map((link) => (
+              <li key={link.name} className="border-b border-white/10 last:border-0">
+                <Link
                   href={link.href}
-                  className="text-xl font-medium block"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-3.5 text-lg font-medium text-white"
+                  onClick={closeMobileMenu}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
-            <div className="pt-6 border-t border-white/10 flex flex-col items-center space-y-6">
-              <div className="flex space-x-6">
-                <a href="#"><Linkedin size={24} /></a>
-                <a href="#"><Youtube size={24} /></a>
-              </div>
-              <button className="w-full bg-white  text-black py-4 rounded-full font-bold">
+
+            {/* Services accordion */}
+            <li className="border-b border-white/10">
+              <button
+                type="button"
+                onClick={() => setIsMobileServicesOpen((p) => !p)}
+                className="flex w-full items-center justify-between py-3.5 text-lg font-medium text-white"
+                aria-expanded={isMobileServicesOpen}
+              >
+                Services
+                <ChevronDown
+                  className={`h-5 w-5 transition-transform duration-200 ${
+                    isMobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isMobileServicesOpen && (
+                <MobileDrillDown onClose={closeMobileMenu} />
+              )}
+            </li>
+
+            {/* Nav links after Services */}
+            {navLinks.slice(2).map((link) => (
+              <li key={link.name} className="border-b border-white/10 last:border-0">
+                <Link
+                  href={link.href}
+                  className="block py-3.5 text-lg font-medium text-white"
+                  onClick={closeMobileMenu}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+
+            <li className="pt-4">
+              <button className="w-full bg-white text-black py-4 rounded-full font-bold text-sm">
                 Book a consultation
               </button>
-            </div>
+            </li>
           </ul>
         </div>
       )}
@@ -421,124 +438,3 @@ const Header2 = () => {
 };
 
 export default Header2;
-
-// "use client";
-// import React, { useState, useEffect } from 'react';
-// import { Linkedin, Youtube, Menu, X } from 'lucide-react';
-// import Image from 'next/image';
-// import Link from 'next/link';
-
-// /**
-//  * Lara Acosta Inspired Glassmorphic Header
-//  * Features: Scroll-based background transition, 
-//  * pill-shaped desktop nav, and mobile drawer.
-//  */
-// const Header2 = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const navLinks = [
-//     { name: 'Home', href: '#' },
-//     { name: 'About me', href: '#' },
-//     { name: 'Services', href: '#' },
-//     { name: 'Blogs', href: '#' },
-//     { name: 'Contact me', href: '#' },
-//   ];
-
-//   return (
-//     <header 
-//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
-//         scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
-//       }`}
-//     >
-//       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
-//         {/* Logo Section */}
-      
-//           <div className="group flex flex-shrink-0 cursor-pointer items-center">
-//   <Link href="/" className="relative flex items-center">
-    
-//     <Image
-//       src="/logo/13fb5d9e-e6b4-453a-974c-2ea5bdee18c2.png"   // put your logo inside public folder
-//       alt="Researcher Logo"
-//       width={150}
-//       height={100}
-//       className="invert brightness-0"
-//       priority
-//     />
-
-//   </Link>
-// </div>
-
-//         {/* Desktop Navigation - Pill Shaped */}
-//         <nav className="hidden lg:flex items-center px-12 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-//           <ul className="flex items-center space-x-8">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a 
-//                   href={link.href} 
-//                   className={`text-lg font-medium transition-colors hover:text-white/70 ${
-//                     link.name === 'Home' ? 'text-white' : 'text-gray-400'
-//                   }`}
-//                 >
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Right Section: Socials + CTA */}
-//         <div className="flex items-center space-x-4">
-       
-
-//           <button className="hidden sm:block bg-[linear-gradient(135deg,#ff4d4d,#b336cc,#29abe2,#00ffc3)] text-black px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors whitespace-nowrap">
-//             Book a consultation
-//           </button>
-
-//           {/* Mobile Menu Toggle */}
-//           <button 
-//             className="lg:hidden p-2 text-white"
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//           >
-//             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Mobile Navigation Drawer */}
-//       {isMenuOpen && (
-//         <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6">
-//           <ul className="space-y-6 text-center text-white">
-//             {navLinks.map((link) => (
-//               <li key={link.name}>
-//                 <a href={link.href} className="text-xl font-medium block" onClick={() => setIsMenuOpen(false)}>
-//                   {link.name}
-//                 </a>
-//               </li>
-//             ))}
-//             <div className="pt-6 border-t border-white/10 flex flex-col items-center space-y-6">
-//               <div className="flex space-x-6">
-//                 <a href="#"><Linkedin size={24} /></a>
-//                 <a href="#"><Youtube size={24} /></a>
-//               </div>
-//               <button className="w-full bg-white text-black py-4 rounded-full font-bold">
-//                 Book a consultation
-//               </button>
-//             </div>
-//           </ul>
-//         </div>
-//       )}
-//     </header>
-//   );
-// };
-
-// export default Header2;

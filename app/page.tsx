@@ -6,6 +6,9 @@ import Industry from "@/components/Industry";
 import ResearchSection from "@/components/ResearchSection";
 import Stat from "@/components/Stat";
 import ServiceSection from "@/components/ServiceSection";
+import Testimonial from "@/components/Testimonial";
+import WhatWeDo from "@/components/WhatWeDo";
+import CapabilitiesSection2 from "@/components/CapabilitiesSection2";
 
 async function getBlogs() {
   const res = await fetch("https://bck.siyahfy.com/wp-json/custom/v1/posts", {
@@ -27,18 +30,25 @@ export default async function Home() {
   <ResearchSection/>
 </div>
 
+<div>
+  <CapabilitiesSection2/>
+</div>
 
+<div>
+  <Stat/>
+</div>
+
+<WhatWeDo/>
 <ClientCarousel/>
 {/* <div>
   <StatCards/>
 </div> */}
 <Industry/>
-<div>
-  <Stat/>
-</div>
-<div>
+
+{/* <div>
   <ServiceSection/>
-</div>
+</div> */}
+<Testimonial/>
 
 <div>
   <BlogGrid2 posts={posts.slice(0, 3)} />

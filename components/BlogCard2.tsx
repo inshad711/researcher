@@ -209,7 +209,7 @@ const BlogCard = ({ post }: { post: WordPressPost }) => {
         
         {/* Render the excerpt and strip HTML tags if needed, or use line-clamp */}
         <div 
-          className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-6 font-medium"
+          className="text-gray-600 text-base md:text-md leading-relaxed line-clamp-3 mb-6 font-light"
           dangerouslySetInnerHTML={{ __html: post.excerpt }}
         />
 
@@ -238,7 +238,7 @@ export default function BlogGrid2({ posts }: { posts: WordPressPost[] }) {
             <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 rounded-full">
               Our Blog
             </span>
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-medium text-slate-900 mb-5">
               {/* Latest from the <span className="text-purple-600">Blog</span>. */}
               {/* Latest from the <span
   className="bg-gradient-to-r from-[#D62872] via-[#F15A29] via-[#F6A623] to-[#2E9EE6] bg-clip-text text-transparent"
@@ -249,7 +249,7 @@ export default function BlogGrid2({ posts }: { posts: WordPressPost[] }) {
   Blog
 </span>.
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className=" text-slate-600 text-base md:text-lg leading-relaxed">
               Discover the latest trends in e-commerce, gamification, and digital marketing 
               to help your business grow faster in 2026.
             </p>

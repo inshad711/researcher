@@ -241,8 +241,8 @@ const Header: React.FC = () => {
               )}
             </div>
 
-            <Link href="/projects" className="text-base font-semibold text-gray-700 transition-colors hover:text-black">
-              Projects
+            <Link href="/case-stories" className="text-base font-semibold text-gray-700 transition-colors hover:text-black">
+              Case Stories
             </Link>
             <Link href="/blog" className="text-base font-semibold text-gray-700 transition-colors hover:text-black">
               Blog

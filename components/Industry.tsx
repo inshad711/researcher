@@ -509,13 +509,14 @@ const Industry = () => {
             <div className="space-y-4">
               <p className="text-[12px] text-slate-500 tracking-widest font-medium">EXPERTISE & INNOVATION</p>
               <h2 className="text-3xl md:text-4xl font-medium text-slate-900 ">
+                   Industries Driven by{" "}
                 <span className="relative inline-block">
-                  Industries
+                Research
                   <svg className="absolute -left-2.5 top-full w-[110%] h-4 -rotate-180" viewBox="0 0 100 20" preserveAspectRatio="none">
                     <path d="M5 15 Q 50 25 95 15" stroke="#6c6bcf" strokeWidth="2" fill="transparent" />
                   </svg>
-                </span>{" "}
-                Driven by Research
+                </span>
+             
               </h2>
             </div>
             <div className="space-y-4 text-slate-700 font-light leading-relaxed">
@@ -542,7 +543,7 @@ const Industry = () => {
 
 const IndustryCard = ({ title, desc, image }: any) => {
   return (
-    <div className="relative overflow-hidden p-5 md:p-7 rounded-md bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 min-h-[220px] md:min-h-[240px] flex flex-col justify-end group">
+    <div className="relative overflow-hidden p-5 md:p-4 rounded-md bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 min-h-[220px] md:min-h-[240px] flex flex-col justify-end group">
       {/* Background Image */}
       {image && (
         <div className="absolute inset-0 z-0">
@@ -553,7 +554,7 @@ const IndustryCard = ({ title, desc, image }: any) => {
             className="object-cover group-hover:scale-110 transition-transform duration-700"
           />
           {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent group-hover:from-black/90 transition-colors duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t  via-black/10 to-transparent from-black/30 transition-colors duration-300" />
         </div>
       )}
 

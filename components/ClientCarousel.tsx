@@ -204,11 +204,11 @@ const ClientCarousel: React.FC = () => {
   }, [moveSlider, isPaused]);
 
   return (
-    <section className="bg-white py-24 px-6 overflow-hidden">
+    <section className="bg-white px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
         <h3 className="text-black font-bold text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
-        <h2 className="text-black text-3xl md:text-5xl font-normal">Our Clients & Partners</h2>
-        <p className="text-gray-600 text-lg md:text-xl font-light">
+        <h2 className="text-slate-900 text-3xl md:text-5xl font-medium">Our Clients & Partners</h2>
+        <p className="text-slate-600 text-lg md:text-xl font-light">
           We are proud to partner and service clients from several industries.
         </p>
       </div>
@@ -263,7 +263,7 @@ const ClientCarousel: React.FC = () => {
   {/* PREV */}
   <button 
     onClick={() => moveSlider('prev')}
-    className="group flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+    className="group cursor-pointer flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
   >
     <svg 
       width="60" height="24" viewBox="0 0 60 24" fill="none" 
@@ -287,7 +287,7 @@ const ClientCarousel: React.FC = () => {
   {/* NEXT */}
   <button 
     onClick={() => moveSlider('next')}
-    className="group flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+    className="group flex cursor-pointer items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
   >
     <svg 
       width="60" height="24" viewBox="0 0 60 24" fill="none"
@@ -310,7 +310,7 @@ const ClientCarousel: React.FC = () => {
       </div>
 
       <div className="mt-10 text-center">
-        <Link href="/clients" className="inline-block bg-[#958357] text-white px-9 py-3 text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-[#84734a] transition-all transform hover:-translate-y-1 shadow-md">
+        <Link href="/clients" className="inline-block bg-gradient-to-r from-purple-800 to-purple-600 text-white px-9 py-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#84734a] transition-all transform hover:-translate-y-1 shadow-md">
           View Clients here
         </Link>
       </div>

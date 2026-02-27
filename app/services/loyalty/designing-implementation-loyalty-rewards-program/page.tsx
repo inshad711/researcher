@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import LoyaltyRewardsProgramPageContent from "@/components/services/LoyaltyRewardsProgramPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/loyalty/designing-implementation-loyalty-rewards-program" />;
+  return <LoyaltyRewardsProgramPageContent />;
 }

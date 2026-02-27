@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Footer2 from "@/components/Footer2";
 import Header2 from "@/components/Header2";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import NextTopLoader from "nextjs-toploader";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
@@ -38,6 +39,16 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col">
           {/* <Header /> */}
+           <NextTopLoader
+          color="#7c3aed"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+        />
           <Header2/>
           <main className="flex-1">{children}</main>
           {/* <Footer /> */}

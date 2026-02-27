@@ -165,6 +165,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { servicesMenu, type ServiceMenuItem } from '@/data/servicesMenu';
 
 
 const Footer2: React.FC = () => {
@@ -178,9 +179,29 @@ const Footer2: React.FC = () => {
     { icon: <Linkedin size={18} />, href: "#", color: "bg-blue-700" },
   ];
 
-  // Link Section Configuration
-  const quickLinks = ["Home", "About", "Services", "Portfolio", "Contact"];
-  const services = ["Web Design", "Development", "Marketing", "Consulting", "Analytics"];
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "About us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Blogs", href: "/blog" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
+  const flattenServiceLinks = (items: ServiceMenuItem[]): { name: string; href: string }[] => {
+    const links: { name: string; href: string }[] = [];
+    for (const item of items) {
+      if (item.href) {
+        links.push({ name: item.name, href: item.href });
+      }
+      if (item.children?.length) {
+        links.push(...flattenServiceLinks(item.children));
+      }
+    }
+    return links;
+  };
+
+  const services = flattenServiceLinks(servicesMenu).slice(0, 6);
 
   return (
    <footer className="relative bg-black text-white overflow-hidden">
@@ -237,13 +258,13 @@ const Footer2: React.FC = () => {
         </h5>
         <ul className="space-y-3">
           {quickLinks.map((link) => (
-            <li key={link}>
-              <a
-                href="#"
+            <li key={link.name}>
+              <Link
+                href={link.href}
                 className="text-zinc-300 hover:text-white transition-colors duration-300 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -257,13 +278,13 @@ const Footer2: React.FC = () => {
         </h5>
         <ul className="space-y-3">
           {services.map((service) => (
-            <li key={service}>
-              <a
-                href="#"
+            <li key={service.href}>
+              <Link
+                href={service.href}
                 className="text-zinc-300 hover:text-white transition-colors duration-300 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               >
-                {service}
-              </a>
+                {service.name}
+              </Link>
             </li>
           ))}
         </ul>

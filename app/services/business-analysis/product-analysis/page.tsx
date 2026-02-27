@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import ProductAnalysisPageContent from "@/components/services/ProductAnalysisPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/business-analysis/product-analysis" />;
+  return <ProductAnalysisPageContent />;
 }

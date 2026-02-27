@@ -122,7 +122,7 @@ const faqSchema = {
 
 export default function DataStoryTellingPageContent() {
   return (
-    <main className="bg-slate-50 pt-24 pb-20 text-slate-900">
+    <main className="bg-slate-50 pt-36 pb-20 text-slate-900">
       <Script id="data-storytelling-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>

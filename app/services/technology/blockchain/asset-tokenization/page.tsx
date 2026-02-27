@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import AssetTokenizationPageContent from "@/components/services/AssetTokenizationPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/blockchain/asset-tokenization" />;
+  return <AssetTokenizationPageContent />;
 }

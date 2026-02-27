@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import DefiConsultationPageContent from "@/components/services/DefiConsultationPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/blockchain/defi-consultation" />;
+  return <DefiConsultationPageContent />;
 }

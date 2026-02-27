@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import Web30TokenomicsPageContent from "@/components/services/Web30TokenomicsPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/web-3-0/tokenomics" />;
+  return <Web30TokenomicsPageContent />;
 }

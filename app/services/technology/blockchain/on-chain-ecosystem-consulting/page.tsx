@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import OnChainEcosystemConsultingPageContent from "@/components/services/OnChainEcosystemConsultingPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/blockchain/on-chain-ecosystem-consulting" />;
+  return <OnChainEcosystemConsultingPageContent />;
 }

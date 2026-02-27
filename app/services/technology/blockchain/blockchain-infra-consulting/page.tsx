@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import BlockchainInfraConsultingPageContent from "@/components/services/BlockchainInfraConsultingPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/blockchain/blockchain-infra-consulting" />;
+  return <BlockchainInfraConsultingPageContent />;
 }

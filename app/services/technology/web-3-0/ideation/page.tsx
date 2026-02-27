@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import Web30IdeationPageContent from "@/components/services/Web30IdeationPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/web-3-0/ideation" />;
+  return <Web30IdeationPageContent />;
 }

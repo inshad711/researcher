@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import BusinessConsultationImplementationPageContent from "@/components/services/BusinessConsultationImplementationPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/artificial-intelligence/business-consultation-implementation" />;
+  return <BusinessConsultationImplementationPageContent />;
 }

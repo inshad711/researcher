@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import Web30StrategyConsultationPageContent from "@/components/services/Web30StrategyConsultationPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/web-3-0/strategy-consultation" />;
+  return <Web30StrategyConsultationPageContent />;
 }

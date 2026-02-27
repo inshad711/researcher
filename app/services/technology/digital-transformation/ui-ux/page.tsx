@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import UiUxPageContent from "@/components/services/UiUxPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/digital-transformation/ui-ux" />;
+  return <UiUxPageContent />;
 }

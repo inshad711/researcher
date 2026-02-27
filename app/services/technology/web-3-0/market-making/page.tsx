@@ -1,5 +1,5 @@
-import SimpleServicePage from "@/components/SimpleServicePage";
+import Web30MarketMakingPageContent from "@/components/services/Web30MarketMakingPageContent";
 
 export default function Page() {
-  return <SimpleServicePage serviceHref="/services/technology/web-3-0/market-making" />;
+  return <Web30MarketMakingPageContent />;
 }

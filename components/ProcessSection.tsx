@@ -806,7 +806,7 @@ const ProcessSection: React.FC = () => {
   });
 
   return (
-    <section className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-16 bg-white" id="section-process">
+    <section className="relative max-w-[1440px] mx-auto px-4 md:px-12 lg:px-24 py-16 md:py-16 bg-white" id="section-process">
       {/* Added 'items-start' to the grid. 
           This is crucial for sticky elements to work within a grid layout.
       */}

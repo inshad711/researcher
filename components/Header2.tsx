@@ -188,16 +188,16 @@ function MobileDrillDown({ onClose }: { onClose: () => void }) {
 
           {/* ── Back button + current section title ── */}
           {currentTitle ? (
-            <div className="flex items-center gap-3 mb-3 pb-3 border-b border-white/10">
+            <div className="mb-3 flex items-center gap-3 border-b border-slate-200 pb-3">
               <button
                 type="button"
                 onClick={goBack}
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors shrink-0"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 transition-colors hover:bg-slate-200"
                 aria-label="Go back"
               >
-                <ArrowLeft className="w-4 h-4 text-white" />
+                <ArrowLeft className="h-4 w-4 text-slate-900" />
               </button>
-              <span className="text-sm font-semibold text-white truncate">{currentTitle}</span>
+              <span className="truncate text-sm font-semibold text-slate-900">{currentTitle}</span>
             </div>
           ) : null}
 
@@ -214,10 +214,10 @@ function MobileDrillDown({ onClose }: { onClose: () => void }) {
                     <button
                       type="button"
                       onClick={() => drillInto(item)}
-                      className="w-full flex items-center justify-between gap-3 px-2 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-left group"
+                      className="group flex w-full items-center justify-between gap-3 rounded-xl px-2 py-2.5 text-left transition-colors hover:bg-slate-100"
                     >
-                      <span className="flex-1 text-sm text-white/90 leading-snug">{name}</span>
-                      <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-white/60 transition-colors shrink-0" />
+                      <span className="flex-1 text-sm leading-snug text-slate-800">{name}</span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-slate-700" />
                     </button>
                   </li>
                 );
@@ -232,12 +232,12 @@ function MobileDrillDown({ onClose }: { onClose: () => void }) {
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       onClick={onClose}
-                      className="block px-2 py-2.5 text-sm text-white/80 leading-snug rounded-xl hover:bg-white/5 hover:text-white/90 transition-colors"
+                      className="block rounded-xl px-2 py-2.5 text-sm leading-snug text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
                     >
                       {name}
                     </Link>
                   ) : (
-                    <span className="block px-2 py-2.5 text-sm text-white/60 leading-snug">
+                    <span className="block px-2 py-2.5 text-sm leading-snug text-slate-500">
                       {name}
                     </span>
                   )}
@@ -276,6 +276,17 @@ const Header2 = () => {
   // Close mobile services accordion when mobile menu closes
   useEffect(() => {
     if (!isMenuOpen) setIsMobileServicesOpen(false);
+  }, [isMenuOpen]);
+
+  // Prevent background page scroll while the mobile menu is open
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
   }, [isMenuOpen]);
 
   const clearCloseTimer = useCallback(() => {
@@ -322,7 +333,7 @@ const Header2 = () => {
     { name: "Contact Us", href: "/contact" },
   ];
 
-  const isLightBg = !isHomePage || scrolled;
+  const isLightBg = !isHomePage || scrolled || isMenuOpen;
   const linkCls = `text-md font-medium transition-colors ${
     isLightBg ? "text-gray-700 hover:text-black" : "text-gray-300 hover:text-white"
   }`;
@@ -336,7 +347,7 @@ const Header2 = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-4 ${
         isLightBg ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
@@ -447,15 +458,15 @@ const Header2 = () => {
 
       {/* ── Mobile menu (accordion) ────────────────────────────────── */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 max-h-[85vh] overflow-y-auto bg-black/95 backdrop-blur-xl border-t border-white/10 px-5 py-4">
+        <div className="absolute left-0 right-0 top-full max-h-[85vh] overflow-y-auto border-t border-slate-200 bg-white px-5 py-4 lg:hidden">
           <ul className="space-y-1">
 
             {/* Nav links before Services */}
             {navLinks.slice(0, 2).map((link) => (
-              <li key={link.name} className="border-b border-white/10 last:border-0">
+              <li key={link.name} className="border-b border-slate-200 last:border-0">
                 <Link
                   href={link.href}
-                  className="block py-3.5 text-lg font-medium text-white"
+                  className="block py-3.5 text-lg font-medium text-slate-900"
                   onClick={closeMobileMenu}
                 >
                   {link.name}
@@ -464,11 +475,11 @@ const Header2 = () => {
             ))}
 
             {/* Services accordion */}
-            <li className="border-b border-white/10">
+            <li className="border-b border-slate-200">
               <div className="flex w-full items-center justify-between py-3.5">
                 <Link
                   href="/services"
-                  className="text-lg font-medium text-white"
+                  className="text-lg font-medium text-slate-900"
                   onClick={closeMobileMenu}
                 >
                   Services
@@ -476,7 +487,7 @@ const Header2 = () => {
                 <button
                   type="button"
                   onClick={() => setIsMobileServicesOpen((p) => !p)}
-                  className="text-white"
+                  className="text-slate-700"
                   aria-label="Toggle services menu"
                   aria-expanded={isMobileServicesOpen}
                 >
@@ -495,10 +506,10 @@ const Header2 = () => {
 
             {/* Nav links after Services */}
             {navLinks.slice(2).map((link) => (
-              <li key={link.name} className="border-b border-white/10 last:border-0">
+              <li key={link.name} className="border-b border-slate-200 last:border-0">
                 <Link
                   href={link.href}
-                  className="block py-3.5 text-lg font-medium text-white"
+                  className="block py-3.5 text-lg font-medium text-slate-900"
                   onClick={closeMobileMenu}
                 >
                   {link.name}
@@ -507,7 +518,7 @@ const Header2 = () => {
             ))}
 
             <li className="pt-4">
-              <button className="w-full bg-white text-black py-4 rounded-full font-bold text-sm">
+              <button className="w-full rounded-full bg-slate-100 py-4 text-sm font-bold text-slate-900">
                 Book a consultation
               </button>
             </li>

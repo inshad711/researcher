@@ -309,8 +309,8 @@ export default function CaseStudieMain() {
       `}</style>
 
       {/* Header Section */}
-      <header className="py-12 px-6 max-w-7xl mx-auto text-center">
-        <h1 className="text-7xl md:text-5xl font-medium tracking-tighter uppercase mb-6 text-zinc-900  leading-[0.85]">
+      <header className="py-12 px-4 max-w-7xl mx-auto text-center">
+        <h1 className="text-3xl md:text-5xl font-medium tracking-tighter uppercase mb-6 text-zinc-900  leading-[0.85]">
           <span className="reveal-container inline-block">
             <span className="reveal-text">Work</span>
           </span>{" "}
@@ -325,7 +325,7 @@ export default function CaseStudieMain() {
       </header>
 
       {/* Main Content Area */}
-      <main className="px-6 pb-32 max-w-7xl mx-auto">
+      <main className="px-4 max-w-7xl mx-auto">
         <div className="space-y-4">
           {caseStudies.map((study) => (
             <CaseStudyCard key={study.id} data={study} />

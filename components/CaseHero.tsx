@@ -18,7 +18,7 @@ const CaseHero = () => {
   const tags = ['UIUX', 'Branding'];
 
   return (
-    <div className=" bg-white text-black selection:bg-black selection:text-white flex flex-col justify-between p-6 md:p-10 lg:p-16 xl:p-20 overflow-x-hidden">
+    <div className=" bg-white text-black selection:text-white flex flex-col justify-between px-4 py-6 md:p-10 lg:py-16  overflow-x-hidden">
       
       {/* Main Header & Nav Grid */}
       <main className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-start w-full max-w-[1600px] mx-auto">
@@ -31,13 +31,13 @@ const CaseHero = () => {
               - Preferred: 9vw (scales with width)
               - Max: 9.5rem (large desktop)
             */}
-            <span className="block text-[clamp(2.75rem,9vw,5.5rem)]">
+            <span className="block text-[clamp(2.25rem,9vw,5.5rem)]">
               Bringing your
             </span>
-            <span className="block text-[clamp(2.75rem,9vw,5.5rem)]">
+            <span className="block text-[clamp(2.25rem,9vw,5.5rem)]">
               brand to life in the
             </span>
-            <span className="block text-[clamp(2.75rem,9vw,5.5rem)] text-zinc-400">
+            <span className="block text-[clamp(2.25rem,9vw,5.5rem)] text-zinc-400">
               digital world
             </span>
           </h1>

@@ -91,12 +91,12 @@ const faqSchema = {
 
 export default function MarketingConsultingPageContent() {
   return (
-    <main className="bg-slate-50 pt-24 pb-20 text-slate-900">
+    <main className="bg-slate-50 pt-38 pb-20 text-slate-900">
       <Script id="marketing-consulting-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
+      <section className="px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">Marketing Consulting</p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">MARKETING CONSULTING</h1>
@@ -113,7 +113,7 @@ export default function MarketingConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-6 md:p-8">
             <img
@@ -135,7 +135,7 @@ export default function MarketingConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">
             The Role of Marketing Consulting Firms
@@ -151,7 +151,7 @@ export default function MarketingConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Why Choose Researchers.me for Your Marketing Consulting Needs?
@@ -167,7 +167,7 @@ export default function MarketingConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions on Marketing Consulting Services

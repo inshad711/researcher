@@ -232,7 +232,7 @@ const BlogCard = ({ post }: { post: WordPressPost }) => {
 export default function BlogGrid2({ posts }: { posts: WordPressPost[] }) {
   return (
     <div className="">
-      <main className="max-w-6xl mx-auto px-5 pb-12 pt-32">
+      <main className="max-w-6xl mx-auto px-4 md:px-5 pb-12 pt-32">
         <header className="pt-5 pb-12 px-5 text-center">
           <div className="max-w-3xl mx-auto">
             <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 rounded-full">

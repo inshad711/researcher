@@ -145,8 +145,8 @@ export default function MysteryShoppingPageContent() {
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-100 via-cyan-100 to-indigo-100 px-6 py-14 text-slate-900 shadow-[0_24px_80px_rgba(14,116,144,0.15)] md:px-10 md:py-20">
+      <section className="px-4 md:px-10">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-cyan-50 to-indigo-100 px-6 py-14 text-slate-900 shadow-[0_24px_80px_rgba(14,116,144,0.15)] md:px-10 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">Mystery Shopping</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
             Evaluate real customer experience with objective field intelligence
@@ -178,7 +178,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Why Mystery Shopping</h2>
@@ -205,7 +205,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Key Evaluation Criteria</h2>
@@ -243,7 +243,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Benefits of Mystery Shopping in UAE</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -261,7 +261,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Types of Mystery Shopping</h2>
@@ -296,7 +296,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-fuchsia-200 bg-gradient-to-br from-fuchsia-50 via-rose-50 to-indigo-50 p-6 text-slate-900 lg:col-span-5 md:p-8">
             <h3 className="text-lg font-semibold">Why Choose Researchers.me</h3>
@@ -326,7 +326,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-4 space-y-3">
@@ -340,7 +340,7 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-16 px-6 md:px-10">
+      <section className="mt-16 px-4 md:px-10">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-indigo-200 bg-gradient-to-br from-indigo-100 via-sky-100 to-cyan-100 px-6 py-10 md:px-10 md:py-14">
           <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-cyan-200/50 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-indigo-200/50 blur-3xl" />

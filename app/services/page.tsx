@@ -177,7 +177,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="templateContainer relative pt-0">
+      {/* <section className="templateContainer relative pt-0">
         <div className="">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
      
 

@@ -19,8 +19,8 @@ const quantitativeSurveyItems = [
 
 export default function QualitativeQuantitativeSurveysPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-28 text-slate-900">
-      <section className="px-6 md:px-10">
+    <main className="bg-slate-50 pb-20 pt-38 text-slate-900">
+      <section className="px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white px-6 py-12 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:px-10 md:py-16">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
             QUANTITATIVE AND QUALITATIVE ANALYSIS
@@ -32,7 +32,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6">
             <img
@@ -52,7 +52,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
@@ -77,7 +77,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6">
             <img
@@ -100,7 +100,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h3 className="text-xl font-semibold md:text-2xl">Quantitative survey</h3>

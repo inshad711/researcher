@@ -208,7 +208,7 @@ const Footer2: React.FC = () => {
   {/* Background Glow */}
   <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-purple-900/20 pointer-events-none" />
 
-  <div className="relative container mx-auto px-6 py-16 max-w-7xl">
+  <div className="relative container mx-auto px-4 py-16 max-w-7xl">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
       {/* Column 1 */}

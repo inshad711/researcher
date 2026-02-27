@@ -82,10 +82,10 @@ const feasibilityTypes: FeasibilityType[] = [
 
 export default function FeasibilityStudiesPageContent() {
   return (
-    <main className="bg-[#f7f8fa] pt-36 pb-20 text-slate-900">
-      <section className="relative overflow-hidden px-6 md:px-10">
-        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/30 blur-3xl" />
-        <div className="absolute right-0 top-10 h-64 w-64 rounded-full bg-amber-200/35 blur-3xl" />
+    <main className=" pt-36 pb-20 text-slate-900">
+      <section className="relative overflow-hidden px-4 md:px-10">
+        {/* <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/30 blur-3xl" />
+        <div className="absolute right-0 top-10 h-64 w-64 rounded-full bg-amber-200/35 blur-3xl" /> */}
 
         <div className="relative mx-auto grid max-w-6xl gap-6 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
           <div className="md:col-span-7">
@@ -139,7 +139,7 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">What We Do</p>
@@ -173,7 +173,7 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
           <div className="grid items-center gap-6 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -198,7 +198,7 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-16 px-6 md:px-10">
+      <section className="mt-16 px-4 md:px-10">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-semibold md:text-4xl">Feasibility Studies Overview</h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -208,7 +208,7 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-8 px-6 md:px-10">
+      <section className="mt-8 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-5">
           {feasibilityTypes.map((item, index) => {
             const Icon = item.icon;
@@ -216,7 +216,7 @@ export default function FeasibilityStudiesPageContent() {
               <article key={item.title} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:shadow-[0_12px_50px_rgba(15,23,42,0.08)]">
                 <div className="grid items-stretch lg:grid-cols-12">
                   <div className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <img src={item.image} alt={item.imageAlt} className="h-64 w-full object-cover md:h-full" />
+                    <img src={item.image} alt={item.imageAlt} className="h-64 p-2 rounded-2xl w-full object-cover md:h-full" />
                   </div>
 
                   <div className={`p-6 md:p-8 lg:col-span-7 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -238,22 +238,6 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-16 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-900 bg-slate-900 px-6 py-10 text-white md:px-10 md:py-14">
-          <h2 className="text-2xl font-semibold leading-tight md:text-4xl">Ready to validate your next initiative?</h2>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300 md:text-base">
-            Share your project concept and goals. We will build a practical feasibility scope across market, technical,
-            operational, legal, and financial dimensions.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
-          >
-            Contact Us
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

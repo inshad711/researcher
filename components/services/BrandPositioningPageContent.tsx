@@ -64,7 +64,7 @@ export default function BrandPositioningPageContent() {
       </Script>
 
       {/* ── HERO ── */}
-      <section className="border-b border-slate-100 bg-linear-to-br from-violet-50 via-white to-indigo-50 px-6 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
+      <section className="border-b border-slate-100 bg-linear-to-br from-violet-50 via-white to-indigo-50 px-4 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
         <div className="mx-auto max-w-6xl">
           <span className="inline-block rounded-full border border-violet-200 bg-violet-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-violet-700">
             Brand Positioning &amp; Benchmarking
@@ -114,7 +114,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── WHAT IS BRAND POSITIONING — editorial split ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* image */}
@@ -161,7 +161,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── STRATEGIES ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -189,7 +189,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── WHY IT MATTERS — split with tall image ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <div>
@@ -237,7 +237,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── RESEARCH APPROACH — alternating timeline ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet-600">Research methodology</p>
@@ -275,7 +275,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
@@ -311,7 +311,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet-600">FAQ</p>
@@ -339,7 +339,7 @@ export default function BrandPositioningPageContent() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-violet-200 bg-linear-to-br from-violet-50 via-indigo-50 to-white">
           <div className="grid lg:grid-cols-2">
             {/* text */}

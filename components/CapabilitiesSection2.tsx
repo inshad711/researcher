@@ -234,85 +234,183 @@
 // export default CapabilitiesSection2;
 
 
+// import React from 'react';
+// import { CheckCircle2, ArrowRight } from 'lucide-react';
+
+// interface CardProps {
+//   title: string;
+//   description: string;
+//   iconBgColor: string;
+//   link: string;
+// }
+
+// const features: CardProps[] = [
+//   {
+//     title: 'Feasibility Studies',
+//     description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+//     iconBgColor: 'bg-sky-400',
+//     link: '#',
+//   },
+//   {
+//     title: 'Data Story Telling',
+//     description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+//     iconBgColor: 'bg-yellow-400',
+//     link: '#',
+//   },
+//   {
+//     title: 'Mystery Shopping',
+//     description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+//     iconBgColor: 'bg-pink-400',
+//     link: '#',
+//   },
+// ];
+
+// const CapabilitiesSection2 = () => {
+//   return (
+//     <section className="pb-20">
+//       <div className="templateContainer">
+
+//         {/* Heading Area */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-3xl md:text-5xl font-normal text-slate-900 mb-4 tracking-tight">
+//             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">Services</span>
+//           </h2>
+//           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+//             Our services and the community we've built. Here's a glimpse of what we've achieved together so far.
+//           </p>
+//         </div>
+
+//         {/* Grid Layout */}
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//           {features.map((feature, index) => (
+//             <div 
+//               key={index}
+//               className="bg-white px-7 py-9 rounded-[15px] shadow-sm flex flex-col items-start text-left border border-slate-100 duration-300"
+//             >
+              
+//               {/* Icon Circle */}
+//               <div className={`${feature.iconBgColor} p-3 rounded-full mb-6`}>
+//                 <CheckCircle2 className="w-8 h-8 text-white" />
+//               </div>
+
+//               {/* Text Content */}
+//               <h3 className="text-[20px] font-normal text-slate-900 mb-4">
+//                 {feature.title}
+//               </h3>
+
+//               <p className="text-slate-600 leading-relaxed text-md mb-4">
+//                 {feature.description}
+//               </p>
+
+          
+//               <a
+//   href={feature.link}
+//   className="group inline-flex items-center text-black font-medium text-lg leading-none transition-all duration-300"
+// >
+//   <span className="flex items-center gap-2">
+//     Explore More
+//     <ArrowRight className="w-4 h-4 mt-[1px] transition-transform duration-300 group-hover:translate-x-1" />
+//   </span>
+// </a>
+
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default CapabilitiesSection2;
+
+/////new
 import React from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { BarChart3, LineChart, Search, ArrowRight } from 'lucide-react';
 
 interface CardProps {
   title: string;
   description: string;
   iconBgColor: string;
   link: string;
+  icon: React.ReactNode;
 }
 
 const features: CardProps[] = [
   {
     title: 'Feasibility Studies',
-    description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
-    iconBgColor: 'bg-sky-400',
+    description:
+      'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+    iconBgColor: 'bg-sky-100',
     link: '#',
+    icon: <BarChart3 className="w-6 h-6 text-sky-600" />,
   },
   {
     title: 'Data Story Telling',
-    description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
-    iconBgColor: 'bg-yellow-400',
+    description:
+      'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+    iconBgColor: 'bg-yellow-100',
     link: '#',
+    icon: <LineChart className="w-6 h-6 text-yellow-600" />,
   },
   {
     title: 'Mystery Shopping',
-    description: 'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
-    iconBgColor: 'bg-pink-400',
+    description:
+      'We offer specialized BI teams that enable guaranteed improved CSAT & response times boost.',
+    iconBgColor: 'bg-pink-100',
     link: '#',
+    icon: <Search className="w-6 h-6 text-pink-600" />,
   },
 ];
 
 const CapabilitiesSection2 = () => {
   return (
-    <section className="pb-20 px-6">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Heading Area */}
+    <section className="pb-20">
+      <div className="templateContainer">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-normal text-slate-900 mb-4 tracking-tight">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">Services</span>
+            Our{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">
+              Services
+            </span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Our services and the community we've built. Here's a glimpse of what we've achieved together so far.
           </p>
         </div>
 
-        {/* Grid Layout */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white px-7 py-9 rounded-[15px] shadow-sm flex flex-col items-start text-left border border-slate-100 duration-300"
+              className="bg-white px-7 py-9 rounded-[15px] shadow-sm border border-slate-100 flex flex-col items-start text-left"
             >
-              
-              {/* Icon Circle */}
-              <div className={`${feature.iconBgColor} p-3 rounded-full mb-6`}>
-                <CheckCircle2 className="w-8 h-8 text-white" />
+              {/* Icon Box (Not Fully Round) */}
+              <div
+                className={`${feature.iconBgColor} p-3 rounded-md mb-6 flex items-center justify-center`}
+              >
+                {feature.icon}
               </div>
 
-              {/* Text Content */}
+              {/* Title */}
               <h3 className="text-[20px] font-normal text-slate-900 mb-4">
                 {feature.title}
               </h3>
 
-              <p className="text-slate-600 leading-relaxed text-md mb-4">
+              {/* Description */}
+              <p className="text-slate-600 leading-relaxed text-md mb-6">
                 {feature.description}
               </p>
 
-          
+              {/* Link */}
               <a
-  href={feature.link}
-  className="group inline-flex items-center text-black font-medium text-lg leading-none transition-all duration-300"
->
-  <span className="flex items-center gap-2">
-    Explore More
-    <ArrowRight className="w-4 h-4 mt-[1px] transition-transform duration-300 group-hover:translate-x-1" />
-  </span>
-</a>
-
+                href={feature.link}
+                className="inline-flex items-center gap-2 text-black font-medium text-lg"
+              >
+                Explore More
+                <ArrowRight className="w-4 h-4 mt-[1px]" />
+              </a>
             </div>
           ))}
         </div>

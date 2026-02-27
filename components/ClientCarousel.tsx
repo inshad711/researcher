@@ -144,30 +144,363 @@
 //   );
 // }
 
+// "use client";
+// import React, { useState, useEffect, useCallback, useRef } from 'react';
+// import Link from 'next/link';
+// import { CLIENT_LOGOS } from '@/data/clientLogos';
+
+// // 3 sets for a seamless infinite loop
+// const DISPLAY_LOGOS = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
+
+// const ClientCarousel: React.FC = () => {
+//   const [currentIndex, setCurrentIndex] = useState<number>(CLIENT_LOGOS.length);
+//   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+//   const [itemsToShow, setItemsToShow] = useState<number>(6);
+//   const [isPaused, setIsPaused] = useState<boolean>(false);
+  
+//   // Use a ref to keep track of the index for the transitionEnd logic
+//   const indexRef = useRef(currentIndex);
+//   indexRef.current = currentIndex;
+
+//   // Handle Responsiveness
+//   useEffect(() => {
+//     const handleResize = () => {
+//       if (window.innerWidth < 640) setItemsToShow(2);
+//       else if (window.innerWidth < 1024) setItemsToShow(4);
+//       else setItemsToShow(6);
+//     };
+//     handleResize();
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   const moveSlider = useCallback((direction: 'next' | 'prev') => {
+//     if (isTransitioning) return;
+//     setIsTransitioning(true);
+//     setCurrentIndex(prev => direction === 'next' ? prev + 1 : prev - 1);
+//   }, [isTransitioning]);
+
+//   const handleTransitionEnd = () => {
+//     setIsTransitioning(false);
+    
+//     // Jump to the middle set if we reach the boundaries
+//     // If we passed the end of the middle set
+//     if (indexRef.current >= CLIENT_LOGOS.length * 2) {
+//       setCurrentIndex(CLIENT_LOGOS.length);
+//     } 
+//     // If we passed the beginning of the middle set
+//     else if (indexRef.current < CLIENT_LOGOS.length) {
+//       setCurrentIndex(indexRef.current + CLIENT_LOGOS.length);
+//     }
+//   };
+
+//   // 2-second Auto-play
+//   useEffect(() => {
+//     if (isPaused) return;
+//     const interval = setInterval(() => {
+//       moveSlider('next');
+//     }, 2000);
+//     return () => clearInterval(interval);
+//   }, [moveSlider, isPaused]);
+
+//   return (
+//     <section className="bg-white px-6 overflow-hidden">
+//       <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+//         <h3 className="text-black font-bold text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
+//         <h2 className="text-slate-900 text-3xl md:text-5xl font-medium">Our Clients & Partners</h2>
+//         <p className="text-slate-600 text-lg md:text-xl font-light">
+//           We are proud to partner and service clients from several industries.
+//         </p>
+//       </div>
+
+//       <div 
+//         className="relative max-w-7xl mx-auto"
+//         onMouseEnter={() => setIsPaused(true)}
+//         onMouseLeave={() => setIsPaused(false)}
+//       >
+//         <div className="relative overflow-hidden">
+//           <div 
+//             className={`flex items-center ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : 'transition-none'}`}
+//             onTransitionEnd={handleTransitionEnd}
+//             style={{ 
+//               transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` 
+//             }}
+//           >
+//             {DISPLAY_LOGOS.map((logo, index) => (
+//               <div 
+//                 key={`${logo.id}-${index}`}
+//                 className="flex-shrink-0 px-4 md:px-8"
+//                 style={{ width: `${100 / itemsToShow}%` }}
+//               >
+//                 <div className="py-2 flex items-center justify-center opacity-100 transition-all duration-500 cursor-pointer">
+//                   <img 
+//                     src={logo.src} 
+//                     alt={logo.alt} 
+//                     className="max-w-full max-h-full object-contain select-none pointer-events-none"
+//                   />
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Navigation Arrows */}
+//         {/* <div className="flex justify-center items-center gap-12 mt-8">
+//           <button 
+//             onClick={() => moveSlider('prev')} 
+//             className="text-slate-800 hover:text-[#958357] transition-colors p-2"
+//           >
+//             <ChevronLeft size={32} strokeWidth={1} />
+//           </button>
+//           <button 
+//             onClick={() => moveSlider('next')} 
+//             className="text-slate-800 hover:text-[#958357] transition-colors p-2"
+//           >
+//             <ChevronRight size={32} strokeWidth={1} />
+//           </button>
+//         </div> */}
+//         <div className="flex justify-center items-center gap-24 mt-12">
+//   {/* PREV */}
+//   <button 
+//     onClick={() => moveSlider('prev')}
+//     className="group cursor-pointer flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+//   >
+//     <svg 
+//       width="60" height="24" viewBox="0 0 60 24" fill="none" 
+//       className="transform transition-transform duration-500 ease-in-out"
+//     >
+//       {/* The stretching line */}
+//       <line 
+//         x1="58" y1="12" x2="12" y2="12" 
+//         stroke="currentColor" strokeWidth="1" 
+//         className=" transition-all duration-500 opacity-0 group-hover:opacity-100"
+//       />
+//       {/* The Arrow Head + short stem */}
+//       <path 
+//         d="M12 6L6 12L12 18M6 12H58" 
+//         stroke="currentColor" strokeWidth="1" strokeLinecap="square"
+//         className=""
+//       />
+//     </svg>
+//   </button>
+
+//   {/* NEXT */}
+//   <button 
+//     onClick={() => moveSlider('next')}
+//     className="group flex cursor-pointer items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+//   >
+//     <svg 
+//       width="60" height="24" viewBox="0 0 60 24" fill="none"
+//     >
+//       {/* The Arrow Head + short stem */}
+//       <path 
+//         d="M48 6L54 12L48 18M54 12H2" 
+//         stroke="currentColor" strokeWidth="1" strokeLinecap="square"
+//         className=" transition-transform duration-500"
+//       />
+//       {/* The stretching line */}
+//       <line 
+//         x1="2" y1="12" x2="48" y2="12" 
+//         stroke="currentColor" strokeWidth="1"
+//         className="transition-all duration-500 opacity-0 group-hover:opacity-100"
+//       />
+//     </svg>
+//   </button>
+// </div>
+//       </div>
+
+//       <div className="mt-10 text-center">
+//         <Link href="/clients" className="inline-block bg-gradient-to-r from-purple-800 to-purple-600 text-white px-9 py-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#84734a] transition-all transform hover:-translate-y-1 shadow-md">
+//           View Clients here
+//         </Link>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ClientCarousel;
+
+
+
+/////new
+
+// "use client";
+// import React, { useState, useEffect, useCallback, useRef } from 'react';
+// import Link from 'next/link';
+// import { CLIENT_LOGOS } from '@/data/clientLogos';
+
+// const DISPLAY_LOGOS = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
+
+// const ClientCarousel: React.FC = () => {
+//   const [currentIndex, setCurrentIndex] = useState<number>(CLIENT_LOGOS.length);
+//   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+//   const [itemsToShow, setItemsToShow] = useState<number>(6);
+//   const [isPaused, setIsPaused] = useState<boolean>(false);
+  
+//   const indexRef = useRef(currentIndex);
+//   indexRef.current = currentIndex;
+
+//   // Handle Responsiveness
+//   useEffect(() => {
+//     const handleResize = () => {
+//       // Adjusted breakpoints for better mobile/tablet feel
+//       if (window.innerWidth < 640) setItemsToShow(2);      // Mobile
+//       else if (window.innerWidth < 768) setItemsToShow(3); // Small Tablet
+//       else if (window.innerWidth < 1024) setItemsToShow(4);// Large Tablet
+//       else setItemsToShow(6);                              // Desktop
+//     };
+//     handleResize();
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   const moveSlider = useCallback((direction: 'next' | 'prev') => {
+//     if (isTransitioning) return;
+//     setIsTransitioning(true);
+//     setCurrentIndex(prev => direction === 'next' ? prev + 1 : prev - 1);
+//   }, [isTransitioning]);
+
+//   const handleTransitionEnd = () => {
+//     setIsTransitioning(false);
+//     if (indexRef.current >= CLIENT_LOGOS.length * 2) {
+//       setCurrentIndex(CLIENT_LOGOS.length);
+//     } 
+//     else if (indexRef.current < CLIENT_LOGOS.length) {
+//       setCurrentIndex(indexRef.current + CLIENT_LOGOS.length);
+//     }
+//   };
+
+//   useEffect(() => {
+//     if (isPaused) return;
+//     const interval = setInterval(() => {
+//       moveSlider('next');
+//     }, 2000);
+//     return () => clearInterval(interval);
+//   }, [moveSlider, isPaused]);
+
+//   return (
+//     <section className="bg-white px-4 md:px-6 py-12 overflow-hidden">
+//       {/* Header Section: Adjusted spacing for mobile */}
+//       <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
+//         <h3 className="text-black font-bold text-xs md:text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
+//         <h2 className="text-slate-900 text-2xl md:text-5xl font-medium leading-tight">Our Clients & Partners</h2>
+//         <p className="text-slate-600 text-base md:text-xl font-light px-4">
+//           We are proud to partner and service clients from several industries.
+//         </p>
+//       </div>
+
+//       <div 
+//         className="relative max-w-7xl mx-auto"
+//         onMouseEnter={() => setIsPaused(true)}
+//         onMouseLeave={() => setIsPaused(false)}
+//       >
+//         <div className="relative overflow-hidden">
+//           <div 
+//             className={`flex items-center ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : 'transition-none'}`}
+//             onTransitionEnd={handleTransitionEnd}
+//             style={{ 
+//               transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` 
+//             }}
+//           >
+//             {DISPLAY_LOGOS.map((logo, index) => (
+//               <div 
+//                 key={`${logo.id}-${index}`}
+//                 className="flex-shrink-0 px-2 md:px-8" // Reduced padding on mobile
+//                 style={{ width: `${100 / itemsToShow}%` }}
+//               >
+//                 <div className="h-16 md:h-24 flex items-center justify-center opacity-100 transition-all duration-500 cursor-pointer">
+//                   <img 
+//                     src={logo.src} 
+//                     alt={logo.alt} 
+//                     className="max-w-full max-h-full object-contain select-none pointer-events-none grayscale hover:grayscale-0 transition-all"
+//                   />
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Navigation Arrows: Gap reduced on mobile to keep them on screen */}
+//         <div className="flex justify-center items-center gap-12 md:gap-24 mt-8 md:mt-12">
+//           {/* PREV */}
+//           <button 
+//             onClick={() => moveSlider('prev')}
+//             className="group cursor-pointer flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+//           >
+//             <svg 
+//               width="40" height="24" viewBox="0 0 60 24" fill="none" 
+//               className="md:w-[60px] transform transition-transform duration-500 ease-in-out"
+//             >
+//               <line 
+//                 x1="58" y1="12" x2="12" y2="12" 
+//                 stroke="currentColor" strokeWidth="1" 
+//                 className="transition-all duration-500 opacity-0 group-hover:opacity-100"
+//               />
+//               <path 
+//                 d="M12 6L6 12L12 18M6 12H58" 
+//                 stroke="currentColor" strokeWidth="1" strokeLinecap="square"
+//               />
+//             </svg>
+//           </button>
+
+//           {/* NEXT */}
+//           <button 
+//             onClick={() => moveSlider('next')}
+//             className="group flex cursor-pointer items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
+//           >
+//             <svg 
+//               width="40" height="24" viewBox="0 0 60 24" fill="none"
+//               className="md:w-[60px]"
+//             >
+//               <path 
+//                 d="M48 6L54 12L48 18M54 12H2" 
+//                 stroke="currentColor" strokeWidth="1" strokeLinecap="square"
+//               />
+//               <line 
+//                 x1="2" y1="12" x2="48" y2="12" 
+//                 stroke="currentColor" strokeWidth="1"
+//                 className="transition-all duration-500 opacity-0 group-hover:opacity-100"
+//               />
+//             </svg>
+//           </button>
+//         </div>
+//       </div>
+
+//       <div className="mt-10 text-center">
+//         <Link href="/clients" className="inline-block bg-gradient-to-r from-purple-800 to-purple-600 text-white px-7 md:px-9 py-3 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#84734a] transition-all transform hover:-translate-y-1 shadow-md">
+//           View Clients here
+//         </Link>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ClientCarousel;
+
+
+//////new
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { CLIENT_LOGOS } from '@/data/clientLogos';
 
-// 3 sets for a seamless infinite loop
 const DISPLAY_LOGOS = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
 const ClientCarousel: React.FC = () => {
+  // Set initial state to 3 to prevent layout shift on mobile load
+  const [itemsToShow, setItemsToShow] = useState<number>(3);
   const [currentIndex, setCurrentIndex] = useState<number>(CLIENT_LOGOS.length);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
-  const [itemsToShow, setItemsToShow] = useState<number>(6);
   const [isPaused, setIsPaused] = useState<boolean>(false);
   
-  // Use a ref to keep track of the index for the transitionEnd logic
   const indexRef = useRef(currentIndex);
   indexRef.current = currentIndex;
 
-  // Handle Responsiveness
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) setItemsToShow(2);
-      else if (window.innerWidth < 1024) setItemsToShow(4);
-      else setItemsToShow(6);
+      if (window.innerWidth < 768) setItemsToShow(3);      // Mobile & Small Tablets
+      else if (window.innerWidth < 1024) setItemsToShow(4); // Large Tablets
+      else setItemsToShow(6);                              // Desktop
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -182,19 +515,14 @@ const ClientCarousel: React.FC = () => {
 
   const handleTransitionEnd = () => {
     setIsTransitioning(false);
-    
-    // Jump to the middle set if we reach the boundaries
-    // If we passed the end of the middle set
     if (indexRef.current >= CLIENT_LOGOS.length * 2) {
       setCurrentIndex(CLIENT_LOGOS.length);
     } 
-    // If we passed the beginning of the middle set
     else if (indexRef.current < CLIENT_LOGOS.length) {
       setCurrentIndex(indexRef.current + CLIENT_LOGOS.length);
     }
   };
 
-  // 2-second Auto-play
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -204,11 +532,11 @@ const ClientCarousel: React.FC = () => {
   }, [moveSlider, isPaused]);
 
   return (
-    <section className="bg-white px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
-        <h3 className="text-black font-bold text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
-        <h2 className="text-slate-900 text-3xl md:text-5xl font-medium">Our Clients & Partners</h2>
-        <p className="text-slate-600 text-lg md:text-xl font-light">
+    <section className="bg-white px-4 md:px-6 py-12 overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16 space-y-3">
+        <h3 className="text-black font-bold text-xs md:text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
+        <h2 className="text-slate-900 text-2xl md:text-5xl font-medium">Our Clients & Partners</h2>
+        <p className="text-slate-600 text-base md:text-xl font-light px-2">
           We are proud to partner and service clients from several industries.
         </p>
       </div>
@@ -229,10 +557,10 @@ const ClientCarousel: React.FC = () => {
             {DISPLAY_LOGOS.map((logo, index) => (
               <div 
                 key={`${logo.id}-${index}`}
-                className="flex-shrink-0 px-4 md:px-8"
+                className="flex-shrink-0 px-3 md:px-8" // Narrower padding for mobile 3-set
                 style={{ width: `${100 / itemsToShow}%` }}
               >
-                <div className="py-2 flex items-center justify-center opacity-100 transition-all duration-500 cursor-pointer">
+                <div className="h-12 md:h-24 flex items-center justify-center">
                   <img 
                     src={logo.src} 
                     alt={logo.alt} 
@@ -244,73 +572,24 @@ const ClientCarousel: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation Arrows */}
-        {/* <div className="flex justify-center items-center gap-12 mt-8">
-          <button 
-            onClick={() => moveSlider('prev')} 
-            className="text-slate-800 hover:text-[#958357] transition-colors p-2"
-          >
-            <ChevronLeft size={32} strokeWidth={1} />
+        {/* Updated Arrow Navigation for Mobile */}
+        <div className="flex justify-center items-center gap-12 md:gap-24 mt-10 md:mt-12">
+          <button onClick={() => moveSlider('prev')} className="group flex items-center text-slate-900 hover:text-[#958357] transition-all">
+            <svg width="45" height="24" viewBox="0 0 60 24" fill="none" className="md:w-[60px]">
+              <path d="M12 6L6 12L12 18M6 12H58" stroke="currentColor" strokeWidth="1" />
+            </svg>
           </button>
-          <button 
-            onClick={() => moveSlider('next')} 
-            className="text-slate-800 hover:text-[#958357] transition-colors p-2"
-          >
-            <ChevronRight size={32} strokeWidth={1} />
-          </button>
-        </div> */}
-        <div className="flex justify-center items-center gap-24 mt-12">
-  {/* PREV */}
-  <button 
-    onClick={() => moveSlider('prev')}
-    className="group cursor-pointer flex items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
-  >
-    <svg 
-      width="60" height="24" viewBox="0 0 60 24" fill="none" 
-      className="transform transition-transform duration-500 ease-in-out"
-    >
-      {/* The stretching line */}
-      <line 
-        x1="58" y1="12" x2="12" y2="12" 
-        stroke="currentColor" strokeWidth="1" 
-        className=" transition-all duration-500 opacity-0 group-hover:opacity-100"
-      />
-      {/* The Arrow Head + short stem */}
-      <path 
-        d="M12 6L6 12L12 18M6 12H58" 
-        stroke="currentColor" strokeWidth="1" strokeLinecap="square"
-        className=""
-      />
-    </svg>
-  </button>
 
-  {/* NEXT */}
-  <button 
-    onClick={() => moveSlider('next')}
-    className="group flex cursor-pointer items-center text-slate-900 hover:text-[#958357] transition-all duration-500 ease-in-out"
-  >
-    <svg 
-      width="60" height="24" viewBox="0 0 60 24" fill="none"
-    >
-      {/* The Arrow Head + short stem */}
-      <path 
-        d="M48 6L54 12L48 18M54 12H2" 
-        stroke="currentColor" strokeWidth="1" strokeLinecap="square"
-        className=" transition-transform duration-500"
-      />
-      {/* The stretching line */}
-      <line 
-        x1="2" y1="12" x2="48" y2="12" 
-        stroke="currentColor" strokeWidth="1"
-        className="transition-all duration-500 opacity-0 group-hover:opacity-100"
-      />
-    </svg>
-  </button>
-</div>
+          <button onClick={() => moveSlider('next')} className="group flex items-center text-slate-900 hover:text-[#958357] transition-all">
+            <svg width="45" height="24" viewBox="0 0 60 24" fill="none" className="md:w-[60px]">
+              <path d="M48 6L54 12L48 18M54 12H2" stroke="currentColor" strokeWidth="1" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div className="mt-10 text-center">
-        <Link href="/clients" className="inline-block bg-gradient-to-r from-purple-800 to-purple-600 text-white px-9 py-3 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-[#84734a] transition-all transform hover:-translate-y-1 shadow-md">
+        <Link href="/clients" className="inline-block bg-gradient-to-r from-purple-800 to-purple-600 text-white px-8 py-3 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full hover:shadow-lg transition-all">
           View Clients here
         </Link>
       </div>

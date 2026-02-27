@@ -339,7 +339,7 @@ export default function Testimonial() {
 
   return (
     <div className=" bg-white text-[#051145] overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-8">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">

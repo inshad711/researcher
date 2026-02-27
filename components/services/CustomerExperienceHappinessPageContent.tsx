@@ -100,13 +100,13 @@ const faqSchema = {
 
 export default function CustomerExperienceHappinessPageContent() {
   return (
-    <main className="bg-slate-50 pt-24 pb-20 text-slate-900">
+    <main className="bg-slate-50 pt-38 pb-20 text-slate-900">
       <Script id="customer-experience-happiness-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-emerald-200 bg-gradient-to-br from-emerald-100 via-cyan-100 to-teal-100 px-6 py-14 shadow-[0_24px_80px_rgba(16,185,129,0.18)] md:px-10 md:py-20">
+      <section className="px-4 md:px-10">
+        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-cyan-50 to-teal-100 px-6 py-14 shadow-[0_24px_80px_rgba(16,185,129,0.18)] md:px-10 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
             Customer Experience and Happiness
           </p>
@@ -136,7 +136,7 @@ export default function CustomerExperienceHappinessPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
             <img
@@ -162,7 +162,7 @@ export default function CustomerExperienceHappinessPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Business Impact of Satisfied Customers</h2>
@@ -186,7 +186,7 @@ export default function CustomerExperienceHappinessPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">How to Improve Customer Service and Satisfaction</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -205,7 +205,7 @@ export default function CustomerExperienceHappinessPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-gradient-to-br from-cyan-50 to-emerald-50 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Why Choose Us for Customer Experience Research in Dubai
@@ -221,7 +221,7 @@ export default function CustomerExperienceHappinessPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-4 space-y-3">

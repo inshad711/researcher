@@ -67,7 +67,7 @@ export default function Instructor() {
 
   return (
     <div className=" text-[#0a1024]">
-      <section className="max-w-7xl mx-auto px-6 py-18">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-18">
         
          {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-10 space-y-4">
@@ -76,7 +76,7 @@ export default function Instructor() {
             Meet Our Instructors
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-medium text-[#0a1024] max-w-2xl leading-[1.15]">
+          <h2 className="text-3xl md:text-5xl font-medium text-[#0a1024] max-w-2xl leading-[1.15]">
             Learn from Industry-Leading Instructors
           </h2>
           

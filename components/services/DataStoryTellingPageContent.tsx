@@ -127,7 +127,7 @@ export default function DataStoryTellingPageContent() {
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
+      <section className="px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
           <div className="md:col-span-8">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Data Story Telling</p>
@@ -172,7 +172,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Why Data Storytelling Matters</h2>
@@ -200,7 +200,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Core Components</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -218,7 +218,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Types of Data Storytelling</h2>
@@ -254,7 +254,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Delivery Approach</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -270,7 +270,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-4 space-y-3">
@@ -284,7 +284,7 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-16 px-6 md:px-10">
+      <section className="mt-16 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 md:grid-cols-12 md:p-10">
           <div className="md:col-span-8">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-700">Ready To Start</p>

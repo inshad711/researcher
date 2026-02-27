@@ -51,16 +51,23 @@ const StatCard = ({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="relative group p-8 rounded-3xl bg-gray-100 border border-slate-200  shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden"
+      className="relative group p-6 rounded-3xl bg-gray-50 border border-slate-200  shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden"
     >
       {/* Decorative background glow */}
       <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors duration-500" />
       
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="p-4 rounded-2xl bg-blue-50 text-blue-600 group-hover:scale-110 transition-transform duration-300">
+        {/* <div className="p-4 rounded-2xl bg-blue-50 text-blue-600 group-hover:scale-110 transition-transform duration-300">
           <Icon size={32} strokeWidth={1.5} />
-        </div>
+        </div> */}
         
+        {/* <div className="p-4 rounded-2xl bg-purple-50 text-purple-600 group-hover:scale-110 transition-transform duration-300">
+  <Icon size={32} strokeWidth={1.5} />
+</div> */}
+
+<div className="p-4 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600 group-hover:scale-110 transition-transform duration-300">
+  <Icon size={32} strokeWidth={1.5} />
+</div>
         <div className="space-y-1">
           <div className="text-5xl font-bold tracking-tight text-slate-900">
             <AnimatedCounter value={value} suffix={suffix} />
@@ -107,8 +114,8 @@ export default function Stat() {
   ];
 
   return (
-    <section className="px-6 pb-12 flex items-center">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="px-4 md:px-6 pb-12 flex items-center">
+      <div className="max-w-6xl mx-auto w-full">
         {/* Header Section */}
         <div className="text-center mb-20 space-y-4">
           <motion.div
@@ -143,7 +150,7 @@ export default function Stat() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}

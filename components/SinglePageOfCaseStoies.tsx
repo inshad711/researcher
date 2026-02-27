@@ -426,7 +426,7 @@ const SuccessStory: React.FC = () => {
   return (
     <div className="text-slate-900">
       {/* Header Section */}
-      <header className="pt-16 pb-8 px-6 max-w-7xl mx-auto text-center">
+      <header className="pt-8 pb-8 px-6 max-w-7xl mx-auto text-center">
      
         {/* <div className="w-24 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div> */}
         <h2 className="text-4xl md:text-5xl font-medium mb-6 tracking-tight">

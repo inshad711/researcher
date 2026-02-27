@@ -153,17 +153,17 @@ const faqSchema = {
 
 export default function EmployeeSatisfactionEngagementPageContent() {
   return (
-    <main className="pt-28 pb-20 text-slate-900">
+    <main className="pt-38 pb-20 text-slate-900">
       <Script id="employee-satisfaction-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
+      <section className="px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 px-6 py-14 shadow-[0_24px_80px_rgba(6,95,70,0.12)] md:px-10 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
             Employee Satisfaction and Engagement
           </p>
-          <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
+          <h1 className="mt-4 max-w-4xl text-xl text-3xl font-semibold leading-tight md:text-5xl">
             EMPLOYEE SATISFACTION AND ENGAGEMENT
           </h1>
           <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
@@ -194,7 +194,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
             <img
@@ -221,7 +221,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Employee Satisfaction Survey in Dubai lead to better customer experience.
@@ -255,7 +255,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <div className="space-y-7">
             {focusAreas.map((area) => (
@@ -268,7 +268,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Why Choose Us as Best Customer Satisfaction Survey in Dubai?</h2>
           <div className="mt-6 space-y-4">
@@ -282,7 +282,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h3 className="text-2xl font-semibold md:text-3xl">Choose Us for Your Customer Feedback Survey Dubai</h3>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -296,7 +296,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
+      <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h3 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions on Employee Satisfaction and Engagement

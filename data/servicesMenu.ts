@@ -9,7 +9,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   { name: "Data Story Telling", href: "/services/data-story-telling" },
   {
     name: "Market Research & Measurement",
-    href: "/services/market-research-measurement",
     children: [
       { name: "Mystery Shopping", href: "/services/market-research-measurement/mystery-shopping" },
       {
@@ -34,7 +33,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   },
   {
     name: "Analytics",
-    href: "/services/analytics",
     children: [
       { name: "Dashboard & Reporting", href: "/services/analytics/dashboard-reporting" },
       { name: "Data Analytics", href: "/services/analytics/data-analytics" },
@@ -45,7 +43,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   },
   {
     name: "Business Intelligence",
-    href: "/services/business-intelligence",
     children: [
       { name: "IBM Cognos Analytics", href: "/services/business-intelligence/ibm-cognos-analytics" },
       { name: "Tableau", href: "/services/business-intelligence/tableau" },
@@ -55,7 +52,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   },
   {
     name: "Business Analysis",
-    href: "/services/business-analysis",
     children: [
       { name: "Product Analysis", href: "/services/business-analysis/product-analysis" },
       { name: "Process Analysis", href: "/services/business-analysis/process-analysis" },
@@ -63,7 +59,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   },
   {
     name: "Technology",
-    href: "/services/technology",
     children: [
       {
         name: "Digital Transformation",
@@ -107,7 +102,6 @@ export const servicesMenu: ServiceMenuItem[] = [
   },
   {
     name: "Loyalty",
-    href: "/services/loyalty",
     children: [
       {
         name: "Designing & Implementation Loyalty & Rewards Programs",

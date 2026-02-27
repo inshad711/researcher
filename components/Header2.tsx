@@ -7,6 +7,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { servicesMenu, type ServiceMenuItem } from "@/data/servicesMenu";
 
+function isPathActive(pathname: string, href?: string) {
+  if (!href) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function hasActiveDescendant(pathname: string, items?: ServiceMenuItem[]): boolean {
+  if (!items?.length) return false;
+  return items.some((item): boolean => isPathActive(pathname, item.href) || hasActiveDescendant(pathname, item.children));
+}
+
 
 // ─── Desktop: recursive nested flyout panel ───────────────────────────────────
 // Each level is a floating panel. Sub-panels open on hover.
@@ -15,10 +25,12 @@ function DesktopPanel({
   items,
   depth = 0,
   onClose,
+  pathname,
 }: {
   items: ServiceMenuItem[];
   depth?: number;
   onClose: () => void;
+  pathname: string;
 }) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const ulRef = useRef<HTMLUListElement>(null);
@@ -51,15 +63,26 @@ function DesktopPanel({
   const shadow = "shadow-[0_8px_32px_-4px_rgba(15,23,42,0.15)]";
   const panelCls =
     depth === 0
-      ? `absolute top-full left-0 z-[70] mt-2 min-w-[260px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`
-      : `absolute top-0 left-full ml-1 z-[75] min-w-[240px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`;
+      ? `absolute top-full left-0 z-[70] min-w-[260px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`
+      : `absolute top-0 left-full z-[75] min-w-[240px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`;
+  const activeChildIndex = items.findIndex((item) => {
+    if (!item.children?.length) return false;
+    return isPathActive(pathname, item.href) || hasActiveDescendant(pathname, item.children);
+  });
+  const openChildIndex = hoveredIdx ?? (activeChildIndex >= 0 ? activeChildIndex : null);
 
   return (
     <ul ref={ulRef} className={panelCls}>
       {items.map((item, i) => {
         const name = item.name.replace(/\s+/g, " ").trim();
         const hasChildren = Boolean(item.children?.length);
-        const isHovered = hoveredIdx === i;
+        const isItemActive = isPathActive(pathname, item.href);
+        const hasActiveChild = hasActiveDescendant(pathname, item.children);
+        const isBranchActive = isItemActive || hasActiveChild;
+        const rowCls = isBranchActive
+          ? "bg-slate-100"
+          : "hover:bg-slate-50";
+        const textCls = isBranchActive ? "text-slate-900 font-medium" : "text-slate-700";
 
         return (
           <li
@@ -68,28 +91,32 @@ function DesktopPanel({
             onMouseEnter={() => setHoveredIdx(i)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
-            <div className="flex items-center rounded-xl transition-colors hover:bg-slate-50">
+            <div className={`flex items-center rounded-xl transition-colors ${rowCls}`}>
               {item.href ? (
                 <Link
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={onClose}
-                  className="block flex-1 px-3.5 py-2.5 text-sm text-slate-700 leading-snug"
+                  className={`block flex-1 px-3.5 py-2.5 text-sm leading-snug ${textCls}`}
                 >
                   {name}
                 </Link>
               ) : (
-                <span className="block flex-1 px-3.5 py-2.5 text-sm text-slate-700 leading-snug">
+                <span className={`block flex-1 px-3.5 py-2.5 text-sm leading-snug ${textCls}`}>
                   {name}
                 </span>
               )}
               {hasChildren && (
-                <ChevronRight className="mr-2.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+                <ChevronRight
+                  className={`mr-2.5 h-3.5 w-3.5 shrink-0 ${
+                    isBranchActive ? "text-slate-700" : "text-slate-400"
+                  }`}
+                />
               )}
             </div>
-            {hasChildren && isHovered && (
-              <DesktopPanel items={item.children!} depth={depth + 1} onClose={onClose} />
+            {hasChildren && openChildIndex === i && (
+              <DesktopPanel items={item.children!} depth={depth + 1} onClose={onClose} pathname={pathname} />
             )}
           </li>
         );
@@ -232,9 +259,11 @@ const Header2 = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLLIElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isServicesRoute = pathname === "/services" || pathname.startsWith("/services/");
 
   useEffect(() => {
     if (!isHomePage) { setScrolled(false); return; }
@@ -249,7 +278,31 @@ const Header2 = () => {
     if (!isMenuOpen) setIsMobileServicesOpen(false);
   }, [isMenuOpen]);
 
-  const closeServices = useCallback(() => setIsServicesOpen(false), []);
+  const clearCloseTimer = useCallback(() => {
+    if (!closeTimerRef.current) return;
+    clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = null;
+  }, []);
+
+  const closeServices = useCallback(() => {
+    clearCloseTimer();
+    setIsServicesOpen(false);
+  }, [clearCloseTimer]);
+
+  const openServices = useCallback(() => {
+    clearCloseTimer();
+    setIsServicesOpen(true);
+  }, [clearCloseTimer]);
+
+  const scheduleCloseServices = useCallback(() => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+      closeTimerRef.current = null;
+    }, 120);
+  }, [clearCloseTimer]);
+
+  useEffect(() => () => clearCloseTimer(), [clearCloseTimer]);
 
   // Click-outside closes the desktop dropdown
   useEffect(() => {
@@ -273,6 +326,11 @@ const Header2 = () => {
   const linkCls = `text-md font-medium transition-colors ${
     isLightBg ? "text-gray-700 hover:text-black" : "text-gray-300 hover:text-white"
   }`;
+  const activeLinkCls = isLightBg ? "text-black font-semibold" : "text-white font-semibold";
+  const linkClassFor = (href: string) => {
+    const isActive = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+    return `${linkCls} ${isActive ? activeLinkCls : ""}`.trim();
+  };
 
   const closeMobileMenu = () => setIsMenuOpen(false);
 
@@ -312,38 +370,52 @@ const Header2 = () => {
           <ul className="flex h-full items-center space-x-7">
             {navLinks.slice(0, 2).map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className={linkCls} onClick={closeServices}>
+                <Link href={link.href} className={linkClassFor(link.href)} onClick={closeServices}>
                   {link.name}
                 </Link>
               </li>
             ))}
 
             {/* Services — nested dropdown lives inside this <li> */}
-            <li ref={servicesRef} className="relative flex h-full items-center">
-              <button
-                type="button"
-                onClick={() => setIsServicesOpen((p) => !p)}
-                className={`flex items-center gap-1 ${linkCls}`}
-                aria-expanded={isServicesOpen}
-                aria-haspopup="true"
-              >
-                Services
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    isServicesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+            <li
+              ref={servicesRef}
+              className="relative flex h-full items-center"
+              onMouseEnter={openServices}
+              onMouseLeave={scheduleCloseServices}
+            >
+              <div className="flex items-center gap-1">
+                <Link
+                  href="/services"
+                  className={`${linkCls} ${isServicesRoute ? activeLinkCls : ""}`.trim()}
+                  onClick={closeServices}
+                >
+                  Services
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsServicesOpen((p) => !p)}
+                  className={`${linkCls} ${isServicesRoute ? activeLinkCls : ""}`.trim()}
+                  aria-label="Toggle services menu"
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                >
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      isServicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </div>
 
               {/* Nested flyout — self-contained, overflow-safe */}
               {isServicesOpen && (
-                <DesktopPanel items={servicesMenu} onClose={closeServices} />
+                <DesktopPanel items={servicesMenu} onClose={closeServices} pathname={pathname} />
               )}
             </li>
 
             {navLinks.slice(2).map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className={linkCls} onClick={closeServices}>
+                <Link href={link.href} className={linkClassFor(link.href)} onClick={closeServices}>
                   {link.name}
                 </Link>
               </li>
@@ -393,19 +465,28 @@ const Header2 = () => {
 
             {/* Services accordion */}
             <li className="border-b border-white/10">
-              <button
-                type="button"
-                onClick={() => setIsMobileServicesOpen((p) => !p)}
-                className="flex w-full items-center justify-between py-3.5 text-lg font-medium text-white"
-                aria-expanded={isMobileServicesOpen}
-              >
-                Services
-                <ChevronDown
-                  className={`h-5 w-5 transition-transform duration-200 ${
-                    isMobileServicesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+              <div className="flex w-full items-center justify-between py-3.5">
+                <Link
+                  href="/services"
+                  className="text-lg font-medium text-white"
+                  onClick={closeMobileMenu}
+                >
+                  Services
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsMobileServicesOpen((p) => !p)}
+                  className="text-white"
+                  aria-label="Toggle services menu"
+                  aria-expanded={isMobileServicesOpen}
+                >
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform duration-200 ${
+                      isMobileServicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </div>
 
               {isMobileServicesOpen && (
                 <MobileDrillDown onClose={closeMobileMenu} />

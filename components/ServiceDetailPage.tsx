@@ -27,103 +27,128 @@ const buildLookup = (items: ServiceMenuItem[], trail: ServiceMenuItem[] = []) =>
 
 buildLookup(servicesMenu);
 
-const buildDescription = (serviceName: string, hasChildren: boolean) => {
+const buildDescription = (serviceName: string, hasChildren: boolean, parentLabel?: string) => {
   if (hasChildren) {
     return `${serviceName} includes specialized tracks tailored to your business goals, data maturity, and market context.`;
+  }
+
+  if (parentLabel) {
+    return `${serviceName} is delivered as a focused ${parentLabel.toLowerCase()} engagement with practical execution support and measurable outcomes.`;
   }
 
   return `${serviceName} helps teams move from assumptions to evidence with practical research, clear recommendations, and measurable outcomes.`;
 };
 
-const buildPageContent = (serviceName: string) => {
-  const short = serviceName.toLowerCase();
+const buildPageContent = ({
+  serviceName,
+  slugPath,
+  trail,
+}: {
+  serviceName: string;
+  slugPath: string;
+  trail: ServiceMenuItem[];
+}) => {
+  const text = `${serviceName} ${slugPath}`.toLowerCase();
+  const parent = trail[trail.length - 1]?.name;
 
-  if (short.includes("analytics")) {
-    return {
-      intro:
-        "Turn fragmented data into clear signals your leadership team can trust for faster, higher-confidence decisions.",
-      outcomes: ["Faster reporting cycles", "Shared KPI definitions", "Improved data confidence"],
-      process: [
-        "Assess sources, tooling, and metric definitions",
-        "Prioritize decision-critical dashboards and use cases",
-        "Implement quality checks and governance rules",
-        "Enable teams with practical reporting workflows",
-      ],
-      deliverables: [
-        "KPI framework and data dictionary",
-        "Executive dashboard blueprint",
-        "Quality scorecard and remediation plan",
-        "Adoption playbook for business teams",
-      ],
-    };
-  }
+  const topicCards = [
+    {
+      keys: ["feasibility"],
+      intro: "Validate commercial viability before major investment decisions with demand, risk, and return modeling.",
+      outcomes: ["Evidence-backed go/no-go decisions", "Investment-risk reduction", "Clear launch assumptions"],
+      deliverables: ["Feasibility model", "Sensitivity and risk matrix", "Commercial viability report", "Decision brief"],
+    },
+    {
+      keys: ["data-story", "story", "dashboard", "reporting"],
+      intro: "Translate data into decision-ready narratives so leadership can act quickly and with confidence.",
+      outcomes: ["Faster executive decisions", "Consistent KPI storytelling", "Higher report adoption"],
+      deliverables: ["Narrative dashboard framework", "Decision-oriented report templates", "KPI storyline map", "Presentation playbook"],
+    },
+    {
+      keys: ["mystery-shopping", "customer-experience", "employee-satisfaction", "qualitative", "quantitative"],
+      intro: "Measure real experiences across touchpoints to identify friction, improve service quality, and increase retention.",
+      outcomes: ["Improved service consistency", "Customer and employee insight clarity", "Actionable experience priorities"],
+      deliverables: ["Experience scorecard", "Journey pain-point map", "VoC/VoE insight report", "Improvement action plan"],
+    },
+    {
+      keys: ["competitor", "brand-positioning", "marketing-consulting", "market-research"],
+      intro: "Strengthen competitive position through market intelligence, positioning clarity, and sharper growth strategy.",
+      outcomes: ["Sharper market positioning", "Clearer competitive strategy", "Stronger growth focus"],
+      deliverables: ["Competitor benchmarking pack", "Positioning strategy note", "Segment opportunity map", "Strategic recommendation deck"],
+    },
+    {
+      keys: ["analytics", "data-analytics", "data-quality", "data-integration", "master-data"],
+      intro: "Build trusted data foundations and analytics workflows that improve decision speed and consistency.",
+      outcomes: ["Improved data trust", "Faster reporting cycles", "Better KPI alignment"],
+      deliverables: ["Data quality baseline", "Integration blueprint", "Analytics backlog", "Governance checklist"],
+    },
+    {
+      keys: ["cognos", "tableau", "power-bi", "qlik"],
+      intro: "Implement BI capabilities that connect business users to reliable, self-serve insight.",
+      outcomes: ["Better dashboard usability", "Reduced ad-hoc reporting load", "Improved insight accessibility"],
+      deliverables: ["BI implementation roadmap", "Dashboard standards guide", "Role-based access model", "Adoption enablement plan"],
+    },
+    {
+      keys: ["product-analysis", "process-analysis", "business-analysis"],
+      intro: "Improve operational and product performance by aligning business processes with customer and revenue goals.",
+      outcomes: ["Process efficiency gains", "Clear requirement definition", "Higher delivery alignment"],
+      deliverables: ["Current-state process map", "Gap and bottleneck analysis", "Requirement specification", "Improvement roadmap"],
+    },
+    {
+      keys: ["digital-transformation", "strategy-consultation", "ui-ux"],
+      intro: "Design practical transformation initiatives that modernize operations, customer journeys, and delivery models.",
+      outcomes: ["Clear transformation priorities", "Reduced implementation risk", "Stronger cross-team alignment"],
+      deliverables: ["Transformation roadmap", "Capability maturity assessment", "UX improvement plan", "Execution governance model"],
+    },
+    {
+      keys: ["artificial-intelligence", "business-consultation-implementation"],
+      intro: "Apply AI where it creates measurable value, with clear use cases, governance, and implementation sequencing.",
+      outcomes: ["AI use-case clarity", "Faster pilot execution", "Responsible AI guardrails"],
+      deliverables: ["AI opportunity matrix", "Pilot scope definition", "Data readiness checklist", "AI operating model"],
+    },
+    {
+      keys: ["blockchain", "tokenization", "defi", "on-chain", "web-3", "tokenomics", "market-making", "ideation"],
+      intro: "Develop web3 and blockchain initiatives with realistic adoption plans, risk controls, and ecosystem fit.",
+      outcomes: ["Clear ecosystem strategy", "Stronger protocol-market fit", "Reduced execution uncertainty"],
+      deliverables: ["Web3 strategy blueprint", "Token/asset design notes", "Ecosystem go-to-market plan", "Risk and compliance checklist"],
+    },
+    {
+      keys: ["loyalty", "rewards"],
+      intro: "Design loyalty programs that improve repeat behavior, customer value, and long-term retention.",
+      outcomes: ["Higher customer retention", "Improved repeat purchase behavior", "Stronger lifetime value"],
+      deliverables: ["Loyalty program architecture", "Rewards economics model", "Tiering and rules design", "Launch measurement framework"],
+    },
+  ];
 
-  if (short.includes("market") || short.includes("research") || short.includes("feasibility")) {
-    return {
-      intro:
-        "Validate demand, uncover competitive dynamics, and identify the segments and channels most likely to drive growth.",
-      outcomes: ["Reduced launch risk", "Clear segment prioritization", "Stronger commercial planning"],
-      process: [
-        "Align business questions and decision criteria",
-        "Run mixed-method research across audiences",
-        "Analyze patterns, white spaces, and barriers",
-        "Translate findings into action-ready options",
-      ],
-      deliverables: [
-        "Market sizing and opportunity map",
-        "Audience and behavior insights",
-        "Competitor and positioning snapshot",
-        "Decision memo with recommendations",
-      ],
+  const matched =
+    topicCards.find((card) => card.keys.some((key) => text.includes(key))) ??
+    {
+      intro: "A focused service model built to clarify priorities, improve decision quality, and accelerate business outcomes.",
+      outcomes: ["Sharper strategic direction", "Clear execution priorities", "Measurable business impact"],
+      deliverables: ["Current-state assessment", "Opportunity and risk summary", "Recommended action plan", "Executive-ready presentation"],
     };
-  }
 
-  if (short.includes("technology") || short.includes("ai") || short.includes("blockchain") || short.includes("web 3")) {
-    return {
-      intro:
-        "Design practical digital initiatives that connect strategic goals to implementable roadmaps and measurable value.",
-      outcomes: ["Clear implementation roadmap", "Reduced execution risk", "Better cross-team alignment"],
-      process: [
-        "Evaluate readiness, constraints, and dependencies",
-        "Define high-value use cases and architecture choices",
-        "Prioritize phases with milestones and KPIs",
-        "Support pilot delivery and scale planning",
-      ],
-      deliverables: [
-        "Transformation roadmap",
-        "Use-case prioritization matrix",
-        "Operating model recommendations",
-        "Pilot scope and KPI framework",
-      ],
-    };
-  }
+  const process = [
+    `Define scope, objectives, and success metrics for ${serviceName}.`,
+    `Collect and validate evidence through stakeholder input, market signals, and operational data.`,
+    `Synthesize findings into prioritized options and trade-offs for leadership decisions.`,
+    `Deliver an execution roadmap with ownership, milestones, and measurable KPIs.`,
+  ];
 
   return {
-    intro:
-      "A focused service model built to clarify priorities, improve decision quality, and accelerate business outcomes.",
-    outcomes: ["Sharper strategic direction", "Clear execution priorities", "Measurable business impact"],
-    process: [
-      "Define business objectives and scope",
-      "Collect evidence and stakeholder inputs",
-      "Synthesize insights into clear options",
-      "Deliver a practical execution plan",
-    ],
-    deliverables: [
-      "Current-state assessment",
-      "Opportunity and risk summary",
-      "Recommended action plan",
-      "Executive-ready presentation",
-    ],
+    intro: matched.intro,
+    outcomes: matched.outcomes,
+    process,
+    deliverables: matched.deliverables,
+    timeline:
+      parent || text.includes("implementation") || text.includes("transformation")
+        ? "Most engagements run in phased sprints with weekly checkpoints, implementation gates, and stakeholder sign-offs."
+        : "Most engagements run in focused sprints with weekly checkpoints and clear decision gates.",
   };
 };
 
-export default async function ServiceCategoryPage({
-  params,
-}: {
-  params: Promise<{ slug: string[] }>;
-}) {
-  const { slug } = await params;
-  const slugPath = slug.join("/");
+export default function ServiceDetailPage({ serviceHref }: { serviceHref: string }) {
+  const slugPath = serviceHref.replace(/^\/services\/?/, "");
   const node = serviceLookup.get(slugPath);
 
   if (!node) {
@@ -132,7 +157,12 @@ export default async function ServiceCategoryPage({
 
   const { item, trail } = node;
   const hasChildren = Boolean(item.children?.length);
-  const pageContent = buildPageContent(item.name);
+  const pageContent = buildPageContent({
+    serviceName: item.name,
+    slugPath,
+    trail,
+  });
+  const parentLabel = trail[trail.length - 1]?.name;
 
   return (
     <section className="bg-white pt-28 pb-20 px-6 md:px-10">
@@ -169,7 +199,7 @@ export default async function ServiceCategoryPage({
           </h1>
           <p className="mt-4 max-w-3xl text-base md:text-lg leading-7 text-slate-600">{pageContent.intro}</p>
           <p className="mt-2 max-w-3xl text-sm md:text-base leading-7 text-slate-500">
-            {buildDescription(item.name, hasChildren)}
+            {buildDescription(item.name, hasChildren, parentLabel)}
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -236,7 +266,7 @@ export default async function ServiceCategoryPage({
                 Typical Timeline
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Most engagements run in focused sprints with weekly checkpoints and clear decision gates.
+                {pageContent.timeline}
               </p>
             </div>
           </aside>

@@ -303,7 +303,7 @@ interface FeatureCardProps {
 
 const SquiggleUnderline: React.FC = () => (
   <span 
-    className="absolute -bottom-4 left-0 w-full h-6 bg-no-repeat bg-bottom bg-contain"
+    className="absolute -bottom-5 left-0 w-full h-6 bg-no-repeat bg-bottom bg-contain"
     style={{ 
       backgroundImage: `url('/image/shape-4.webp')`,
     }}
@@ -317,13 +317,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center text-purple-600 shrink-0 ">
         <Icon size={28} />
       </div>
-      <h3 className="text-xl font-bold text-slate-800 group-hover:text-purple-700 transition-colors">
+      <h3 className="text-[20px] font-sans font-medium text-slate-800 group-hover:text-purple-700 transition-colors">
         {title}
       </h3>
     </div>
-    <div className="space-y-4 text-gray-500 leading-relaxed">
+    <div className="space-y-4  font-sans">
       <p>{description}</p>
-      {description2 && <p>{description2}</p>}
+      {/* {description2 && <p>{description2}</p>} */}
     </div>
   </div>
 );
@@ -361,24 +361,24 @@ export default function MainAbout() {
             {/* Right Column: Content */}
             <div className="w-full lg:w-1/2">
               <div className="space-y-6">
-                <h5 className="text-black font-semibold text-lg tracking-wide">
-                  Welcome to Edule
+                <h5 className="tracking-wide font-sans">
+                  Welcome to Researcher
                 </h5>
-                <h2 className="text-3xl md:text-[38px] font-normal text-gray-900 leading-tight tracking-tighter">
+                <h2 className="text-3xl md:text-[38px] font-heading  font-normal text-[#101010] leading-[37.2px] md:leading-[42.2px] ">
                   You can join with Edule and upgrade your skill for your{' '}
                   <span className="relative inline-block text-purple-600 ">
                     bright future.
-                    <SquiggleUnderline />
+                    {/* <SquiggleUnderline /> */}
                   </span>
                 </h2>
-                <p className="text-gray-700 font-light text-base md:text-lg leading-relaxed max-w-xl">
+                <p className="font-sans max-w-xl">
                   Lorem Ipsum has been the industry's standard dummy text ever since unknown printer 
                   took galley type and scrambled make type specimen book. It has survived not only 
                   five centuries.
                 </p>
                 <a
                   href="/innovation"
-                  className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-800 to-purple-600 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
+                  className="group font-sans inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-800 to-purple-600 text-white px-5 py-3 rounded-full transition-all hover:shadow-xl active:scale-95"
                 >
                   <span>Our Research Process</span>
                   <div className="relative w-5 h-5 overflow-hidden">

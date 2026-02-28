@@ -779,10 +779,10 @@ const StepCard = ({ step, index, total, progress }: { step: Step, index: number,
         transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <div className="group bg-white border border-[#EBECF0] rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] transition-all duration-500">
-          <h5 className="text-[18px] md:text-[20px] font-semibold text-[#5D636F] mb-3 md:mb-4 group-hover:text-[#0A0A0A] transition-colors duration-300">
+          <h5 className="text-[18px] md:text-[20px] font-semibold text-[#101010] mb-3 md:mb-4 group-hover:text-[#0A0A0A] transition-colors duration-300">
             {step.title}
           </h5>
-          <p className="text-[#404040] text-sm md:text-[16px] leading-relaxed max-w-[440px]">
+          <p className="font-sans max-w-[440px]">
             {step.description}
           </p>
         </div>
@@ -825,11 +825,11 @@ const ProcessSection: React.FC = () => {
             <span className="text-[12px] md:text-[13px] font-bold uppercase tracking-[0.15em] text-[#404040]">Process</span>
           </div>
 
-          <h2 className="text-[32px] md:text-[56px] lg:text-[38px] font-bold leading-[1.2] md:leading-[1.1] tracking-tight">
-            <span className="text-[#0A0A0A] block">Our Uniqueness</span>
+          <h2 className="text-3xl md:text-[38px] max-w-2xl mx-auto font-normal text-[#101010] leading-[42.2px]">
+            <span className=" block ">Our Uniqueness</span>
           </h2>
 
-          <p className="text-[16px] md:text-[18px] text-[#404040] leading-relaxed max-w-[480px]">
+          <p className=" font-sans max-w-[480px]">
             We dive deep into your goals, audience, and challenges to craft a strategy that drives clear direction and impact.
           </p>
         </div>

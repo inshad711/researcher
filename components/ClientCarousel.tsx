@@ -534,9 +534,9 @@ const ClientCarousel: React.FC = () => {
   return (
     <section className="bg-white px-4 md:px-6 py-12 overflow-hidden">
       <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16 space-y-3">
-        <h3 className="text-black font-bold text-xs md:text-sm tracking-[0.15em] uppercase">Join Us Today</h3>
-        <h2 className="text-slate-900 text-2xl md:text-5xl font-medium">Our Clients & Partners</h2>
-        <p className="text-slate-600 text-base md:text-xl font-light px-2">
+ 
+        <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">Our Clients & Partners</h2>
+        <p className="font-sans max-w-lg mx-auto">
           We are proud to partner and service clients from several industries.
         </p>
       </div>

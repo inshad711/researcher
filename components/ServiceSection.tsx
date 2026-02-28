@@ -33,7 +33,7 @@ const ConsultancyServices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#101838] text-white font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen bg-[#101838] text-white font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153] selection:bg-blue-500/30">
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-6 py-20 text-center">
         <div className="flex justify-center mb-8">

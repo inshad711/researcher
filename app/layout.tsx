@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Lato } from "next/font/google";
+import { Bricolage_Grotesque, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,11 +15,11 @@ const bricolageGrotesque = Bricolage_Grotesque({
   weight: ["200","300","400", "500", "600", "700", "800"],
 });
 
-const lato = Lato({
-  variable: "--font-lato",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
   display: "swap",
-  weight: [ "400", "700", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -35,9 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} ${bricolageGrotesque.variable} antialiased min-h-screen`}
+        className={`${playfairDisplay.variable} ${bricolageGrotesque.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
+        {/* <div className="flex min-h-screen flex-col"> */}
           {/* <Header /> */}
            <NextTopLoader
           color="#7c3aed"
@@ -54,7 +54,7 @@ export default function RootLayout({
           {/* <Footer /> */}
           <Footer2/>
           <WhatsAppFloatingButton/>
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );

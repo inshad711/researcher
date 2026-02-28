@@ -17,7 +17,7 @@ const FlowButton = ({ text, href }: FlowButtonProps) => {
         <div className="absolute inset-0 z-0 w-0 bg-black transition-all duration-500 group-hover/button:w-full" />
 
         {/* Text */}
-        <span className="z-10 text-sm font-bold uppercase tracking-widest text-black transition-colors group-hover/button:text-white">
+        <span className="z-10 transition-colors group-hover/button:text-white text-[#364153] font-light text-[16.36px] leading-[23px] tracking-[0.4px]">
           {text}
         </span>
 

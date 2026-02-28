@@ -12,16 +12,16 @@ export default function ResearchSection() {
   return (
     <section
       id="research"
-      className="w-full bg-white py-16 md:py-24 overflow-hidden text-stone-900"
+      className="w-full bg-[#ffffff] pt-13 md:pt-18"
     >
       <div className="templateContainer">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-0 items-center">
           
           {/* --- Left Side: Content --- */}
           <div className="flex flex-col items-start gap-6 order-2 lg:order-1">
             {/* <SectionTag text="Innovation & R&D" /> */}
 
-            <h2 className="text-3xl md:text-[38px] font-light text-gray-900 leading-tight tracking-tighter">
+            <h2 className="text-3xl md:text-[38px] font-heading  font-normal text-[#101010] leading-[37.2px] md:leading-[42.2px]">
               Precision <span className="text-purple-800 font-light">Driven by</span>{" "}
               Material  Research
             </h2>
@@ -42,7 +42,13 @@ export default function ResearchSection() {
                 <Feature text="Anti-Scuff Coating R&D" />
               </ul>
             </div> */}
-       <p className="text-gray-600 font-normal text-base md:text-[17px] leading-relaxed max-w-xl">
+       {/* <p className="text-[#364153] font-normal text-base md:text-[15px] leading-relaxed max-w-xl">
+  Our dedicated research team continuously explores sustainable materials 
+  and structural engineering to ensure your packaging is as durable as it 
+  is beautiful. 
+</p> */}
+
+<p className="text-[#364153] font-light text-[16.36px] leading-[23px] tracking-[0.4px] max-w-xl">
   Our dedicated research team continuously explores sustainable materials 
   and structural engineering to ensure your packaging is as durable as it 
   is beautiful. 
@@ -57,6 +63,15 @@ export default function ResearchSection() {
     <Feature text="Anti-Scuff Coating R&D" />
   </ul>
 </div>
+
+{/* <div className="space-y-4 mb-4">
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+    <Feature text="Material Performance Validation Studies" />
+    <Feature text="Applied Structural Engineering Research" />
+    <Feature text="Circular Resource & Fiber Development" />
+    <Feature text="Advanced Coating Technology Innovation" />
+  </ul>
+</div> */}
 
             {/* <a
               href="/innovation"
@@ -95,7 +110,7 @@ export default function ResearchSection() {
             <RevealImage
               src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp" // Replace with an image of your lab or prototyping process
               alt="Packaging Material Research"
-              className="aspect-[4/3] rounded-sm shadow-2xl"
+              className="aspect-[4/3]  shadow-lg"
             />
           </div>
         </div>
@@ -106,16 +121,7 @@ export default function ResearchSection() {
 
 /* --- Internal Sub-Components --- */
 
-function SectionTag({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="text-md font-bold uppercase tracking-[0.2em] text-purple-800">
-        {text}
-      </span>
-      <div className="w-8 h-[1px] bg-[#901f2c]"></div>
-    </div>
-  );
-}
+
 
 function Feature({ text }: { text: string }) {
   return (
@@ -123,7 +129,7 @@ function Feature({ text }: { text: string }) {
     //   <span className="w-1.5 h-1.5 bg-purple-900  rounded-full" />
     //   {text}
     // </li>
-    <li className="flex items-center gap-2 text-gray-700 font-light text-base md:text-lg leading-relaxed">
+    <li className="flex items-center gap-2  text-[#364153]  font-light text-[16.36px] leading-[16px] tracking-[0.4px]">
       <span className="w-1.5 h-1.5 bg-purple-900 rounded-full shrink-0" />
       {text}
     </li>

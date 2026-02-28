@@ -53,10 +53,10 @@ const CountUp = ({
 
   return (
     <span ref={elementRef} className="flex items-baseline">
-      <span className="text-2xl font-extrabold text-slate-800 tracking-tight">
+      <span className="text-2xl font-semibold text-slate-800 tracking-tight">
         {count}
       </span>
-      <span className="text-2xl font-extrabold text-slate-800 tracking-tight">
+      <span className="text-2xl font-semibold text-slate-800 tracking-tight">
         {suffix}
       </span>
     </span>

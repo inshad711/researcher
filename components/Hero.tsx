@@ -150,22 +150,22 @@ const Hero: React.FC = () => {
           <div className="max-w-xl text-white relative">
             <div className="relative z-10 space-y-5 pt-0 lg:pt-16">
               
-              <h3 className="text-sm font-semibold uppercase tracking-widest border-l-2 border-purple-400 pl-4 text-[#fce9f6]">
+              <p className="text-sm font-semibold uppercase tracking-widest border-l-2 border-purple-400 pl-4 text-[#fce9f6]">
                 Research
-              </h3>
+              </p>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
                 Our Research Based
                 <br />
                 <span className="font-medium">
                   For{" "}
-                  <span className="text-purple-200 font-semibold">
+                  <span className="text-purple-200">
                     Your Project
                   </span>
                 </span>
               </h2>
 
-              <p className="text-lg md:text-xl text-gray-200 font-thin  max-w-md">
+              <p className="text-gray-200  font-light text-[16.36px] leading-[23px] tracking-[0.4px]  max-w-md">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Aspernatur, totam accusantium.
               </p>

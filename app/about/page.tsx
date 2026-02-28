@@ -57,7 +57,7 @@ const aboutSignals = [
 
 export default function AboutPage() {
   return (
-    <main className="relative pt-28  text-slate-900">
+    <main className="relative pt-28">
       {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_4%,rgba(255,140,66,0.14),transparent_26%),radial-gradient(circle_at_90%_10%,rgba(255,203,131,0.14),transparent_30%)]" /> */}
 <div>
   <MainAbout/>
@@ -95,14 +95,14 @@ export default function AboutPage() {
       </section> */}
 
       <section className="templateContainer pt-0">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8">
+        {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
           <div className="grid gap-5 lg:grid-cols-12">
             <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Partner With Us</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+              <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
                 Turn your next market question into a confident strategic move.
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+              <p className="mt-3 max-w-2xl font-sans">
                 We align teams quickly, validate assumptions with evidence, and deliver outputs built for action.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
@@ -115,7 +115,7 @@ export default function AboutPage() {
             <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white lg:col-span-4 md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">Next Step</p>
               <h3 className="mt-3 text-xl font-semibold leading-tight">Book a strategic intake call.</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
+              <p className="mt-3 text-white font-sans">
                 We&apos;ll define scope, timeline, and the right research model for your goal.
               </p>
               <div className="mt-6 flex flex-col gap-3">
@@ -135,7 +135,7 @@ export default function AboutPage() {
               </div>
             </aside>
           </div>
-        </div>
+        {/* </div> */}
       </section>
     </main>
   );

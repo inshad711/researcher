@@ -179,11 +179,11 @@ export default function WhatWeDo() {
 
       <section className="templateContainer relative mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center justify-center text-center space-y-4">
-          <h2 className="text-3xl md:text-5xl font-medium text-slate-900">
+          <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
             What we do
           </h2>
 
-          <p className="max-w-lg text-slate-600 text-lg leading-relaxed">
+          <p className="max-w-lg font-sans">
             Explore our curated selection of top-tier collections, designed to bring 
             style and functionality to your everyday lifestyle.
           </p>
@@ -195,24 +195,24 @@ export default function WhatWeDo() {
             return (
               <article
                 key={service.title}
-                className="group rounded-2xl shadow-sm border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group rounded-2xl shadow-sm border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
               >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-colors group-hover:bg-slate-900">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 transition-colors ">
                   <IconComponent 
-                    className="h-5 w-5 transition-colors group-hover:!stroke-white" 
+                    className="h-5 w-5 transition-colors " 
                     style={{ stroke: "url(#icon-gradient)" }}
                   />
                 </div>
                 
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                {/* <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
                   {service.category}
-                </p>
+                </p> */}
                 
-                <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-900">
+                <h3 className="mt-3 text-[18px] font-sans font-normal text-[#101010] mb-4">
                   {service.title}
                 </h3>
                 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="font-sans">
                   {service.description}
                 </p>
                 

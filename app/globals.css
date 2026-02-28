@@ -8,27 +8,39 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-lato);
-  --font-heading: var(--font-bricolage-grotesque);
+  --font-sans: var(--font-bricolage-grotesque);
+  --font-heading: var(--font-playfair-display);
 }
 
 
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-lato), sans-serif;
+  font-family: var(--font-bricolage-grotesque), sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-bricolage-grotesque);
-}
+@layer base {
+  body {
+    @apply font-sans;
+  }
 
+  .font-sans {
+    font-weight: 300;
+    font-size: 16.36px;
+    line-height: 23px;
+    letter-spacing: 0.4px;
+    color: #364153;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
 
 .templateContainer {
   @apply max-w-[1400px] mx-auto px-4  md:px-12 lg:px-14 py-6 md:py-10 lg:py-12;

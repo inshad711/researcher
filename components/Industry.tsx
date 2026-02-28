@@ -507,8 +507,8 @@ const Industry = () => {
         <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center pt-10 lg:py-0">
           <div className="lg:max-w-lg space-y-8">
             <div className="space-y-4">
-              <p className="text-[12px] text-slate-500 tracking-widest font-medium">EXPERTISE & INNOVATION</p>
-              <h2 className="text-3xl md:text-4xl font-medium text-slate-900 ">
+              <p className="text-[12px] text-slate-500 tracking-widest ">EXPERTISE & INNOVATION</p>
+              <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
                    Industries Driven by{" "}
                 <span className="relative inline-block">
                 Research
@@ -519,7 +519,7 @@ const Industry = () => {
              
               </h2>
             </div>
-            <div className="space-y-4 text-slate-700 font-light leading-relaxed">
+            <div className="space-y-4 font-sans">
               <p>
                 We don't just build software; we solve complex challenges through extensive Market Research and User Behavior Analysis.
               </p>
@@ -560,11 +560,11 @@ const IndustryCard = ({ title, desc, image }: any) => {
 
       {/* Text Content */}
       <div className="relative z-10">
-        <h3 className="text-[17px] md:text-lg font-semibold text-white mb-2">
+        <h3 className="text-[17px] md:text-lg font-normal text-white mb-2">
           {title}
         </h3>
 
-        <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-2">
+        <p className="text-white/80 text-sm font-light leading-relaxed mb-4 line-clamp-2">
           {desc}
         </p>
 

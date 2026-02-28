@@ -122,7 +122,7 @@
 //   };
 
 //   return (
-//     <div className="min-h-screen bg-white font-sans text-[#051145] overflow-x-hidden">
+//     <div className="min-h-screen bg-white font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153] text-[#051145] overflow-x-hidden">
 //       <div className="max-w-7xl mx-auto px-6 py-20">
         
 //         {/* Header Section */}
@@ -289,14 +289,14 @@ const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({ testimoni
         </div>
         <div>
           <h4 className="font-medium text-[#051145] text-xl leading-tight">{testimonial.name}</h4>
-          <p className="text-gray-500 text-sm font-semibold">{testimonial.role}</p>
+          <p className="text-gray-500 text-sm font-normal">{testimonial.role}</p>
         </div>
       </div>
       <div className="text-blue-600 hidden sm:block">
         <Quote className="fill-blue-600" size={32} />
       </div>
     </div>
-    <p className="text-slate-600 leading-relaxed">"{testimonial.text}"</p>
+    <p className="font-sans">"{testimonial.text}"</p>
   </div>
 );
 
@@ -346,13 +346,13 @@ export default function Testimonial() {
               <div className="w-4 h-4 rounded-full border-4 border-[#051145]"></div>
               <span className="font-medium uppercase tracking-wider text-sm">Student Testimonials</span>
             </div>
-            <h2 className="text-5xl md:text-4xl font-medium">
+            <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
               What Our Students <br className="hidden md:block" /> Are Saying
             </h2>
           </div>
           
           <div className="max-w-md md:text-right flex flex-col md:items-end gap-6">
-            <p className="text-gray-500 leading-relaxed text-lg">
+            <p className="font-sans">
               Explore experiences from our global community of learners who have accelerated their growth.
             </p>
             <div className="flex gap-3">

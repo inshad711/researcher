@@ -69,7 +69,7 @@ import Image from 'next/image';
 
 const SuccessHero = () => {
   return (
-    <section className="relative w-full min-h-[600px] bg-white overflow-hidden font-sans">
+    <section className="relative w-full min-h-[600px] bg-white overflow-hidden font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153]">
       {/* 1. Main Background Image Container */}
       <div className="relative w-full h-[500px] md:h-[700px]">
         <Image

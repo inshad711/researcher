@@ -346,7 +346,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-white text-black py-16 px-6 md:px-12 lg:px-20 ">
+    <section className="bg-white text-black py-16 px-4 md:px-12 lg:px-20 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Left Column: STICKY */}
@@ -381,8 +381,8 @@ const FAQSection: React.FC = () => {
     </svg>
   </div>
 
-  <h3 className="text-md md:text-lg font-light leading-tight max-w-sm text-slate-700">
-    A knowledge base search feature is a must-have.  A knowledge base search feature is a must-have
+  <h3 className=" font-sans  max-w-sm ">
+    A knowledge base search feature is a must have.  A knowledge base search feature is a must-have
   </h3>
 </div>
 
@@ -390,7 +390,7 @@ const FAQSection: React.FC = () => {
         <div className="lg:col-span-8">
           <div className="divide-y divide-slate-300">
             {faqData.map((faq, index) => (
-              <div key={index} className="py-2">
+              <div key={index} className="py-0">
                 <button
                   onClick={() => toggleAccordion(index)}
                   className="w-full flex justify-between cursor-pointer items-center py-5 text-left hover:text-blue-600 transition-colors group focus:outline-none"
@@ -410,7 +410,7 @@ const FAQSection: React.FC = () => {
                     openIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="text-slate-600 text-base md:text-lg ">
+                  <p className="font-sans">
                     {faq.answer}
                   </p>
                 </div>

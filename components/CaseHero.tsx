@@ -25,7 +25,7 @@ const CaseHero = () => {
         
         {/* Responsive Fluid Headline */}
         <section className="lg:col-span-9 xl:col-span-10">
-          <h1 className="font-medium tracking-tighter leading-[0.9] text-black">
+          <h1 className="font-medium tracking-tighter font-sans leading-[0.9] text-black">
             {/* Fluid size logic: 
               - Min: 2.75rem (small mobile)
               - Preferred: 9vw (scales with width)
@@ -58,7 +58,7 @@ const CaseHero = () => {
       </main>
 
       {/* Footer Meta Information */}
-      <footer className="mt-16 lg:mt-32 w-full max-w-[1600px] mx-auto">
+      <footer className="mt-16 lg:mt-20 w-full max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-zinc-100 pt-8 lg:pt-12">
           
           {/* Brand Info */}
@@ -69,7 +69,7 @@ const CaseHero = () => {
 
           {/* Description - Hidden on small mobile or centered on tablet */}
           <div className="md:col-span-4 lg:col-span-5">
-            <p className="text-zinc-600 text-sm md:text-base leading-relaxed max-w-sm lg:mx-auto lg:text-center font-normal">
+            <p className="font-sans max-w-sm lg:mx-auto lg:text-center font-normal">
               Website Redesign: Improving user experience and modernizing design.
             </p>
           </div>

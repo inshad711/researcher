@@ -203,7 +203,7 @@ const CaseStudyCard = ({ data }: { data: CaseStudyData }) => {
                 {data.client}
               </h3>
               <span className="text-white/30 text-2xl font-light">/</span>
-              <p className="text-white/70 font-medium text-lg md:text-xl">
+              <p className="text-white/70 font-normal text-lg md:text-xl">
                 {data.service}
               </p>
             </div>
@@ -223,7 +223,7 @@ const CaseStudyCard = ({ data }: { data: CaseStudyData }) => {
                 </div> 
                 Client
               </span>
-              <p className="text-zinc-900 font-semibold">{data.client}</p>
+              <p className="[#101010] font-medium">{data.client}</p>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -233,7 +233,7 @@ const CaseStudyCard = ({ data }: { data: CaseStudyData }) => {
                 </div> 
                 Location
               </span>
-              <p className="text-zinc-900 font-semibold">{data.location}</p>
+              <p className="[#101010] font-medium">{data.location}</p>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -243,7 +243,7 @@ const CaseStudyCard = ({ data }: { data: CaseStudyData }) => {
                 </div> 
                 Year
               </span>
-              <p className="text-zinc-900 font-semibold">{data.year}</p>
+              <p className="[#101010] font-medium">{data.year}</p>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -253,13 +253,13 @@ const CaseStudyCard = ({ data }: { data: CaseStudyData }) => {
                 </div> 
                 Service
               </span>
-              <p className="text-zinc-900 font-semibold">{data.service}</p>
+              <p className="[#101010] font-medium">{data.service}</p>
             </div>
           </div>
         </div>
 
         {/* View Case Study Button */}
-        <button className="mt-8 group/btn flex items-center justify-between w-full px-5 py-4 bg-zinc-950 dark:bg-zinc-100 text-white dark:text-zinc-950 rounded-xl font-bold transition-all hover:bg-black dark:hover:bg-white active:scale-[0.98]">
+        <button className="mt-8 group/btn flex items-center justify-between w-full px-5 py-4 bg-zinc-950  text-white  rounded-xl font-medium transition-all hover:bg-black dark:hover:bg-white active:scale-[0.98]">
           <span className="text-sm">View Case Study</span>
           <ArrowRight className="transform group-hover/btn:translate-x-1 transition-transform" size={18} />
         </button>
@@ -310,7 +310,7 @@ export default function CaseStudieMain() {
 
       {/* Header Section */}
       <header className="py-12 px-4 max-w-7xl mx-auto text-center">
-        <h1 className="text-3xl md:text-5xl font-medium tracking-tighter uppercase mb-6 text-zinc-900  leading-[0.85]">
+        <h1 className="text-3xl md:text-[38px] max-w-2xl mx-auto font-normal text-[#101010] leading-[42.2px] uppercase mb-4">
           <span className="reveal-container inline-block">
             <span className="reveal-text">Work</span>
           </span>{" "}
@@ -319,7 +319,7 @@ export default function CaseStudieMain() {
             <span className="reveal-text" style={{ animationDelay: '0.2s' }}>Archive</span>
           </span>
         </h1>
-        <p className="text-slate-500 text-lg md:text-[18px] max-w-2xl mx-auto font-medium opacity-100">
+        <p className="font-sans max-w-xl mx-auto">
           A selection of digital experiences and brand narratives crafted with precision.
         </p>
       </header>

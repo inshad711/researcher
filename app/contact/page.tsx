@@ -180,14 +180,14 @@ export default function ContactPage() {
             <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 rounded-full">
               Contact Us
             </span>
-            <h1 className="text-3xl md:text-5xl font-medium text-slate-900 mb-5">
+            <h1 className="text-3xl md:text-[38px] max-w-2xl mx-auto font-normal text-[#101010] leading-[42.2px] mb-5">
               Let&apos;s{" "}
               <span className="bg-[radial-gradient(circle_at_30%_50%,#D62872_0%,#F15A29_35%,#F6A623_60%,#2E9EE6_100%)] bg-clip-text text-transparent">
                 Start
               </span>{" "}
               a Conversation.
             </h1>
-            <p className=" text-slate-600 text-base md:text-lg leading-relaxed">
+            <p className=" font-sans max-w-xl mx-auto">
               Tell us about your requirements and our team will get back to you
               within 12 hours with a tailored solution.
             </p>

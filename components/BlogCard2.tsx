@@ -203,18 +203,18 @@ const BlogCard = ({ post }: { post: WordPressPost }) => {
 
       {/* Your original floating white card design */}
       <div className="relative -mt-12 bg-white rounded-2xl py-6 px-4 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 z-10 mx-0">
-        <h3 className="text-[1.15rem] line-clamp-1 font-semibold text-gray-900 leading-tight mb-3 group-hover:text-purple-600 transition-colors duration-300">
+        <h3 className="text-[1.15rem] line-clamp-1 font-sans font-normal text-gray-900 leading-tight mb-3 group-hover:text-purple-600 transition-colors duration-300">
           {post.title}
         </h3>
         
         {/* Render the excerpt and strip HTML tags if needed, or use line-clamp */}
         <div 
-          className="text-gray-600 text-base md:text-md leading-relaxed line-clamp-3 mb-6 font-light"
+          className="font-sans line-clamp-3 mb-6"
           dangerouslySetInnerHTML={{ __html: post.excerpt }}
         />
 
         {/* Footer Meta */}
-        <div className="border-t border-gray-50 pt-4 flex items-center justify-between text-gray-500 text-xs font-bold uppercase tracking-wider">
+        <div className="border-t border-gray-50 pt-2 flex items-center justify-between text-gray-500 text-xs font-normal uppercase tracking-wider">
           <div className="flex items-center gap-2">
             <Calendar size={14} className="text-black" />
             <span>{new Date(post.published_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
@@ -238,7 +238,7 @@ export default function BlogGrid2({ posts }: { posts: WordPressPost[] }) {
             <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 rounded-full">
               Our Blog
             </span>
-            <h1 className="text-3xl md:text-5xl font-medium text-slate-900 mb-5">
+            <h1 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px] mb-5">
               {/* Latest from the <span className="text-purple-600">Blog</span>. */}
               {/* Latest from the <span
   className="bg-gradient-to-r from-[#D62872] via-[#F15A29] via-[#F6A623] to-[#2E9EE6] bg-clip-text text-transparent"
@@ -249,7 +249,7 @@ export default function BlogGrid2({ posts }: { posts: WordPressPost[] }) {
   Blog
 </span>.
             </h1>
-            <p className=" text-slate-600 text-base md:text-lg leading-relaxed">
+            <p className=" max-w-lg font-sans mx-auto">
               Discover the latest trends in e-commerce, gamification, and digital marketing 
               to help your business grow faster in 2026.
             </p>

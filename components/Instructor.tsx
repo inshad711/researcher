@@ -71,16 +71,16 @@ export default function Instructor() {
         
          {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-10 space-y-4">
-          <div className="flex items-center text-[#0a1024] font-bold uppercase tracking-wider text-sm bg-indigo-50 px-4 py-2 rounded-full">
+          {/* <div className="flex items-center text-[#0a1024] font-bold uppercase tracking-wider text-sm bg-indigo-50 px-4 py-2 rounded-full">
             <div className="w-2 h-2 bg-indigo-600 rounded-full mr-2" />
             Meet Our Instructors
-          </div>
+          </div> */}
           
-          <h2 className="text-3xl md:text-5xl font-medium text-[#0a1024] max-w-2xl leading-[1.15]">
+          <h2 className="text-3xl md:text-[38px] max-w-2xl mx-auto font-normal text-[#101010] leading-[42.2px] ">
             Learn from Industry-Leading Instructors
           </h2>
           
-          <p className="text-gray-500 text-lg max-w-3xl leading-relaxed">
+          <p className=" max-w-3xl font-sans">
             Our instructors aren’t just teachers — they’re experienced professionals, 
             creators, and leaders in their fields. At Educrave, you’ll be guided by 
             experts who bring real-world knowledge and proven strategies directly to your screen.

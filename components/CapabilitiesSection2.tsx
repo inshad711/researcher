@@ -365,16 +365,28 @@ const features: CardProps[] = [
 const CapabilitiesSection2 = () => {
   return (
     <section className="pb-20">
-      <div className="templateContainer">
+      <div className="templateContainer bg-[#FFFFFF]">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-normal text-slate-900 mb-4 tracking-tight">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px] mb-4">
             Our{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">
               Services
             </span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          {/* <h2 className="
+  text-[clamp(1.8rem,4vw,2.4rem)]
+  leading-[clamp(2.2rem,4.5vw,2.6rem)]
+  font-normal
+  text-[#101010]
+  mb-4
+">
+  Our{' '}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">
+    Services
+  </span>
+</h2> */}
+          <p className="text-[#364153] font-light max-w-xl mx-auto text-[16.36px] leading-[23px] tracking-[0.4px] ">
             Our services and the community we've built. Here's a glimpse of what we've achieved together so far.
           </p>
         </div>
@@ -394,19 +406,19 @@ const CapabilitiesSection2 = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-[20px] font-normal text-slate-900 mb-4">
+              <h3 className="text-[18px] font-sans font-normal text-[#101010] mb-4">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-slate-600 leading-relaxed text-md mb-6">
+              <p className=" text-[#364153] font-light text-[16.36px] leading-[23px] mb-6">
                 {feature.description}
               </p>
 
               {/* Link */}
               <a
                 href={feature.link}
-                className="inline-flex items-center gap-2 text-black font-medium text-lg"
+                className="inline-flex items-center gap-2 text-[16px] font-sans font-normal text-[#101010]"
               >
                 Explore More
                 <ArrowRight className="w-4 h-4 mt-[1px]" />

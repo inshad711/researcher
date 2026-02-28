@@ -347,7 +347,7 @@ const Header2 = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-4 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-1.5 ${
         isLightBg ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
@@ -372,7 +372,7 @@ const Header2 = () => {
 
         {/* Desktop nav pill */}
         <nav
-          className={`hidden lg:flex h-full items-center px-10 py-2.5 rounded-full border transition-all duration-300 ${
+          className={`hidden lg:flex items-center px-10 py-2.5 rounded-full border transition-all duration-300 ${
             isLightBg
               ? "bg-gray-100 border-gray-200"
               : "bg-white/5 border-white/10 backdrop-blur-md"

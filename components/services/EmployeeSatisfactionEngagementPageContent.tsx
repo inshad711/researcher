@@ -159,7 +159,7 @@ export default function EmployeeSatisfactionEngagementPageContent() {
       </Script>
 
       <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 px-6 py-14 shadow-[0_24px_80px_rgba(6,95,70,0.12)] md:px-10 md:py-20">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 px-6 py-14 md:px-10 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
             Employee Satisfaction and Engagement
           </p>
@@ -196,11 +196,11 @@ export default function EmployeeSatisfactionEngagementPageContent() {
 
       <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5 ">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Loyalty-1024x683.jpg"
               alt="Customer Retention"
-              className="h-72 w-full rounded-xl object-cover"
+              className="h-full w-full rounded-xl object-cover"
             />
           </article>
 

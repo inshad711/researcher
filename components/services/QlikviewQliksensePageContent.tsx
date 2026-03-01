@@ -21,7 +21,7 @@ const analyticsItems = [
 
 export default function QlikviewQliksensePageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
+    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
       <section className="px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
           <div className="md:col-span-8">
@@ -111,7 +111,7 @@ export default function QlikviewQliksensePageContent() {
             </ul>
           </article>
 
-          <article className="order-1 rounded-2xl border border-slate-200 bg-white p-5 lg:order-2 lg:col-span-5 md:p-7">
+          <article className="order-1 rounded-2xl border border-slate-200 bg-white p-2 lg:order-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Analytics-1024x400.jpg"
               alt="Process Analysis"

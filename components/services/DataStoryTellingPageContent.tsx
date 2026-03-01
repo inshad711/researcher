@@ -186,7 +186,7 @@ export default function DataStoryTellingPageContent() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/02/rese-11.jpg"
               alt="Data storytelling collaboration"

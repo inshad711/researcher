@@ -180,7 +180,7 @@ function FeatureCard({ item }: { item: IconItem }) {
 
 export default function StrategyConsultationPageContent() {
   return (
-    <main className="bg-slate-50 pb-24 pt-24 text-slate-900">
+    <main className="bg-slate-50 pb-24 pt-36 text-slate-900">
       <Script id="strategy-consultation-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
@@ -220,7 +220,7 @@ export default function StrategyConsultationPageContent() {
 
       <section className="mt-12 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/annie-spratt-hCb3lIB8L8E-unsplash-1.png"
               alt="Strategy and Consultation"
@@ -231,7 +231,7 @@ export default function StrategyConsultationPageContent() {
               helps us to develop tailored strategies that address your needs and opportunities.
             </p>
           </article>
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/startae-team-7tXA8xwe4W4-unsplash-Copy-1024x683.png"
               alt="Strategy Team at Work"

@@ -310,7 +310,7 @@ export default function CaseStudieMain() {
 
       {/* Header Section */}
       <header className="py-12 px-4 max-w-7xl mx-auto text-center">
-        <h1 className="text-3xl md:text-[38px] max-w-2xl mx-auto font-normal text-[#101010] leading-[42.2px] uppercase mb-4">
+        <h1 className="max-w-2xl mx-auto uppercase text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px] mb-4">
           <span className="reveal-container inline-block">
             <span className="reveal-text">Work</span>
           </span>{" "}

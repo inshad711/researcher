@@ -48,13 +48,13 @@ const faqSchema = {
 
 export default function UiUxPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
+    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
       <Script id="ui-ux-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
       <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-10">
+        <div className="mx-auto max-w-6xl">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">UI / UX</p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">UI/UX DESIGN</h1>
         </div>

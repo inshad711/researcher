@@ -59,7 +59,7 @@ export default function DashboardReportingPageContent() {
       </section>
 
       <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-6 md:grid-cols-12 md:p-8">
+        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-2 md:grid-cols-12">
           <article className="md:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/calculator-1024x683.jpg"

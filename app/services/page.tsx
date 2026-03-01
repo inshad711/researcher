@@ -92,7 +92,7 @@ export default function ServicesPage() {
   const secondaryFeatured = featuredServices.slice(1);
 
   return (
-    <div className="relative bg-[#fcfcfb] text-slate-900 pt-28">
+    <div className="relative bg-[#fcfcfb] text-slate-900 pt-36">
 
       <div>
         <MainService/>
@@ -101,8 +101,8 @@ export default function ServicesPage() {
 <ServiceCard/>
     
 
-       <section className="templateContainer relative pt-0">
-        <div className="">
+       <section className="templateContainer relative mt-8 md:mt-4">
+  
        <div className="flex flex-col items-center justify-center text-center space-y-4">
   {/* Heading */}
           <h2 className="text-3xl md:text-5xl font-medium text-slate-900">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
           </h2>
   
   {/* Description */}
-          <p className="max-w-lg text-slate-600 text-lg leading-relaxed">
+          <p className="max-w-lg font-sans">
             Explore our curated selection of top-tier collections, designed to bring 
             style and functionality to your everyday lifestyle.
           </p>
@@ -122,14 +122,14 @@ export default function ServicesPage() {
                 key={service.title}
                 className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                {/* <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
                   {service.category}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold leading-snug">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
+                </p> */}
+                <h3 className="mt-3 text-[20px] md:text-[18px] font-sans font-medium">{service.title}</h3>
+                <p className="mt-3 font-sans">{service.description}</p>
                 <Link
                   href="/contact"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:gap-3"
+                  className="mt-5 inline-flex items-center gap-2 text-[18px] md:text-[16px] font-medium font-sans transition group-hover:gap-3"
                 >
                   Learn More
                   <ArrowRight className="h-4 w-4" />
@@ -137,7 +137,7 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
-        </div>
+    
       </section>
 
       <div>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
 
         <section className="templateContainer relative">
         <div className="">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:p-12">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_2px_2px_rgba(15,23,42,0.08)] md:py-12 md:px-10">
             <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
               <Sparkles className="h-3.5 w-3.5" />
               Our Services
@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <h1 className="mt-5 max-w-4xl text-2xl font-semibold leading-tight md:text-4xl">
               Empowering business growth with elegant research and strategic precision.
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700 md:text-lg">
+            <p className="mt-5 max-w-3xl font-sans">
               Comprehensive research, analytics, and consulting services tailored to drive sustainable
               success in the UAE and beyond.
             </p>
@@ -252,16 +252,16 @@ export default function ServicesPage() {
 
      
 
-      <section className="templateContainer relative pt-0">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8">
+     <section className="templateContainer pt-0">
+        {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
           <div className="grid gap-5 lg:grid-cols-12">
             <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Partner With Us</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
-                Turn your service needs into a clear, actionable growth plan.
+              <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
+                Turn your next market question into a confident strategic move.
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
-                We align on your priorities, define the right scope, and deliver research outputs your team can act on.
+              <p className="mt-3 max-w-2xl font-sans">
+                We align teams quickly, validate assumptions with evidence, and deliver outputs built for action.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
                 <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Discovery in 48 hours</p>
@@ -273,8 +273,8 @@ export default function ServicesPage() {
             <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white lg:col-span-4 md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">Next Step</p>
               <h3 className="mt-3 text-xl font-semibold leading-tight">Book a strategic intake call.</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                We&apos;ll define scope, timeline, and the right service model for your goal.
+              <p className="mt-3 text-white font-sans">
+                We&apos;ll define scope, timeline, and the right research model for your goal.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link
@@ -285,15 +285,15 @@ export default function ServicesPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/about"
+                  href="/services"
                   className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-slate-300"
                 >
-                  Explore About
+                  Explore Services
                 </Link>
               </div>
             </aside>
           </div>
-        </div>
+        {/* </div> */}
       </section>
     </div>
   );

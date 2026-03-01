@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function MasterDataManagementPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
+    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
       <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-12">
+        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white py-8 px-3 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
             Master Data Management (MDM)
           </p>
@@ -41,7 +41,7 @@ export default function MasterDataManagementPageContent() {
       </section>
 
       <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-6 md:grid-cols-12 md:p-8">
+        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-2 md:grid-cols-12">
           <article className="md:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Mystery-shopping-1024x683.jpg"

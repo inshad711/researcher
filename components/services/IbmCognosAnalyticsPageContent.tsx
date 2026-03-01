@@ -43,7 +43,7 @@ export default function IbmCognosAnalyticsPageContent() {
 
       <section className="mt-14 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-stone-200 bg-white p-6 md:p-8 lg:col-span-5">
+          <article className="rounded-2xl border border-stone-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/calculator-1024x683.jpg"
               alt="Microsoft Power BI"
@@ -72,7 +72,7 @@ export default function IbmCognosAnalyticsPageContent() {
             </p>
           </article>
 
-          <article className="order-1 rounded-2xl border border-stone-200 bg-white p-6 md:p-8 lg:order-2 lg:col-span-5">
+          <article className="order-1 rounded-2xl border border-stone-200 bg-white p-2 lg:order-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Business-Intelligence-1024x683.jpg"
               alt="Brand Positioning"

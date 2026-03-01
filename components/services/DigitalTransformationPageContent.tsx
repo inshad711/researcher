@@ -173,7 +173,7 @@ const faqSchema = {
 
 export default function DigitalTransformationPageContent() {
   return (
-    <main className="pt-32 pb-20 text-slate-900">
+    <main className="pt-36 pb-20 text-slate-900">
       <Script
         id="digital-transformation-faq-schema"
         type="application/ld+json"
@@ -232,7 +232,7 @@ export default function DigitalTransformationPageContent() {
       {/* Understanding Digital Transformation + Image */}
       <section className="mt-14 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/alina-grubnyak-ZiQkhI7417A-unsplash-1024x683.png"
               alt="Digital Transformation"

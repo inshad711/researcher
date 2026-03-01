@@ -279,7 +279,7 @@ export default function DataAnalyticsPageContent() {
                   className="grid gap-0 overflow-hidden rounded-2xl border border-slate-200 bg-white md:grid-cols-[64px_1fr] transition hover:border-cyan-200 hover:shadow-sm"
                 >
                   {/* number sidebar */}
-                  <div className="flex items-center justify-center border-b border-slate-100 bg-cyan-50 px-4 py-4 md:border-b-0 md:border-r">
+                  <div className="flex items-center justify-center border-b border-slate-100 rounded-xl bg-cyan-50 px-4 py-4 md:border-b-0 md:border-r">
                     <span className="text-xl font-bold text-cyan-300">0{i + 1}</span>
                   </div>
                   {/* content */}

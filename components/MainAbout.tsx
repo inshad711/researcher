@@ -364,7 +364,7 @@ export default function MainAbout() {
                 <h5 className="tracking-wide font-sans">
                   Welcome to Researcher
                 </h5>
-                <h2 className="text-3xl md:text-[38px] font-heading  font-normal text-[#101010] leading-[37.2px] md:leading-[42.2px] ">
+                <h2 className="text-3xl md:text-[38px] font-heading font-normal text-[#101010] leading-[37.2px] md:leading-[40.2px] ">
                   You can join with Edule and upgrade your skill for your{' '}
                   <span className="relative inline-block text-purple-600 ">
                     bright future.
@@ -393,7 +393,7 @@ export default function MainAbout() {
       </section>
 
       {/* Bottom Section: Features */}
-      <section className="py-12 bg-gray-50/50">
+      <section className="py-8 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <FeatureCard 

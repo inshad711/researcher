@@ -21,7 +21,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
   return (
     <main className="bg-slate-50 pb-20 pt-38 text-slate-900">
       <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white px-6 py-12 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:px-10 md:py-16">
+        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white px-6 py-12  md:px-10 md:py-16">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
             QUANTITATIVE AND QUALITATIVE ANALYSIS
           </p>
@@ -34,11 +34,11 @@ export default function QualitativeQuantitativeSurveysPageContent() {
 
       <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6">
+          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Loyalty-1024x683.jpg"
               alt="Customer Retention"
-              className="h-full min-h-64 w-full object-cover"
+              className="h-full min-h-64 rounded-xl w-full object-cover"
             />
           </article>
 
@@ -79,11 +79,11 @@ export default function QualitativeQuantitativeSurveysPageContent() {
 
       <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6">
+          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-6 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Qualitative-Survey-1024x627.jpg"
               alt="Qualitative Survey"
-              className="h-full min-h-64 w-full object-cover"
+              className="h-full min-h-64 w-full rounded-xl object-cover"
             />
           </article>
 
@@ -113,11 +113,11 @@ export default function QualitativeQuantitativeSurveysPageContent() {
             </ul>
           </article>
 
-          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-5">
+          <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white lg:col-span-5 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Employee-engagement-1024x683.jpg"
               alt="Mystery Shopping"
-              className="h-full min-h-64 w-full object-cover"
+              className="h-full min-h-64 w-full rounded-xl object-cover"
             />
           </article>
         </div>

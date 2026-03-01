@@ -77,10 +77,10 @@ function CreativeSelect({
                     onChange(name, option);
                     setIsOpen(false);
                   }}
-                  className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-blue-600"
+                  className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-black"
                 >
                   {option}
-                  {value === option && <CheckCircle2 className="h-4 w-4 text-blue-600" />}
+                  {value === option && <CheckCircle2 className="h-4 w-4 text-green-600" />}
                 </div>
               ))}
             </motion.div>
@@ -280,7 +280,7 @@ export default function ContactPage() {
                     value={form.fullName}
                     onChange={(e) => setField("fullName", e.target.value)}
                     required
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                   />
                 </div>
                 <div className="space-y-2">
@@ -291,7 +291,7 @@ export default function ContactPage() {
                     value={form.email}
                     onChange={(e) => setField("email", e.target.value)}
                     required
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                   />
                 </div>
                 <div className="space-y-2">
@@ -302,7 +302,7 @@ export default function ContactPage() {
                     value={form.phone}
                     onChange={(e) => setField("phone", e.target.value)}
                     required
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                   />
                 </div>
                 <div className="space-y-2">
@@ -312,7 +312,7 @@ export default function ContactPage() {
                     placeholder="Your company"
                     value={form.company}
                     onChange={(e) => setField("company", e.target.value)}
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                   />
                 </div>
                 <CreativeSelect
@@ -346,7 +346,7 @@ export default function ContactPage() {
                     placeholder="Your Nationality"
                     value={form.nationality}
                     onChange={(e) => setField("nationality", e.target.value)}
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                   />
                 </div>
                 <CreativeSelect
@@ -358,7 +358,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="mt-5 space-y-2">
+              <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700 ml-1">Message</label>
                 <textarea
                   rows={4}
@@ -366,18 +366,18 @@ export default function ContactPage() {
                   value={form.message}
                   onChange={(e) => setField("message", e.target.value)}
                   required
-                  className="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-3.5 outline-none transition focus:border-slate-400 focus:bg-white"
+                  className="w-full resize-none rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-2 outline-none transition focus:border-slate-400 focus:bg-white"
                 />
               </div>
 
               <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-[11px] leading-relaxed text-slate-400 max-w-[200px]">
+                <p className="text-[11px] leading-relaxed text-slate-600 max-w-[200px]">
                   Your data is encrypted and secure under our privacy guidelines.
                 </p>
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-10 py-4 text-sm font-bold text-white transition-all hover:bg-black hover:shadow-xl active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-10 py-3 text-sm font-bold text-white transition-all hover:bg-black hover:shadow-xl active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSending ? "Submitting..." : "Submit Request"}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -392,7 +392,7 @@ export default function ContactPage() {
         <div className="overflow-hidden border border-slate-200 bg-white">
           <iframe
             title="Company location map"
-            src="https://www.google.com/maps?q=Dubai,UAE&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28883.855016898866!2d55.261939!3d25.186967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d1689d13e4b%3A0x77f4a8952f0de3a2!2sResearchers%20%7C%20Market%20Research%20Company%20in%20Dubai%20%7C%20Product%20Analysis%20%26%20Feasibility%20Study%20UAE!5e0!3m2!1sen!2sin!4v1772365389675!5m2!1sen!2sin"
             className="h-[350px] w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -118,11 +118,11 @@ export default function BrandPositioningPageContent() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* image */}
-            <div className="relative">
+            <div className="relative p-2 border border-slate-200 bg-white rounded-2xl">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2022/11/Business-Intelligence-1024x683.jpg"
                 alt="Brand Positioning"
-                className="h-105 w-full rounded-3xl object-cover lg:h-130"
+                className="h-105 w-full rounded-3xl object-cover rounded-xl lg:h-130"
               />
               <div className="absolute -bottom-5 -right-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl md:-right-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Core goal</p>
@@ -219,11 +219,11 @@ export default function BrandPositioningPageContent() {
               </div>
             </div>
 
-            <div className="relative lg:sticky lg:top-32">
+            <div className="relative lg:sticky lg:top-32 border border-slate-200 bg-white p-2 rounded-2xl">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2022/11/Data-Processing-1024x917.jpg"
                 alt="Benchmarking Marketing"
-                className="h-120 w-full rounded-3xl object-cover"
+                className="h-120 w-full rounded-xl object-cover"
               />
               <div className="absolute -left-4 -bottom-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl md:-left-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Benchmarking</p>
@@ -257,7 +257,7 @@ export default function BrandPositioningPageContent() {
                 className="grid gap-0 overflow-hidden rounded-2xl border border-slate-200 bg-white md:grid-cols-[72px_1fr]"
               >
                 {/* step number sidebar */}
-                <div className="flex items-center justify-center border-b border-slate-100 bg-violet-50 px-4 py-4 md:border-b-0 md:border-r md:py-8">
+                <div className="flex items-center justify-center border-b rounded-xl border-slate-100 bg-violet-50 px-4 py-4 md:border-b-0 md:border-r md:py-8">
                   <span className="text-2xl font-bold text-violet-300">0{i + 1}</span>
                 </div>
                 {/* content */}

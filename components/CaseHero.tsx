@@ -18,10 +18,10 @@ const CaseHero = () => {
   const tags = ['UIUX', 'Branding'];
 
   return (
-    <div className=" bg-white text-black selection:text-white flex flex-col justify-between px-4 py-6 md:p-10 lg:py-16  overflow-x-hidden">
+    <div className=" bg-white text-black selection:text-white flex flex-col justify-between ">
       
       {/* Main Header & Nav Grid */}
-      <main className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-start w-full max-w-[1600px] mx-auto">
+      <main className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-start w-full templateContainer">
         
         {/* Responsive Fluid Headline */}
         <section className="lg:col-span-9 xl:col-span-10">
@@ -58,8 +58,8 @@ const CaseHero = () => {
       </main>
 
       {/* Footer Meta Information */}
-      <footer className="mt-16 lg:mt-20 w-full max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-zinc-100 pt-8 lg:pt-12">
+      <footer className=" w-full templateContainer">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-zinc-100 pt-2">
           
           {/* Brand Info */}
           <div className="md:col-span-4 flex flex-col">

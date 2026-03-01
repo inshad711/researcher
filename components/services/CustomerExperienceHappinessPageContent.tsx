@@ -106,7 +106,7 @@ export default function CustomerExperienceHappinessPageContent() {
       </Script>
 
       <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-cyan-50 to-teal-100 px-6 py-14 shadow-[0_24px_80px_rgba(16,185,129,0.18)] md:px-10 md:py-20">
+        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-cyan-50 to-teal-100 px-6 py-14  md:px-10 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
             Customer Experience and Happiness
           </p>
@@ -138,11 +138,11 @@ export default function CustomerExperienceHappinessPageContent() {
 
       <section className="mt-14 px-4 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border h-fit border-slate-200 bg-white  lg:col-span-5 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Qualitative-Survey-1024x627.jpg"
               alt="Qualitative survey for customer experience"
-              className="h-72 w-full rounded-xl object-cover"
+              className="w-full rounded-xl object-cover"
             />
           </article>
 
@@ -176,11 +176,11 @@ export default function CustomerExperienceHappinessPageContent() {
             </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white  lg:col-span-5 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Loyalty-1024x683.jpg"
               alt="Customer retention and loyalty"
-              className="h-72 w-full rounded-xl object-cover"
+              className="w-full h-full rounded-xl object-cover"
             />
           </article>
         </div>

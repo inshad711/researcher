@@ -39,7 +39,7 @@ const SinglePageService = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="">
       {/* Marquee Animation Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee {
@@ -57,19 +57,19 @@ const SinglePageService = () => {
       `}} />
 
       {/* Top Section / Hero Header */}
-      <header className="max-w-7xl mx-auto px-6 pt-16 pb-12">
+      <header className="max-w-7xl mx-auto px-4 pt-16 md:pt-8 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-8">
-            <h1 className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
               A Disciplined Approach <br />
               to Capital Deployment
             </h1>
           </div>
           <div className="md:col-span-4 pt-2">
-            <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
+            <p className=" font-sans max-w-md">
               Valenco Capital applies a structured, research-led framework to every investment decision, prioritizing clarity, risk awareness, and long-term outcomes.
             </p>
-            <p className="text-xs font-medium text-slate-400 mt-6 uppercase tracking-widest">
+            <p className="md:text-xs text-[16px] font-medium text-slate-400 mt-6 font-sans uppercase">
               Process over momentum. Conviction over activity.
             </p>
           </div>
@@ -77,7 +77,7 @@ const SinglePageService = () => {
       </header>
 
       {/* Hero Image Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-10">
+      <section className="max-w-7xl mx-auto px-6 mb-8">
         <div className="relative h-[400px] md:h-[600px] overflow-hidden rounded-sm">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" 
@@ -88,7 +88,7 @@ const SinglePageService = () => {
       </section>
 
       {/* Marquee Trust Section */}
-      <section className="mb-10 overflow-hidden border-y border-slate-50 py-12">
+      <section className="mb-10 overflow-hidden border-y border-slate-50 py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <span className="text-[12px] uppercase tracking-[0.2em] font-bold text-slate-600">
             Trusted by Industry Leaders
@@ -111,16 +111,16 @@ const SinglePageService = () => {
       </section>
 
       {/* Research Section */}
-      <section className="max-w-7xl mx-auto px-6 pb-32">
+      <section className="max-w-7xl mx-auto px-4 pb-8 md:pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           
           {/* Sticky Left Sidebar - FIXED */}
           <div className="md:col-span-3 md:sticky top-32 self-start">
-            <span className="text-sm font-medium text-slate-700 uppercase tracking-widest block mb-2">
+            <span className="font-medium md:text-sm text-[18px] text-slate-700 uppercase  block mb-2">
               Research as The Foundation
             </span>
             
-            <div className="hidden md:block aspect-[4/5] w-full overflow-hidden grayscale opacity-80 rounded-sm">
+            <div className="aspect-[4/5] w-full overflow-hidden grayscale opacity-80 rounded-sm">
                 <img 
                     src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1000" 
                     alt="Architectural Detail"
@@ -140,18 +140,18 @@ const SinglePageService = () => {
             {/* List of Points */}
             <div className="border-t border-slate-100">
               {researchPoints.map((item) => (
-                <div key={item.id} className="group border-b border-slate-100 py-12 transition-colors hover:bg-slate-50/50">
+                <div key={item.id} className="group border-b border-slate-100 py-8 transition-colors hover:bg-slate-50/50">
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
                     <div className="md:col-span-1">
-                      <span className="text-xs font-mono text-slate-400">{item.id}</span>
+                      <span className="text-[16px] md:text-sm font-normal text-slate-400">{item.id}</span>
                     </div>
                     <div className="md:col-span-5">
-                      <h3 className="text-xl font-medium pr-8 group-hover:translate-x-1 transition-transform duration-300">
+                      <h3 className="font-medium pr-8 text-[19px] md:text-[17px] font-sans group-hover:translate-x-1 transition-transform duration-300">
                         {item.title}
                       </h3>
                     </div>
                     <div className="md:col-span-6">
-                      <p className="text-sm text-slate-500 leading-relaxed max-w-md">
+                      <p className="text-slate-500 font-sans leading-relaxed max-w-md">
                         {item.description}
                       </p>
                     </div>

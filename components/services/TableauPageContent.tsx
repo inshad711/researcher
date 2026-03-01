@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function TableauPageContent() {
   return (
-    <main className="relative overflow-hidden bg-[#f6f7f9] pb-24 pt-24 text-slate-900">
+    <main className="relative overflow-hidden bg-[#f6f7f9] pb-24 pt-36 text-slate-900">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,23,42,0.08),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(30,41,59,0.05),transparent_35%)]" />
 
       <section className="relative px-6 md:px-10">
@@ -58,7 +58,7 @@ export default function TableauPageContent() {
 
       <section className="relative mt-14 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7 lg:col-span-5">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Qualitative-Survey-1024x627.jpg"
               alt="Qualitative Survey"
@@ -96,7 +96,7 @@ export default function TableauPageContent() {
             </p>
           </article>
 
-          <article className="order-1 rounded-2xl border border-slate-200 bg-white p-5 md:p-7 lg:order-2 lg:col-span-5">
+          <article className="order-1 rounded-2xl border border-slate-200 bg-white p-2 lg:order-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Dashboard-Reporting-1024x683.jpg"
               alt="Tableau"

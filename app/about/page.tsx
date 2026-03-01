@@ -94,7 +94,7 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      <section className="templateContainer pt-0">
+      <section className="templateContainer mb-8">
         {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
           <div className="grid gap-5 lg:grid-cols-12">
             <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">

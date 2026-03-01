@@ -63,7 +63,7 @@ const StatCard = ({
   <Icon size={32} strokeWidth={1.5} />
 </div>
         <div className="space-y-1">
-          <div className="text-3xl md:text-4xl font-normal font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153] text-[#101010]">
+          <div className="text-3xl md:text-4xl font-normal font-light  leading-[23px] tracking-[0.4px] text-[#101010]">
             <AnimatedCounter value={value} suffix={suffix} />
           </div>
           <h3 className="text-lg font-normal font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153] text-slate-500 dark:text-slate-400">

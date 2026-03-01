@@ -150,7 +150,7 @@ const faqSchema = {
 
 export default function ProductAnalysisPageContent() {
   return (
-    <main className="pt-32 pb-20 text-slate-900">
+    <main className="pt-36 pb-20 text-slate-900">
       <Script id="product-analysis-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
@@ -201,7 +201,7 @@ export default function ProductAnalysisPageContent() {
       {/* What we help you understand + Image */}
       <section className="mt-14 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Employee-engagement-1024x683.jpg"
               alt="Product analysis research"
@@ -392,19 +392,18 @@ export default function ProductAnalysisPageContent() {
 
       {/* CTA */}
       <section className="mt-16 px-6 md:px-10">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 px-6 py-10 md:px-10 md:py-14">
-          <div className="pointer-events-none absolute -right-16 -top-12 h-52 w-52 rounded-full bg-white/5 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 left-8 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200  px-6 py-10 md:px-8 md:py-10">
+       
 
           <div className="relative grid gap-6 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
+              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-black/80">
                 Ready To Start
               </p>
-              <h2 className="mt-4 text-2xl font-semibold leading-tight text-white md:text-4xl">
+              <h2 className="mt-4 text-2xl font-semibold leading-tight text-black md:text-4xl">
                 Need a complete analysis of your product?
               </h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-white/70 md:text-base">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-black/70 md:text-base">
                 Partner with Researchers.me to gain deep product insights — from design and
                 manufacturing to market positioning and performance — and turn data into strategic
                 decisions.
@@ -412,7 +411,7 @@ export default function ProductAnalysisPageContent() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+                  className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white"
                 >
                   Contact Us
                   <ArrowRight className="h-4 w-4" />
@@ -427,7 +426,7 @@ export default function ProductAnalysisPageContent() {
             </div>
 
             <div className="grid gap-3 md:col-span-4">
-              <div className="rounded-xl border border-white/20 bg-white/10 p-4">
+              <div className="rounded-xl border border-white/20 bg-black p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
                   Scope
                 </p>
@@ -435,7 +434,7 @@ export default function ProductAnalysisPageContent() {
                   Design to market — end-to-end product study
                 </p>
               </div>
-              <div className="rounded-xl border border-white/20 bg-white/10 p-4">
+              <div className="rounded-xl border border-white/20 bg-black p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
                   Output
                 </p>

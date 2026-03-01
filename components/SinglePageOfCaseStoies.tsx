@@ -432,13 +432,13 @@ const SuccessStory: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-medium mb-6 tracking-tight">
           {storyData.title}
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className=" text-slate-600 max-w-2xl mx-auto font-sans">
           {storyData.description}
         </p>
       </header>
 
       {/* Hero Image Section */}
-      <section className="px-6 max-w-7xl mx-auto mb-16">
+      <section className="px-6 max-w-7xl mx-auto mb-12">
         <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border border-slate-200">
           <img 
             src={storyData.image} 
@@ -458,7 +458,7 @@ const SuccessStory: React.FC = () => {
           <aside className="lg:w-[28%]">
             <div className="lg:sticky lg:top-28 space-y-6">
               <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-medium mb-6 flex items-center gap-2">
                   {/* <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
                     <ChevronRight size={18} />
                   </span> */}
@@ -501,7 +501,7 @@ const SuccessStory: React.FC = () => {
       <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
         Client
       </p>
-      <p className="mt-1 text-base font-semibold text-slate-800">
+      <p className="mt-1 text-base font-medium text-slate-800">
         {storyData.details.client}
       </p>
     </div>
@@ -517,7 +517,7 @@ const SuccessStory: React.FC = () => {
       <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
         Year
       </p>
-      <p className="mt-1 text-base font-semibold text-slate-800">
+      <p className="mt-1 text-base font-medium text-slate-800">
         {storyData.details.year}
       </p>
     </div>
@@ -533,7 +533,7 @@ const SuccessStory: React.FC = () => {
       <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
         Location
       </p>
-      <p className="mt-1 text-base font-semibold text-slate-800">
+      <p className="mt-1 text-base font-medium text-slate-800">
         {storyData.details.location}
       </p>
     </div>
@@ -541,7 +541,7 @@ const SuccessStory: React.FC = () => {
 </div>
 
                 <div className="mt-10 pt-8 border-t border-slate-100">
-                  <button className="w-full bg-slate-900 text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
+                  <button className="w-full bg-slate-900 text-white py-3 px-6 rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
                     Share Story <Share2 size={18} />
                   </button>
                 </div>
@@ -562,12 +562,21 @@ const SuccessStory: React.FC = () => {
           <div className="lg:w-[72%] space-y-8">
             {storyData.content.map((section, index) => (
               <section key={index} className="group">
-                <h3 className="text-2xl font-bold flex items-center gap-3">
-                  <span className="text-purple-600/80 text-4xl font-medium italic">0{index + 1}.</span>
+                {/* <h3 className="text-2xl font-bold flex items-center gap-3 pb-5">
+                  <span className="text-purple-600/80 text-4xl font-medium">0{index + 1}.</span>
                   {section.heading}
-                </h3>
+                  
+                </h3> */}
+                <h3 className="flex items-baseline gap-3 pb-5 text-2xl font-bold text-slate-800">
+  <span className="text-purple-600/80 text-3xl font-semibold leading-none">
+    0{index + 1}.
+  </span>
+  <span className="font-sans text-3xl font-medium ">
+    {section.heading}
+  </span>
+</h3>
                 <div className="prose prose-slate max-w-none">
-                  <p className="text-lg leading-relaxed text-slate-600">
+                  <p className=" text-slate-600 font-sans">
                     {section.body}
                   </p>
                 </div>

@@ -55,7 +55,7 @@ import Image from 'next/image';
 
 const MainService = () => {
   return (
-    <section className="relative w-full px-6 py-12 md:px-16 md:py-20 overflow-hidden">
+    <section className="relative w-full px-6 md:px-16  overflow-hidden">
       {/* Top Content Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start z-20">
         
@@ -72,7 +72,7 @@ const MainService = () => {
 
         {/* Small Intro Paragraph */}
         <div className="md:col-span-4 md:pt-8">
-          <p className="text-xs md:text-[14px] text-gray-600 leading-relaxed max-w-[240px]">
+          <p className="text-[14px] text-gray-600 font-sans max-w-[240px]">
             Here will go a small intro paragraph that talks about the way we see design in the studio.
           </p>
         </div>

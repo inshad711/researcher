@@ -17,14 +17,14 @@ export default function Web30IdeationPageContent() {
 
       <section className="mt-10 px-6 md:px-10">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.05)] lg:col-span-5">
+          <article className="overflow-hidden rounded-[1.5rem] p-2  border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.05)] lg:col-span-5">
             <div className="relative h-full min-h-[320px]">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2023/06/pexels-andrea-piacquadio-3758105-modified-768x674.jpg"
                 alt="andrea"
-                className="h-full w-full object-cover"
+                className="h-full w-full rounded-2xl object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
+             
             </div>
           </article>
 

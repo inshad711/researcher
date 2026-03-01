@@ -67,7 +67,7 @@ export default function Instructor() {
 
   return (
     <div className=" text-[#0a1024]">
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-18">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pb-12 md:pb-18 pt-5">
         
          {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-10 space-y-4">

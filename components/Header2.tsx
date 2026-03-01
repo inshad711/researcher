@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useLayoutEffect, useState, useRef, useCallback } from "react";
 import { ChevronDown, ChevronRight, ArrowLeft, Menu, X } from "lucide-react";
@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { servicesMenu, type ServiceMenuItem } from "@/data/servicesMenu";
+import ConsultationModal from "@/components/ConsultationModal";
 
 function isPathActive(pathname: string, href?: string) {
   if (!href) return false;
@@ -43,6 +44,7 @@ function DesktopPanel({
     el.style.right = "";
     el.style.marginLeft = "";
     el.style.marginRight = "";
+    el.style.transform = "";
 
     const rect = el.getBoundingClientRect();
     const overflow = rect.right - (window.innerWidth - 12);
@@ -58,12 +60,23 @@ function DesktopPanel({
         el.style.marginRight = "4px";
       }
     }
+
+    const adjustedRect = el.getBoundingClientRect();
+    const overflowBottom = adjustedRect.bottom - (window.innerHeight - 12);
+    if (overflowBottom > 0) {
+      const maxShiftUp = Math.max(0, adjustedRect.top - 12);
+      const shiftUp = Math.min(overflowBottom, maxShiftUp);
+      if (shiftUp > 0) {
+        // Keep lower flyouts inside viewport so last items do not get clipped.
+        el.style.transform = `translateY(-${shiftUp}px)`;
+      }
+    }
   });
 
   const shadow = "shadow-[0_8px_32px_-4px_rgba(15,23,42,0.15)]";
   const panelCls =
     depth === 0
-      ? `absolute top-full left-0 z-[70] min-w-[260px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`
+      ? `absolute top-full left-0 z-[70] mt-2 min-w-[260px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`
       : `absolute top-0 left-full z-[75] min-w-[240px] rounded-2xl border border-slate-100 bg-white p-1.5 ${shadow}`;
   const activeChildIndex = items.findIndex((item) => {
     if (!item.children?.length) return false;
@@ -255,6 +268,7 @@ function MobileDrillDown({ onClose }: { onClose: () => void }) {
 // ─── Main Header ──────────────────────────────────────────────────────────────
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -280,14 +294,14 @@ const Header2 = () => {
 
   // Prevent background page scroll while the mobile menu is open
   useEffect(() => {
-    if (!isMenuOpen) return;
+    if (!isMenuOpen && !isConsultationOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isConsultationOpen]);
 
   const clearCloseTimer = useCallback(() => {
     if (!closeTimerRef.current) return;
@@ -344,6 +358,12 @@ const Header2 = () => {
   };
 
   const closeMobileMenu = () => setIsMenuOpen(false);
+  const openConsultation = () => {
+    closeServices();
+    setIsMenuOpen(false);
+    setIsConsultationOpen(true);
+  };
+  const closeConsultation = () => setIsConsultationOpen(false);
 
   return (
     <header
@@ -390,7 +410,7 @@ const Header2 = () => {
             {/* Services — nested dropdown lives inside this <li> */}
             <li
               ref={servicesRef}
-              className="relative flex h-full items-center"
+              className="relative flex h-full items-center after:absolute after:left-0 after:right-0 after:top-full after:h-2 after:content-['']"
               onMouseEnter={openServices}
               onMouseLeave={scheduleCloseServices}
             >
@@ -437,7 +457,9 @@ const Header2 = () => {
         {/* CTA + Hamburger */}
         <div className="flex h-full items-center space-x-4">
           <button
-            className={`hidden sm:block px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+            type="button"
+            onClick={openConsultation}
+            className={`hidden cursor-pointer sm:block px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
               isLightBg
                 ? "bg-black text-white hover:bg-gray-800"
                 : "bg-white text-black hover:bg-gray-200"
@@ -457,8 +479,13 @@ const Header2 = () => {
       </div>
 
       {/* ── Mobile menu (accordion) ────────────────────────────────── */}
-      {isMenuOpen && (
-        <div className="absolute left-0 right-0 top-full max-h-[85vh] overflow-y-auto border-t border-slate-200 bg-white px-5 py-4 lg:hidden">
+
+      <div
+        className={`fixed left-0 top-[76px] h-[calc(100dvh-76px)] w-full overflow-y-auto border-t border-slate-200 bg-white px-5 py-4 transition-transform duration-300 ease-out lg:hidden ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
           <ul className="space-y-1">
 
             {/* Nav links before Services */}
@@ -518,13 +545,17 @@ const Header2 = () => {
             ))}
 
             <li className="pt-4">
-              <button className="w-full rounded-full bg-slate-100 py-4 text-sm font-bold text-slate-900">
+              <button
+                type="button"
+                onClick={openConsultation}
+                className="w-full rounded-full bg-black py-4 text-md font-bold text-white"
+              >
                 Book a consultation
               </button>
             </li>
           </ul>
-        </div>
-      )}
+      </div>
+      <ConsultationModal isOpen={isConsultationOpen} onClose={closeConsultation} />
     </header>
   );
 };

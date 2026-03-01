@@ -84,7 +84,7 @@ export default function MicrosoftPowerBIPageContent() {
       </Script>
 
       {/* ── HERO ── */}
-      <section className="border-b border-slate-100 bg-linear-to-br from-amber-50 via-white to-yellow-50 px-6 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
+      <section className=" px-4 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
         <div className="mx-auto max-w-6xl">
           <span className="inline-block rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
             Microsoft Power BI
@@ -136,15 +136,15 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── WHAT IS POWER BI — editorial split ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* image */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 border rounded-2xl border-slate-200 bg-white p-2">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2022/11/calculator-1024x683.jpg"
                 alt="Microsoft Power BI"
-                className="h-96 w-full rounded-3xl object-cover lg:h-120"
+                className="h-96 w-full rounded-3xl object-cover rounded-xl lg:h-120"
               />
               <div className="absolute -bottom-5 -right-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl md:-right-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Platform</p>
@@ -185,7 +185,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── UAE MARKET REASONS — 2×3 icon grid ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           {/* heading row with inline stats */}
           <div className="grid items-end gap-8 md:grid-cols-2">
@@ -232,7 +232,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── OUR SERVICES ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
@@ -267,7 +267,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <div>
@@ -306,7 +306,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-600">FAQ</p>
@@ -334,7 +334,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="border-t border-slate-100 bg-slate-50 px-6 py-20 md:px-10 md:py-28">
+      <section className="border-t border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-amber-200 bg-linear-to-br from-amber-50 via-yellow-50 to-white">
           <div className="grid lg:grid-cols-2">
             <div className="px-8 py-12 md:px-12 md:py-16">

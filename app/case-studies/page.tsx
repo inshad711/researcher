@@ -155,7 +155,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-     <section className="templateContainer pt-0">
+   <section className="templateContainer mb-8">
         {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
           <div className="grid gap-5 lg:grid-cols-12">
             <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">
@@ -167,9 +167,9 @@ export default function ProjectsPage() {
                 We align teams quickly, validate assumptions with evidence, and deliver outputs built for action.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Discovery in 48 hours</p>
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Decision-focused reporting</p>
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Hands-on implementation support</p>
+                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Discovery in 48 hours</p>
+                <p className="rounded-xl border border-slate-200 bg-[#ecfeff] px-4 py-3">Decision-focused reporting</p>
+                <p className="rounded-xl border border-slate-200 bg-[#faf5ff] px-4 py-3">Hands-on implementation support</p>
               </div>
             </div>
 
@@ -198,6 +198,7 @@ export default function ProjectsPage() {
           </div>
         {/* </div> */}
       </section>
+      
      
     </div>
   );

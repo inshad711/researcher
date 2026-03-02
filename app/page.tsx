@@ -9,6 +9,30 @@ import ServiceSection from "@/components/ServiceSection";
 import Testimonial from "@/components/Testimonial";
 import WhatWeDo from "@/components/WhatWeDo";
 import CapabilitiesSection2 from "@/components/CapabilitiesSection2";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Expert Market Research Company in Dubai | UAE",
+  description:
+    "Leading market research company in Dubai providing feasibility studies, competitor analysis, and UAE market intelligence to help businesses grow confidently.",
+  keywords: [
+    "market research Dubai",
+    "market research agencies in UAE",
+    "Market analysis",
+  ],
+  openGraph: {
+    title: "Expert Market Research Company in Dubai | UAE",
+    description:
+      "Leading market research company in Dubai providing feasibility studies, competitor analysis, and UAE market intelligence to help businesses grow confidently.",
+    type: "website",
+    images: [
+      {
+        url: "/logo1.png",
+        alt: "logo1",
+      },
+    ],
+  },
+};
 
 async function getBlogs() {
   const res = await fetch("https://bck.siyahfy.com/wp-json/custom/v1/posts", {

@@ -163,13 +163,13 @@ import { Play, BookOpen, User, Star, Dot, FileText, Globe } from 'lucide-react';
 type ResearchProject = {
   id: number;
   title: string;
-  leadResearcher: string;
-  department: string;
-  funding: string;
-  citations: string;
-  duration: string;
-  publications: string;
-  methodology: string;
+  // leadResearcher: string;
+  // department: string;
+  // funding: string;
+  // citations: string;
+  // duration: string;
+  // publications: string;
+  // methodology: string;
   image: string;
 };
 
@@ -177,37 +177,37 @@ const researchProjects: ResearchProject[] = [
   {
     id: 1,
     title: "AI Ethics in Modern Socio-Economic Frameworks",
-    leadResearcher: "Dr. Sarah Mitchell",
-    department: "Computational Sociology",
-    funding: "$250k Grant",
-    citations: "450+",
-    duration: "24 Months",
-    publications: "12 Papers",
-    methodology: "Quantitative",
+    // leadResearcher: "Dr. Sarah Mitchell",
+    // department: "Computational Sociology",
+    // funding: "$250k Grant",
+    // citations: "450+",
+    // duration: "24 Months",
+    // publications: "12 Papers",
+    // methodology: "Quantitative",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500",
   },
   {
     id: 2,
     title: "Quantum Computing: Scalability & Error Correction",
-    leadResearcher: "James Parker",
-    department: "Applied Physics Lab",
-    funding: "$1.2M Grant",
-    citations: "1,100",
-    duration: "36 Months",
-    publications: "8 Journals",
-    methodology: "Experimental",
+    // leadResearcher: "James Parker",
+    // department: "Applied Physics Lab",
+    // funding: "$1.2M Grant",
+    // citations: "1,100",
+    // duration: "36 Months",
+    // publications: "8 Journals",
+    // methodology: "Experimental",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=500",
   },
   {
     id: 3,
     title: "Sustainable Urban Infrastructure & Smart Grids",
-    leadResearcher: "Lina Gomez",
-    department: "Environmental Engineering",
-    funding: "$890k Grant",
-    citations: "320",
-    duration: "18 Months",
-    publications: "15 Reports",
-    methodology: "Case Study",
+    // leadResearcher: "Lina Gomez",
+    // department: "Environmental Engineering",
+    // funding: "$890k Grant",
+    // citations: "320",
+    // duration: "18 Months",
+    // publications: "15 Reports",
+    // methodology: "Case Study",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=500",
   },
 ];
@@ -224,7 +224,7 @@ const ResearchCard = ({ project }: { project: ResearchProject }) => {
         />
         
         {/* Overlays */}
-        <div className="absolute top-4 left-4 flex gap-2">
+        {/* <div className="absolute top-4 left-4 flex gap-2">
            <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-sm text-white px-3 py-1.5 rounded-xl text-xs font-semibold">
               <div className="bg-blue-600 rounded-full p-1">
                 <Play size={10} fill="currentColor" />
@@ -240,24 +240,24 @@ const ResearchCard = ({ project }: { project: ResearchProject }) => {
               </div>
               {project.publications}
            </div>
-        </div>
+        </div> */}
 
         {/* Level/Methodology Badge */}
-        <div className="absolute -bottom-1 left-4">
+        {/* <div className="absolute -bottom-1 left-4">
           <div className="bg-white px-6 py-2 rounded-t-xl shadow-sm border-x border-t border-gray-100">
              <span className="text-[14px] font-medium text-[#0A1D56]">{project.methodology}</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Content */}
-      <div className="py-6 px-5 pt-6 flex flex-col flex-grow">
-        <h3 className="font-medium font-sans mb-4">
+      <div className="px-2 pt-4 pb-3 flex flex-col flex-grow">
+        <h3 className="font-medium font-sans">
           {project.title}
         </h3>
 
         {/* Researcher Info */}
-        <div className="flex items-center gap-3 mb-4">
+        {/* <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full bg-[#101010] flex items-center justify-center text-white">
             <User size={20} />
           </div>
@@ -265,17 +265,17 @@ const ResearchCard = ({ project }: { project: ResearchProject }) => {
             <p className="text-sm font-medium text-[#101010]">{project.leadResearcher}</p>
             <p className="text-xs text-gray-500">{project.department}</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Research Specific Footer info */}
-        <div className="mt-auto pt-2 border-t border-gray-50 flex justify-between items-center">
+        {/* <div className="mt-auto pt-2 border-t border-gray-50 flex justify-between items-center">
             <div className="text-xs font-semibold text-slate-500">
                 Citations: <span className="text-[#2541B2]">{project.citations}</span>
             </div>
             <div className="text-sm font-medium text-green-600">
                 {project.funding}
             </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

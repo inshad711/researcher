@@ -161,7 +161,9 @@ import {
   Linkedin, 
   MapPin, 
   Phone, 
-  Mail 
+  Mail, 
+  Youtube,
+  
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -173,10 +175,25 @@ const Footer2: React.FC = () => {
 
   // Social Media Links Configuration
   const socialLinks = [
-    { icon: <Facebook size={18} />, href: "#", color: "bg-blue-600" },
-    { icon: <Twitter size={18} />, href: "#", color: "bg-sky-500" },
-    { icon: <Instagram size={18} />, href: "#", color: "bg-pink-600" },
-    { icon: <Linkedin size={18} />, href: "#", color: "bg-blue-700" },
+    { icon: <Facebook size={18} />, href: "https://www.facebook.com/ResearchersMe/", color: "bg-blue-600" },
+    { icon: <Twitter size={18} />, href: "https://x.com/researchers_me", color: "bg-sky-500" },
+    { icon: <Instagram size={18} />, href: "https://www.instagram.com/researchers.me/", color: "bg-pink-600" },
+    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/company/researchers-me/", color: "bg-blue-700" },
+    { icon: <Youtube size={18} />, href: "https://www.youtube.com/@Researchers-MENA", color: "bg-blue-700" },
+    // { icon: <PinterestIcon size={18} />, href: "https://in.pinterest.com/researchers_me/", color: "bg-blue-700" },
+    {
+  icon: (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49-.09-.81-.17-2.06.04-2.95.19-.81 1.23-5.17 1.23-5.17s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.34.67 1.34 1.48 0 .9-.57 2.24-.86 3.48-.24 1.02.51 1.86 1.51 1.86 1.81 0 3.2-1.91 3.2-4.66 0-2.44-1.75-4.15-4.26-4.15-2.9 0-4.6 2.17-4.6 4.42 0 .88.34 1.83.76 2.34.08.1.09.19.07.29-.08.32-.25 1.02-.28 1.16-.04.19-.14.23-.32.14-1.2-.56-1.95-2.33-1.95-3.74 0-3.04 2.21-5.83 6.37-5.83 3.34 0 5.94 2.38 5.94 5.57 0 3.32-2.09 5.99-4.99 5.99-.97 0-1.88-.5-2.19-1.1l-.6 2.28c-.22.85-.82 1.92-1.22 2.57.92.28 1.9.43 2.92.43 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+    </svg>
+  ),
+  href: "https://in.pinterest.com/researchers_me/",
+},
   ];
 
   const quickLinks = [
@@ -231,7 +248,7 @@ const Footer2: React.FC = () => {
           businesses grow in the modern era.
         </p>
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
   {socialLinks.map((social, index) => (
     <a
       key={index}

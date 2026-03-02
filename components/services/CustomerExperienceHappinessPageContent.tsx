@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Script from "next/script";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -100,139 +100,177 @@ const faqSchema = {
 
 export default function CustomerExperienceHappinessPageContent() {
   return (
-    <main className="bg-slate-50 pt-38 pb-20 text-slate-900">
+    <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
       <Script id="customer-experience-happiness-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-emerald-200 bg-gradient-to-br from-emerald-50 via-cyan-50 to-teal-100 px-6 py-14  md:px-10 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
-            Customer Experience and Happiness
-          </p>
-          <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
-            Customer Satisfaction Service in UAE: Experience and Happiness
-          </h1>
-          <p className="mt-5 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            Customer satisfaction is one of the most important drivers of business growth. At Researchers.me,
-            we help organizations improve customer experience through measurable strategies, practical insights,
-            and continuous optimization across the customer journey.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
-            >
-              Start Consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/services/market-research-measurement"
-              className="inline-flex items-center rounded-full border border-emerald-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white"
-            >
-              Back to Services
-            </Link>
+      <section>
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Customer Experience and Happiness
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">
+              Customer Satisfaction Service in UAE: Experience and Happiness
+            </h1>
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
+              Customer satisfaction is one of the most important drivers of business growth. At Researchers.me,
+              we help organizations improve customer experience through measurable strategies, practical insights,
+              and continuous optimization across the customer journey.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              >
+                Start Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/services/market-research-measurement"
+                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
+              >
+                Back to Services
+              </Link>
+            </div>
+          </div>
+          <div className="lg:col-span-5">
+            <img
+              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              alt="Customer experience strategy meeting"
+              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border h-fit border-slate-200 bg-white  lg:col-span-5 p-2">
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-start">
+          <article className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Qualitative-Survey-1024x627.jpg"
+              src="/image/46908.webp"
               alt="Qualitative survey for customer experience"
-              className="w-full rounded-xl object-cover"
+              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
             />
           </article>
-
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">
-              For better customer experience and happiness
-            </h2>
-            <div className="mt-5 space-y-3">
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Core Focus
+            </p>
+            <h2 className="text-2xl font-semibold md:text-3xl">For Better Customer Experience and Happiness</h2>
+            <ul className="mt-5 space-y-3">
               {corePractices.map((item) => (
-                <div key={item} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
-                  <span className="text-sm leading-6 text-slate-700">{item}</span>
-                </div>
+                <li key={item} className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Business Outcomes
+            </p>
             <h2 className="text-2xl font-semibold md:text-3xl">Business Impact of Satisfied Customers</h2>
-            <div className="mt-5 space-y-3">
+            <ul className="mt-5 space-y-3">
               {businessImpact.map((item) => (
-                <div key={item} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" />
-                  <span className="text-sm leading-6 text-slate-700">{item}</span>
-                </div>
+                <li key={item} className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </article>
-
-          <article className="rounded-2xl border border-slate-200 bg-white  lg:col-span-5 p-2">
+          <article className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Loyalty-1024x683.jpg"
+              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
               alt="Customer retention and loyalty"
-              className="w-full h-full rounded-xl object-cover"
+              className="h-full min-h-[300px] w-full rounded-3xl object-cover"
             />
           </article>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="border-t border-slate-200">
+        <div className="templateContainer">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Improvement Strategy
+          </p>
           <h2 className="text-2xl font-semibold md:text-3xl">How to Improve Customer Service and Satisfaction</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             In the UAE, exceptional customer service is both a cultural expectation and a competitive necessity.
             Organizations that prioritize customer happiness gain stronger loyalty, better reputation, and more
             sustainable growth.
           </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {improvementWays.map((item) => (
-              <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
+          <ol className="mt-6 grid gap-6 md:grid-cols-2">
+            {improvementWays.map((item, index) => (
+              <li key={item.title} className="border-l-2 border-slate-200 pl-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Step {index + 1}
+                </p>
+                <h3 className="mt-1 text-base font-semibold text-slate-900 md:text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
-              </article>
+              </li>
             ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Why Researchers.me
+            </p>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Why Choose Us for Customer Experience Research in Dubai
+            </h2>
+            <ul className="mt-5 grid gap-3 md:grid-cols-2">
+              {chooseUs.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="lg:col-span-5">
+            <img
+              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              alt="Customer experience consulting in Dubai"
+              className="h-full min-h-[320px] w-full rounded-3xl object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-gradient-to-br from-cyan-50 to-emerald-50 p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">
-            Why Choose Us for Customer Experience Research in Dubai
-          </h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            {chooseUs.map((item) => (
-              <div key={item} className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-white/70 px-4 py-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
-                <span className="text-sm leading-6 text-slate-700">{item}</span>
-              </div>
-            ))}
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+          <div className="self-start lg:col-span-4 lg:sticky lg:top-32">
+            <h2 className="text-2xl font-medium leading-relaxed text-slate-900 md:text-3xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-700 md:text-base">
+              Expert answers about customer experience and happiness research.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
-          <div className="mt-4 space-y-3">
-            {faqItems.map((faq) => (
-              <details key={faq.question} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">
-                  {faq.question}
-                </summary>
-                <p className="mt-2 text-sm leading-7 text-slate-700">{faq.answer}</p>
-              </details>
-            ))}
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-slate-300">
+              {faqItems.map((faq) => (
+                <details key={faq.question} className="py-4">
+                  <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">
+                    {faq.question}
+                  </summary>
+                  <p className="mt-2 text-sm leading-7 text-slate-700">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

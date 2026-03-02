@@ -145,9 +145,9 @@ export default function MysteryShoppingPageContent() {
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-cyan-50 to-indigo-100 px-6 py-14 text-slate-900 shadow-[0_24px_80px_rgba(14,116,144,0.15)] md:px-10 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">Mystery Shopping</p>
+      <section className="templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="rounded-[2rem] border border-slate-300 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-100 px-6 py-14 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.12)] md:px-10 md:py-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-700">Mystery Shopping</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
             Evaluate real customer experience with objective field intelligence
           </h1>
@@ -156,21 +156,21 @@ export default function MysteryShoppingPageContent() {
             employee behavior, and adherence to brand promises and SOPs.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl border border-sky-200 bg-white/80 px-4 py-3 text-sm">Unbiased customer experience insight</div>
-            <div className="rounded-xl border border-sky-200 bg-white/80 px-4 py-3 text-sm">SOP and compliance visibility</div>
-            <div className="rounded-xl border border-sky-200 bg-white/80 px-4 py-3 text-sm">Action-ready performance recommendations</div>
+            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">Unbiased customer experience insight</div>
+            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">SOP and compliance visibility</div>
+            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">Action-ready performance recommendations</div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-700"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900"
             >
               Start Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center rounded-full border border-sky-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white"
+              className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
             >
               Back to Services
             </Link>
@@ -178,9 +178,9 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Why Mystery Shopping</h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               Undercover evaluators interact with your business as real customers and provide structured feedback on
@@ -192,7 +192,7 @@ export default function MysteryShoppingPageContent() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-5 md:p-8">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Employee-engagement-1024x683.jpg"
               alt="Mystery shopping employee engagement"
@@ -205,13 +205,13 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Key Evaluation Criteria</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {keyCriteria.map((item) => (
-                <div key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <div key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-3">
                   <Eye className="h-4 w-4 text-slate-700" />
                   <span className="text-sm font-medium text-slate-800">{item}</span>
                 </div>
@@ -223,19 +223,19 @@ export default function MysteryShoppingPageContent() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 via-sky-50 to-cyan-50 p-6 text-slate-900 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-300 bg-slate-100 p-6 text-slate-900 lg:col-span-5 md:p-8">
             <h3 className="text-lg font-semibold">Program Outcomes</h3>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                 <span>Clear visibility into frontline service quality</span>
               </li>
               <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                 <span>Early detection of compliance and SOP gaps</span>
               </li>
               <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                 <span>Targeted improvement actions with measurable impact</span>
               </li>
             </ul>
@@ -243,14 +243,14 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="rounded-2xl border border-slate-200 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Benefits of Mystery Shopping in UAE</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {benefits.map((item) => {
               const Icon = item.icon;
               return (
-                <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <article key={item.title} className="rounded-xl border border-slate-200 p-4">
                   <Icon className="h-5 w-5 text-slate-800" />
                   <h3 className="mt-3 text-base font-semibold text-slate-900">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
@@ -261,15 +261,15 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Types of Mystery Shopping</h2>
             <div className="mt-5 space-y-3">
               {shoppingTypes.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <div key={item.title} className="rounded-xl border border-slate-200 p-4">
                     <div className="flex items-start gap-3">
                       <Icon className="mt-0.5 h-5 w-5 shrink-0 text-slate-800" />
                       <div>
@@ -283,7 +283,7 @@ export default function MysteryShoppingPageContent() {
             </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-5 md:p-8">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Customer-experience-1024x682.jpg"
               alt="Customer experience mystery shopping"
@@ -296,26 +296,26 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-fuchsia-200 bg-gradient-to-br from-fuchsia-50 via-rose-50 to-indigo-50 p-6 text-slate-900 lg:col-span-5 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-2xl border border-slate-300 bg-slate-100 p-6 text-slate-900 lg:col-span-5 md:p-8">
             <h3 className="text-lg font-semibold">Why Choose Researchers.me</h3>
             <ul className="mt-4 space-y-3">
               {differentiators.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-fuchsia-600" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">How We Conduct Mystery Shopping Research</h2>
             <div className="mt-5 space-y-3">
               {methodology.map((step, index) => (
-                <div key={step} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-600 text-xs font-semibold text-white">
+                <div key={step} className="flex items-start gap-3 rounded-xl border border-slate-200 p-4">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-white">
                     {index + 1}
                   </span>
                   <p className="text-sm leading-6 text-slate-700">{step}</p>
@@ -326,12 +326,12 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="rounded-2xl border border-slate-200 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-4 space-y-3">
             {faqItems.map((faq) => (
-              <details key={faq.question} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <details key={faq.question} className="rounded-xl border border-slate-200 p-4">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">{faq.question}</summary>
                 <p className="mt-2 text-sm leading-7 text-slate-700">{faq.answer}</p>
               </details>
@@ -340,14 +340,14 @@ export default function MysteryShoppingPageContent() {
         </div>
       </section>
 
-      <section className="mt-16 px-4 md:px-10">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-indigo-200 bg-gradient-to-br from-indigo-100 via-sky-100 to-cyan-100 px-6 py-10 md:px-10 md:py-14">
-          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-cyan-200/50 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-indigo-200/50 blur-3xl" />
+      <section className="mt-16 templateContainer !py-0 md:!py-0 lg:!py-0">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-300 bg-gradient-to-br from-slate-100 via-stone-100 to-zinc-100 px-6 py-10 md:px-10 md:py-14">
+          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-slate-300/40 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-zinc-300/40 blur-3xl" />
 
           <div className="relative grid gap-6 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <p className="inline-flex rounded-full border border-indigo-200 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-700">
+              <p className="inline-flex rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700">
                 Ready To Improve
               </p>
               <h2 className="mt-4 text-2xl font-semibold leading-tight text-slate-900 md:text-4xl">
@@ -360,14 +360,14 @@ export default function MysteryShoppingPageContent() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700"
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900"
                 >
                   Contact Us
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/services/market-research-measurement"
-                  className="inline-flex items-center rounded-full border border-indigo-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white"
+                  className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
                 >
                   Explore Market Research Services
                 </Link>
@@ -375,12 +375,12 @@ export default function MysteryShoppingPageContent() {
             </div>
 
             <div className="grid gap-3 md:col-span-4">
-              <div className="rounded-xl border border-indigo-200 bg-white/80 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-indigo-700">Focus</p>
+              <div className="rounded-xl border border-slate-300 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">Focus</p>
                 <p className="mt-1 text-sm font-medium text-slate-800">Service consistency by touchpoint</p>
               </div>
-              <div className="rounded-xl border border-sky-200 bg-white/80 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-sky-700">Output</p>
+              <div className="rounded-xl border border-slate-300 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">Output</p>
                 <p className="mt-1 text-sm font-medium text-slate-800">Action-ready performance roadmap</p>
               </div>
             </div>
@@ -390,6 +390,3 @@ export default function MysteryShoppingPageContent() {
     </main>
   );
 }
-
-
-

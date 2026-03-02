@@ -1,4 +1,6 @@
 import Script from "next/script";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 type FaqItem = {
   question: string;
@@ -91,43 +93,69 @@ const faqSchema = {
 
 export default function MarketingConsultingPageContent() {
   return (
-    <main className="bg-slate-50 pt-38 pb-20 text-slate-900">
+    <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
       <Script id="marketing-consulting-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">Marketing Consulting</p>
-          <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">MARKETING CONSULTING</h1>
-          <p className="mt-5 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            The process of seeking professional advice and suggestions from a marketing consultant in order to improve
-            the effectiveness of your marketing tactics is known as marketing consultancy. It provides businesses with
-            reliable access to highly advanced marketing knowledge.
-          </p>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            Marketing consulting is a strategic partnership with professionals to enhance the effectiveness of your
-            marketing tactics. It's more than just advice; it's a doorway to advanced marketing knowledge that can
-            transform your business.
-          </p>
+      <section>
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Marketing Consulting</p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">MARKETING CONSULTING</h1>
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
+              The process of seeking professional advice and suggestions from a marketing consultant in order to
+              improve the effectiveness of your marketing tactics is known as marketing consultancy. It provides
+              businesses with reliable access to highly advanced marketing knowledge.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              Marketing consulting is a strategic partnership with professionals to enhance the effectiveness of your
+              marketing tactics. It&apos;s more than just advice; it&apos;s a doorway to advanced marketing knowledge
+              that can transform your business.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              >
+                Start Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/services/market-research-measurement"
+                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
+              >
+                Back to Services
+              </Link>
+            </div>
+          </article>
+          <article className="lg:col-span-5">
+            <img
+              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              alt="Marketing consulting session"
+              className="h-full min-h-[320px] w-full rounded-3xl object-cover"
+            />
+          </article>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-6 md:p-8">
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-start">
+          <article className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Customer-experience-1024x682.jpg"
-              alt="Appearance Of Employee"
-              className="h-80 w-full rounded-xl object-cover"
+              src="/image/46908.webp"
+              alt="Marketing consultant presenting strategy"
+              className="h-full min-h-[300px] w-full rounded-3xl object-cover"
             />
           </article>
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-6 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">As a marketing consultant, we are</h2>
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">What We Do</p>
+            <h2 className="mt-2 text-2xl font-semibold md:text-3xl">As a marketing consultant, we are</h2>
             <ul className="mt-5 space-y-3">
               {consultantPoints.map((point) => (
-                <li key={point} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-7 text-slate-700">
-                  {point}
+                <li key={point} className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
@@ -135,47 +163,68 @@ export default function MarketingConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">
-            The Role of Marketing Consulting Firms
-          </p>
-          <div className="mt-5 space-y-4">
-            {roleSections.map((item) => (
-              <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
-              </article>
-            ))}
-          </div>
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              The Role of Marketing Consulting Firms
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold md:text-3xl">How Consulting Firms Create Results</h2>
+            <div className="mt-6 space-y-4">
+              {roleSections.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-slate-200 px-5 py-5">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </article>
+          <article className="lg:col-span-5">
+            <img
+              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
+              alt="Marketing consulting team collaboration"
+              className="h-full min-h-[320px] w-full rounded-3xl object-cover"
+            />
+          </article>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">
-            Why Choose Researchers.me for Your Marketing Consulting Needs?
-          </h2>
-          <div className="mt-5 space-y-4">
-            {whyChooseSections.map((item) => (
-              <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
-              </article>
-            ))}
-          </div>
+      <section className="border-t border-slate-200">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12">
+          <article className="lg:col-span-5">
+            <img
+              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              alt="Marketing strategy planning team"
+              className="h-full min-h-[320px] w-full rounded-3xl object-cover"
+            />
+          </article>
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Why Researchers.me</p>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Why Choose Researchers.me for Your Marketing Consulting Needs?
+            </h2>
+            <div className="mt-5 space-y-4">
+              {whyChooseSections.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-slate-200 px-5 py-5">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
-      <section className="mt-14 px-4 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">
-            Frequently Asked Questions on Marketing Consulting Services
-          </h2>
-          <div className="mt-4 space-y-3">
+      <section className="border-y border-slate-200">
+        <div className="templateContainer">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">FAQ</p>
+          <h2 className="mt-2 text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
+          <div className="mt-6 space-y-3">
             {faqItems.map((faq) => (
-              <details key={faq.question} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">{faq.question}</summary>
+              <details key={faq.question} className="rounded-2xl border border-slate-200 px-5 py-4">
+                <summary className="cursor-pointer list-none text-sm font-semibold text-slate-900 md:text-base">
+                  {faq.question}
+                </summary>
                 <p className="mt-2 text-sm leading-7 text-slate-700">{faq.answer}</p>
               </details>
             ))}

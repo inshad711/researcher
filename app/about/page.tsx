@@ -106,9 +106,9 @@ export default function AboutPage() {
                 We align teams quickly, validate assumptions with evidence, and deliver outputs built for action.
               </p>
               <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Discovery in 48 hours</p>
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Decision-focused reporting</p>
-                <p className="rounded-xl border border-slate-200 bg-white px-4 py-3">Hands-on implementation support</p>
+                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Discovery in 48 hours</p>
+                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Decision-focused reporting</p>
+                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Hands-on implementation support</p>
               </div>
             </div>
 

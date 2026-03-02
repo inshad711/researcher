@@ -1,9 +1,22 @@
+
+
+
+// /////////new
 // "use client";
 
-// import React, { useState, useEffect, useCallback, useRef } from 'react';
+// import React, { useState, useEffect, useCallback } from 'react';
 // import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// const testimonials = [
+// // 1. Define the Interface for Testimonials
+// interface TestimonialData {
+//   id: number;
+//   name: string;
+//   role: string;
+//   image: string;
+//   text: string;
+// }
+
+// const testimonials: TestimonialData[] = [
 //   {
 //     id: 1,
 //     name: "Ahmed Khan",
@@ -41,53 +54,53 @@
 //   }
 // ];
 
-// // To create an infinite loop, we clone the items
-// // [CloneLast2, CloneLast1, ...Originals..., CloneFirst1, CloneFirst2]
-// const itemsToClone = 3; // Number of items to buffer for smooth looping
-// const extendedTestimonials = [
+// const itemsToClone = 3;
+// const extendedTestimonials: TestimonialData[] = [
 //   ...testimonials.slice(-itemsToClone),
 //   ...testimonials,
 //   ...testimonials.slice(0, itemsToClone)
 // ];
 
-// const TestimonialCard = ({ testimonial }) => (
-//   <div className="bg-[#f2f2f2] rounded-xl p-8 flex flex-col gap-6 shadow-sm transition-all duration-300 hover:-translate-y-2 h-full mx-3 border border-transparent hover:border-blue-100">
+// // 2. Component Prop Types
+// const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({ testimonial }) => (
+//   <div className="bg-gray-50 shadow-md rounded-xl p-6 flex flex-col gap-6  transition-all duration-300 hover:-translate-y-2 h-full mx-3 border border-transparent hover:border-blue-100">
 //     <div className="flex gap-1">
 //       {[...Array(5)].map((_, i) => (
 //         <Star key={i} size={18} className="fill-[#ff6b6b] text-[#ff6b6b]" />
 //       ))}
 //     </div>
 //     <div className="flex items-center justify-between">
-//       <div className="flex items-center gap-4">
+//       <div className="flex items-center gap-3">
 //         <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0">
 //           <img 
 //             src={testimonial.image} 
 //             alt={testimonial.name} 
 //             className="w-full h-full object-cover"
-//             onError={(e) => { e.target.src = "https://via.placeholder.com/150"; }}
+//             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { 
+//               const target = e.target as HTMLImageElement;
+//               target.src = "https://via.placeholder.com/150"; 
+//             }}
 //           />
 //         </div>
 //         <div>
-//           <h4 className="font-bold text-[#051145] text-xl leading-tight">{testimonial.name}</h4>
-//           <p className="text-gray-500 text-sm font-semibold">{testimonial.role}</p>
+//           <h4 className="font-medium text-[#051145] text-xl leading-tight">{testimonial.name}</h4>
+//           <p className="text-gray-500 text-sm font-normal">{testimonial.role}</p>
 //         </div>
 //       </div>
 //       <div className="text-blue-600 hidden sm:block">
 //         <Quote className="fill-blue-600" size={32} />
 //       </div>
 //     </div>
-//     <p className="text-gray-600 leading-relaxed italic">"{testimonial.text}"</p>
+//     <p className="font-sans">"{testimonial.text}"</p>
 //   </div>
 // );
 
 // export default function Testimonial() {
-//   const [visibleItems, setVisibleItems] = useState(3);
-//   // Start at the index of the first "real" item (after the cloned buffer)
-//   const [currentIndex, setCurrentIndex] = useState(itemsToClone);
-//   const [isTransitioning, setIsTransitioning] = useState(true);
-//   const [isMoving, setIsMoving] = useState(false);
+//   const [visibleItems, setVisibleItems] = useState<number>(3);
+//   const [currentIndex, setCurrentIndex] = useState<number>(itemsToClone);
+//   const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
+//   const [isMoving, setIsMoving] = useState<boolean>(false);
 
-//   // Responsive logic
 //   useEffect(() => {
 //     const updateVisibleItems = () => {
 //       if (window.innerWidth < 768) setVisibleItems(1);
@@ -99,8 +112,8 @@
 //     return () => window.removeEventListener('resize', updateVisibleItems);
 //   }, []);
 
-//   const moveSlide = useCallback((direction) => {
-//     if (isMoving) return; // Prevent spamming buttons
+//   const moveSlide = useCallback((direction: 'next' | 'prev') => {
+//     if (isMoving) return;
 //     setIsMoving(true);
 //     setIsTransitioning(true);
 //     setCurrentIndex((prev) => direction === 'next' ? prev + 1 : prev - 1);
@@ -109,12 +122,10 @@
 //   const handleTransitionEnd = () => {
 //     setIsMoving(false);
     
-//     // If we've reached the cloned items at the end, jump to real start
 //     if (currentIndex >= testimonials.length + itemsToClone) {
 //       setIsTransitioning(false);
 //       setCurrentIndex(itemsToClone);
 //     } 
-//     // If we've reached the cloned items at the start, jump to real end
 //     else if (currentIndex <= itemsToClone - 1) {
 //       setIsTransitioning(false);
 //       setCurrentIndex(testimonials.length + itemsToClone - 1);
@@ -122,23 +133,21 @@
 //   };
 
 //   return (
-//     <div className="min-h-screen bg-white font-light text-[16.36px] leading-[23px] tracking-[0.4px] text-[#364153] text-[#051145] overflow-x-hidden">
-//       <div className="max-w-7xl mx-auto px-6 py-20">
-        
-//         {/* Header Section */}
-//         <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+//     <div className=" bg-white text-[#051145] overflow-x-hidden">
+//       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+//         <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-8">
 //           <div className="max-w-2xl">
 //             <div className="flex items-center gap-2 mb-4">
 //               <div className="w-4 h-4 rounded-full border-4 border-[#051145]"></div>
-//               <span className="font-bold uppercase tracking-wider text-sm">Student Testimonials</span>
+//               <span className="font-medium uppercase tracking-wider text-sm">Student Testimonials</span>
 //             </div>
-//             <h2 className="text-5xl md:text-6xl font-black leading-tight">
+//             <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
 //               What Our Students <br className="hidden md:block" /> Are Saying
 //             </h2>
 //           </div>
           
 //           <div className="max-w-md md:text-right flex flex-col md:items-end gap-6">
-//             <p className="text-gray-500 leading-relaxed text-lg">
+//             <p className="font-sans">
 //               Explore experiences from our global community of learners who have accelerated their growth.
 //             </p>
 //             <div className="flex gap-3">
@@ -158,8 +167,7 @@
 //           </div>
 //         </div>
 
-//         {/* Carousel Wrapper */}
-//         <div className="relative pt-10">
+//         <div className="relative">
 //           <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
 //           <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div>
 
@@ -183,8 +191,7 @@
 //             </div>
 //           </div>
           
-//           {/* Active indicator (mapped to original testimonials) */}
-//           <div className="flex justify-center items-center gap-3 mt-12 relative z-10">
+//           {/* <div className="flex justify-center items-center gap-3 mt-12 relative z-10">
 //             {testimonials.map((_, idx) => {
 //               const adjustedIndex = (currentIndex - itemsToClone + testimonials.length) % testimonials.length;
 //               return (
@@ -196,7 +203,7 @@
 //                 />
 //               );
 //             })}
-//           </div>
+//           </div> */}
 //         </div>
 //       </div>
 //     </div>
@@ -206,7 +213,8 @@
 
 
 
-/////////new
+
+/////////new content
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -344,16 +352,17 @@ export default function Testimonial() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-4 h-4 rounded-full border-4 border-[#051145]"></div>
-              <span className="font-medium uppercase tracking-wider text-sm">Student Testimonials</span>
+              <span className="font-medium uppercase tracking-wider text-sm">SUCCESS STORIES</span>
             </div>
             <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
-              What Our Students <br className="hidden md:block" /> Are Saying
+              What Our Clients  <br className="hidden md:block" /> Experience
             </h2>
           </div>
           
           <div className="max-w-md md:text-right flex flex-col md:items-end gap-6">
             <p className="font-sans">
-              Explore experiences from our global community of learners who have accelerated their growth.
+            See how businesses across Dubai and the UAE turn our market research and feasibility insights into smarter strategies and measurable growth.
+
             </p>
             <div className="flex gap-3">
               <button 
@@ -373,8 +382,15 @@ export default function Testimonial() {
         </div>
 
         <div className="relative">
-          <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
-          <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div>
+          {/* <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
+          <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div> */}
+          <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] 
+bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
+rounded-[30px] z-0 hidden lg:block"></div>
+
+<div className="absolute bottom-[-20px] left-0 right-0 top-[180px] 
+bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
+rounded-2xl z-0 lg:hidden"></div>
 
           <div className="relative z-10 overflow-hidden">
             <div 
@@ -395,20 +411,6 @@ export default function Testimonial() {
               ))}
             </div>
           </div>
-          
-          {/* <div className="flex justify-center items-center gap-3 mt-12 relative z-10">
-            {testimonials.map((_, idx) => {
-              const adjustedIndex = (currentIndex - itemsToClone + testimonials.length) % testimonials.length;
-              return (
-                <div
-                  key={idx}
-                  className={`transition-all duration-300 rounded-full h-2 ${
-                    adjustedIndex === idx ? 'w-10 bg-blue-400' : 'w-2 bg-gray-400 opacity-50'
-                  }`}
-                />
-              );
-            })}
-          </div> */}
         </div>
       </div>
     </div>

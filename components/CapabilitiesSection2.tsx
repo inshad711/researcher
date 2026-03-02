@@ -364,7 +364,7 @@ const features: CardProps[] = [
 
 const CapabilitiesSection2 = () => {
   return (
-    <section className="pb-20">
+    <section className="pb-10">
       <div className="templateContainer bg-[#FFFFFF]">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -374,20 +374,9 @@ const CapabilitiesSection2 = () => {
               Services
             </span>
           </h2>
-          {/* <h2 className="
-  text-[clamp(1.8rem,4vw,2.4rem)]
-  leading-[clamp(2.2rem,4.5vw,2.6rem)]
-  font-normal
-  text-[#101010]
-  mb-4
-">
-  Our{' '}
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500">
-    Services
-  </span>
-</h2> */}
+     
           <p className="text-[#364153] font-light max-w-xl mx-auto text-[16.36px] leading-[23px] tracking-[0.4px] ">
-            Our services and the community we've built. Here's a glimpse of what we've achieved together so far.
+            At Researchers, we offer specialized Dubai market research and UAE business intelligence services that help you understand your market before you invest.
           </p>
         </div>
 
@@ -426,6 +415,30 @@ const CapabilitiesSection2 = () => {
             </div>
           ))}
         </div>
+        {/* <div className='pt-10'>
+             <a
+                        href="/services"
+                        className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-700 to-purple-500 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
+                      >
+                        <span>View Service Page</span>
+                        <div className="relative w-5 h-5 overflow-hidden">
+                          <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-0 -translate-x-6 opacity-0 group-hover:opacity-100" />
+                          <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-6 translate-x-0 opacity-100 group-hover:opacity-0" />
+                        </div>
+                      </a>
+        </div> */}
+        <div className="pt-6 md:pt-10 flex justify-center">
+  <a
+    href="/services"
+    className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-700 to-purple-500 text-white px-5 py-3 font-medium rounded-full transition-all hover:shadow-xl active:scale-95"
+  >
+    <span>View Service Page</span>
+    <div className="relative w-5 h-5 overflow-hidden">
+      <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-0 -translate-x-6 opacity-0 group-hover:opacity-100" />
+      <ArrowRight className="w-5 h-5 absolute transition-all duration-300 group-hover:translate-x-6 translate-x-0 opacity-100 group-hover:opacity-0" />
+    </div>
+  </a>
+</div>
       </div>
     </section>
   );

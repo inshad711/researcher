@@ -21,9 +21,9 @@ const analyticsItems = [
 
 export default function QlikviewQliksensePageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
-      <section className="px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
+    <main className="bg-white pb-20 pt-36 text-slate-900">
+      <section className="templateContainer">
+        <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-8">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">Business Intelligence</p>
             <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Qlikview/Qliksense</h1>
@@ -49,23 +49,23 @@ export default function QlikviewQliksensePageContent() {
               </Link>
               <Link
                 href="/services/business-intelligence"
-                className="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
+                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
               >
                 Back to BI Services
               </Link>
             </div>
           </div>
 
-          <div className="grid gap-3 md:col-span-4">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="grid gap-3 md:col-span-4 md:pl-6">
+            <div className="border-b border-slate-200 pb-4">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Focus</p>
               <p className="mt-1 text-sm font-medium text-slate-800">Augmented Intelligence</p>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div className="border-b border-slate-200 pb-4">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Approach</p>
               <p className="mt-1 text-sm font-medium text-slate-800">AI-driven, collaborative, and actionable analytics</p>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div className="pb-1">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Outcome</p>
               <p className="mt-1 text-sm font-medium text-slate-800">Real-time insights with better data literacy</p>
             </div>
@@ -73,9 +73,9 @@ export default function QlikviewQliksensePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-5 lg:col-span-5 md:p-7">
+      <section className="templateContainer mt-14 !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Data-Preparation-scaled.jpg"
               alt="Qualitative Research"
@@ -83,7 +83,7 @@ export default function QlikviewQliksensePageContent() {
             />
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+          <article className="lg:col-span-7">
             <h2 className="text-2xl font-semibold md:text-3xl">Data preparation</h2>
             <ul className="mt-5 space-y-3">
               {dataPreparationItems.map((item) => (
@@ -97,9 +97,9 @@ export default function QlikviewQliksensePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="order-2 rounded-2xl border border-slate-200 bg-white p-6 lg:order-1 lg:col-span-7 md:p-8">
+      <section className="templateContainer mt-14 !py-0 md:!py-0 lg:!py-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="order-2 lg:order-1 lg:col-span-7">
             <h2 className="text-2xl font-semibold md:text-3xl">Analytics</h2>
             <ul className="mt-5 space-y-3">
               {analyticsItems.map((item) => (
@@ -111,7 +111,7 @@ export default function QlikviewQliksensePageContent() {
             </ul>
           </article>
 
-          <article className="order-1 rounded-2xl border border-slate-200 bg-white p-2 lg:order-2 lg:col-span-5">
+          <article className="order-1 lg:order-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Analytics-1024x400.jpg"
               alt="Process Analysis"

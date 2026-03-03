@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Script from "next/script";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 
 type FaqItem = {
   question: string;
@@ -76,25 +76,44 @@ const faqSchema = {
 
 export default function OnChainEcosystemConsultingPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
+    <main className="overflow-hidden bg-slate-100 pb-20 pt-24 text-slate-900">
       <Script id="on-chain-ecosystem-consulting-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
+      <section className="templateContainer relative">
+        <div className="absolute -left-20 -top-10 h-48 w-48 rounded-full bg-cyan-200/50 blur-3xl" />
+        <div className="absolute -right-16 top-20 h-56 w-56 rounded-full bg-emerald-200/40 blur-3xl" />
+        <div className="relative rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-cyan-50 via-slate-50 to-emerald-50 p-6 shadow-[0_24px_60px_rgba(15,23,42,0.08)] md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
             On-Chain Ecosystem Consulting
           </p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">
             On-Chain Ecosystem Consulting Services
           </h1>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
+            Build resilient token economies, partnership loops, and governance systems that keep your on-chain
+            ecosystem growing without losing strategic control.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+            >
+              Start consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50/70 px-4 py-2 text-sm text-slate-700">
+              <Sparkles className="h-4 w-4 text-cyan-700" />
+              Strategy, tokenomics, governance
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-5 lg:col-span-5 md:p-7">
+      <section className="templateContainer pt-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-3xl border border-slate-200 bg-slate-50/70 p-5 lg:col-span-5 md:p-7">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/shubham-dhage-pyt6ZAHfmx4-unsplash-1-768x609.png"
               alt="shubham-dhage-1"
@@ -102,7 +121,7 @@ export default function OnChainEcosystemConsultingPageContent() {
             />
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+          <article className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-cyan-50/40 p-6 lg:col-span-7 md:p-8">
             <p className="text-sm leading-7 text-slate-700 md:text-base">
               The adoption of blockchain technology has surged, reshaping industries and redefining traditional
               processes in today&apos;s business scene.
@@ -123,13 +142,14 @@ export default function OnChainEcosystemConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="rounded-3xl border border-slate-200 bg-gradient-to-r from-cyan-50 to-slate-50 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">The Significance in Today&apos;s Businesses</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">On-Chain ecosystem serves as the bedrock for:</p>
-          <div className="mt-5 space-y-3">
-            {significancePoints.map((item) => (
-              <div key={item} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {significancePoints.map((item, index) => (
+              <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700">Pillar {index + 1}</p>
                 <p className="text-sm leading-7 text-slate-700 md:text-base">{item}</p>
               </div>
             ))}
@@ -137,15 +157,15 @@ export default function OnChainEcosystemConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="rounded-3xl border border-slate-200 bg-gradient-to-r from-emerald-50 to-slate-50 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">How On-Chain Ecosystems Influence Business?</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             From supply chain management and finance to healthcare and beyond, on-chain ecosystems are reshaping industries by:
           </p>
-          <div className="mt-5 space-y-3">
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
             {influencePoints.map((item) => (
-              <div key={item} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
                 <p className="text-sm leading-7 text-slate-700 md:text-base">{item}</p>
               </div>
             ))}
@@ -153,9 +173,9 @@ export default function OnChainEcosystemConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">On-Chain Ecosystems Consultancy</h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               At Researchers, we focus on understanding and optimizing on-chain ecosystems to drive innovation,
@@ -167,16 +187,16 @@ export default function OnChainEcosystemConsultingPageContent() {
             </p>
 
             <h3 className="mt-7 text-xl font-semibold md:text-2xl">Our Consulting Services</h3>
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
               {consultingServices.map((item) => (
-                <div key={item} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div key={item} className="rounded-2xl border border-slate-200 bg-gradient-to-br from-cyan-50/70 to-slate-50 p-4">
                   <p className="text-sm leading-7 text-slate-700 md:text-base">{item}</p>
                 </div>
               ))}
             </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-5 md:p-8">
+          <article className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-emerald-50/60 p-6 lg:col-span-5 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">Why Choose Researchers.me</h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               Partnering with us for on-chain ecosystem consultation offers several advantages:
@@ -193,8 +213,8 @@ export default function OnChainEcosystemConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-100 via-slate-50 to-emerald-100 p-6 text-slate-900 md:p-8">
           <h3 className="text-2xl font-semibold md:text-3xl">Optimize Your On-Chain Ecosystem</h3>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             Embark on a transformative journey within blockchain ecosystems with Researchers. Maximize the potential
@@ -206,7 +226,7 @@ export default function OnChainEcosystemConsultingPageContent() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-cyan-200"
             >
               Contact us
               <ArrowRight className="h-4 w-4" />
@@ -215,14 +235,14 @@ export default function OnChainEcosystemConsultingPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="rounded-3xl border border-slate-200 bg-slate-50/70 p-6 md:p-8">
           <h3 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions (FAQs) on On-Chain Ecosystem
           </h3>
           <div className="mt-5 space-y-3">
             {faqItems.map((faq) => (
-              <details key={faq.question} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <details key={faq.question} className="rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-cyan-50/60 p-4">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">{faq.question}</summary>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">{faq.answer}</p>
               </details>

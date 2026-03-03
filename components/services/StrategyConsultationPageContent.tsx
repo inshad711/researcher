@@ -170,7 +170,7 @@ const faqSchema = {
 function FeatureCard({ item }: { item: IconItem }) {
   const Icon = item.icon;
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-6">
+    <article className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
       <Icon className="h-5 w-5 text-slate-700" />
       <h3 className="mt-4 text-base font-semibold text-slate-900">{item.title}</h3>
       <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
@@ -185,8 +185,8 @@ export default function StrategyConsultationPageContent() {
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-11">
+      <section className="templateContainer !py-0">
+        <div className="rounded-[2rem] border border-slate-200 bg-slate-100 p-7 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-11">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Digital Transformation</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
             Strategy &amp; Consultation
@@ -210,7 +210,7 @@ export default function StrategyConsultationPageContent() {
             </Link>
             <Link
               href="/services/technology/digital-transformation"
-              className="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+              className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-200/70"
             >
               Back to Digital Transformation
             </Link>
@@ -218,9 +218,9 @@ export default function StrategyConsultationPageContent() {
         </div>
       </section>
 
-      <section className="mt-12 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-2xl border border-slate-200 bg-white p-2">
+      <section className="templateContainer mt-12 !py-0">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/annie-spratt-hCb3lIB8L8E-unsplash-1.png"
               alt="Strategy and Consultation"
@@ -231,7 +231,7 @@ export default function StrategyConsultationPageContent() {
               helps us to develop tailored strategies that address your needs and opportunities.
             </p>
           </article>
-          <article className="rounded-2xl border border-slate-200 bg-white p-2">
+          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-2">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/startae-team-7tXA8xwe4W4-unsplash-Copy-1024x683.png"
               alt="Strategy Team at Work"
@@ -247,8 +247,8 @@ export default function StrategyConsultationPageContent() {
         </div>
       </section>
 
-      <section className="mt-12 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer mt-12 !py-0">
+        <div>
           <h2 className="text-3xl font-semibold">The Value of Effective Business Strategies</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
             In an ever-changing market landscape, a well-crafted strategy is the cornerstone of sustained business
@@ -262,8 +262,8 @@ export default function StrategyConsultationPageContent() {
         </div>
       </section>
 
-      <section className="mt-12 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer mt-12 !py-0">
+        <div>
           <h2 className="text-3xl font-semibold">Why Businesses Need Consultation Services</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
             Consultation services offer invaluable support and guidance to businesses, bringing external expertise,
@@ -277,8 +277,8 @@ export default function StrategyConsultationPageContent() {
         </div>
       </section>
 
-      <section className="mt-12 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer mt-12 !py-0">
+        <div className="rounded-2xl border border-slate-200 bg-slate-100 p-6 md:p-8">
           <h2 className="text-3xl font-semibold">Our Approach</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
             We follow a structured, four-phase methodology to ensure your strategy is not only well-crafted but also
@@ -304,8 +304,8 @@ export default function StrategyConsultationPageContent() {
         </div>
       </section>
 
-      <section className="mt-12 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer mt-12 !py-0">
+        <div className="rounded-2xl border border-slate-200 bg-slate-100 p-6 md:p-8">
           <h2 className="text-3xl font-semibold">Frequently Asked Questions</h2>
           <p className="mt-3 text-sm leading-7 text-slate-600">Common questions about our Strategy &amp; Consultation services.</p>
           <div className="mt-5 space-y-3">

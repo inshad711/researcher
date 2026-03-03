@@ -152,7 +152,6 @@
 
 
 
-"use client";
 import React from 'react';
 import { 
   Facebook, 
@@ -225,7 +224,7 @@ const Footer2: React.FC = () => {
   {/* Background Glow */}
   <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-purple-900/20 pointer-events-none" />
 
-  <div className="relative container mx-auto px-4 py-16 max-w-7xl">
+  <div className="relative container mx-auto px-4 pt-16 pb-8 max-w-7xl">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
       {/* Column 1 */}
@@ -315,19 +314,24 @@ const Footer2: React.FC = () => {
         </h5>
 
         <ul className="space-y-4 text-zinc-300">
-          <li className="flex items-start gap-3 hover:text-white transition">
+          {/* <li className="flex items-start gap-3 hover:text-white transition">
             <MapPin size={18} className="text-blue-500 mt-1" />
-            123 Business Street, New York, NY 10001
-          </li>
+           UAE Office Address: 20th Floor, Regal Tower, Business Bay, Dubai, United Arab Emirates
+          </li> */}
+          <li className="flex items-start gap-3 hover:text-white transition">
+  {/* Add flex-shrink-0 here */}
+  <MapPin size={18} className="text-blue-500 mt-1 flex-shrink-0" />
+  UAE Office Address: 20th Floor, Regal Tower, Business Bay, Dubai, United Arab Emirates
+</li>
 
           <li className="flex items-center gap-3 hover:text-white transition">
             <Phone size={18} className="text-purple-500" />
-            +1 (234) 567-890
+          +966 56 639 2386
           </li>
 
           <li className="flex items-center gap-3 hover:text-white transition">
             <Mail size={18} className="text-blue-400" />
-            contact@example.com
+         info@researchers.me
           </li>
         </ul>
       </div>

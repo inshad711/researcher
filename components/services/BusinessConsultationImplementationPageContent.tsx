@@ -85,11 +85,11 @@ const sections: ServiceSection[] = [
 
 export default function BusinessConsultationImplementationPageContent() {
   return (
-    <main className="pt-32 pb-20 text-slate-900">
+    <main className="pb-20 text-slate-900">
 
       {/* Hero */}
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
+      <section className="templateContainer !pt-32">
+        <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-slate-50 via-stone-50 to-amber-50 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
           <div className="relative h-72 w-full md:h-96">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/charlesdeluvio-Lks7vei-eAg-unsplash.jpg"
@@ -107,7 +107,7 @@ export default function BusinessConsultationImplementationPageContent() {
             </div>
           </div>
 
-          <div className="bg-white px-6 py-8 md:px-10 md:py-10">
+          <div className="px-6 py-8 md:px-10 md:py-10">
             <p className="max-w-4xl text-sm leading-7 text-slate-600 md:text-base">
               Digital transformation requires a strategic approach to leverage its full potential.
               At Researchers, we guide your business through this transformative journey, providing
@@ -120,13 +120,13 @@ export default function BusinessConsultationImplementationPageContent() {
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+              <div className="rounded-xl border border-slate-300/70 bg-gradient-to-r from-slate-100/80 to-slate-50/30 px-4 py-3 text-sm text-slate-700">
                 AI strategy &amp; roadmap design
               </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+              <div className="rounded-xl border border-slate-300/70 bg-gradient-to-r from-cyan-100/70 to-slate-50/30 px-4 py-3 text-sm text-slate-700">
                 Use case research &amp; prioritization
               </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+              <div className="rounded-xl border border-slate-300/70 bg-gradient-to-r from-amber-100/70 to-slate-50/30 px-4 py-3 text-sm text-slate-700">
                 End-to-end implementation support
               </div>
             </div>
@@ -151,14 +151,14 @@ export default function BusinessConsultationImplementationPageContent() {
       </section>
 
       {/* Service Sections */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl space-y-6">
+      <section className="templateContainer !pt-8">
+        <div className="space-y-6">
           {sections.map((section, index) => {
             const Icon = section.icon;
             return (
               <article
                 key={section.title}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
+                className="overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-100/70 via-stone-50/50 to-cyan-50/40"
               >
                 <div
                   className={`grid lg:grid-cols-2 ${
@@ -172,9 +172,9 @@ export default function BusinessConsultationImplementationPageContent() {
                       alt={section.imageAlt}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 to-transparent" />
-                    <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm">
-                      <span className="text-xs font-bold text-slate-700">
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-transparent to-cyan-800/10" />
+                    <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/60 bg-slate-900/65 backdrop-blur-sm shadow-sm">
+                      <span className="text-xs font-bold text-white">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </span>
@@ -183,7 +183,7 @@ export default function BusinessConsultationImplementationPageContent() {
                   {/* Content */}
                   <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-300/70 bg-slate-100/70">
                         <Icon className="h-4 w-4 text-slate-700" />
                       </div>
                       <h2 className="text-lg font-semibold leading-snug text-slate-900 md:text-xl">
@@ -211,8 +211,8 @@ export default function BusinessConsultationImplementationPageContent() {
       </section>
 
       {/* What You Gain */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer !pt-8">
+        <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-cyan-50/55 via-slate-50/50 to-amber-50/55 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             What You Gain Working With Researchers
           </h2>
@@ -231,7 +231,7 @@ export default function BusinessConsultationImplementationPageContent() {
             ].map((point) => (
               <div
                 key={point}
-                className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4"
+                className="flex items-start gap-3 rounded-xl border border-slate-300/65 bg-gradient-to-r from-slate-100/80 to-stone-50/45 p-4"
               >
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                 <span
@@ -245,8 +245,8 @@ export default function BusinessConsultationImplementationPageContent() {
       </section>
 
       {/* CTA */}
-      <section className="mt-16 px-6 md:px-10">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 px-6 py-10 md:px-10 md:py-14">
+      <section className="templateContainer !pt-10">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 px-6 py-10 md:px-10 md:py-14">
           <div className="pointer-events-none absolute -right-16 -top-12 h-52 w-52 rounded-full bg-white/5 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-16 left-8 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
 

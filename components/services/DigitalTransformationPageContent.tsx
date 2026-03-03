@@ -174,16 +174,11 @@ const faqSchema = {
 export default function DigitalTransformationPageContent() {
   return (
     <main className="pt-36 pb-20 text-slate-900">
-      <Script
-        id="digital-transformation-faq-schema"
-        type="application/ld+json"
-      >
-        {JSON.stringify(faqSchema)}
-      </Script>
+
 
       {/* Hero */}
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-stone-50 to-slate-100 px-6 py-14 shadow-[0_20px_60px_rgba(0,0,0,0.07)] md:px-10 md:py-20">
+      <section className="templateContainer">
+        <div className=" px-4 py-14  md:px-0 md:py-0">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
             Technology
           </p>
@@ -230,8 +225,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* Understanding Digital Transformation + Image */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/alina-grubnyak-ZiQkhI7417A-unsplash-1024x683.png"
@@ -277,8 +272,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* The Urgent Need */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className=" rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             The Urgent Need for Digital Transformation
           </h2>
@@ -305,8 +300,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* Types of Digital Transformation */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-8 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">
               Types of Digital Transformation
@@ -370,8 +365,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* Our Offerings */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Our Offerings</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
             We provide comprehensive digital transformation services designed to guide your
@@ -401,8 +396,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">
               Why Choose Researchers.me for Digital Transformation?
@@ -472,8 +467,8 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className=" rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions
           </h2>
@@ -494,7 +489,7 @@ export default function DigitalTransformationPageContent() {
       </section>
 
       {/* CTA */}
-      <section className="mt-16 px-6 md:px-10">
+      {/* <section className="templateContainer mt-16">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 px-6 py-10 md:px-10 md:py-14">
           <div className="pointer-events-none absolute -right-16 -top-12 h-52 w-52 rounded-full bg-white/5 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-16 left-8 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
@@ -548,7 +543,7 @@ export default function DigitalTransformationPageContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

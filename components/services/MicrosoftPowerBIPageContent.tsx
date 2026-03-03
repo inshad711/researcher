@@ -78,14 +78,11 @@ const faqSchema = {
 
 export default function MicrosoftPowerBIPageContent() {
   return (
-    <main className="bg-white text-slate-900">
-      <Script id="microsoft-power-bi-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </Script>
-
+    <main className="bg-white text-slate-900 pt-30">
+    
       {/* ── HERO ── */}
-      <section className=" px-4 pb-20 pt-36 md:px-10 md:pb-28 md:pt-44">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer ">
+        <div>
           <span className="inline-block rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
             Microsoft Power BI
           </span>
@@ -116,12 +113,12 @@ export default function MicrosoftPowerBIPageContent() {
           </div>
 
           {/* platform cards */}
-          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {powerBIPlatforms.map((p) => {
               const Icon = p.icon;
               return (
-                <div key={p.title} className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-100 bg-amber-50">
+                <div key={p.title} className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50">
                     <Icon className="h-5 w-5 text-amber-600" />
                   </div>
                   <div>
@@ -136,17 +133,17 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── WHAT IS POWER BI — editorial split ── */}
-      <section className="px-4 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer">
+        <div>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
             {/* image */}
-            <div className="relative order-2 lg:order-1 border rounded-2xl border-slate-200 bg-white p-2">
+            <div className="relative order-2 lg:order-1">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2022/11/calculator-1024x683.jpg"
                 alt="Microsoft Power BI"
                 className="h-96 w-full rounded-3xl object-cover rounded-xl lg:h-120"
               />
-              <div className="absolute -bottom-5 -right-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl md:-right-6">
+              <div className="absolute -bottom-5 -right-4 rounded-2xl bg-white p-5 md:-right-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Platform</p>
                 <p className="mt-1 text-sm font-semibold text-slate-900 max-w-45 leading-snug">
                   Cloud-based BI by Microsoft
@@ -185,8 +182,8 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── UAE MARKET REASONS — 2×3 icon grid ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer">
+        <div>
           {/* heading row with inline stats */}
           <div className="grid items-end gap-8 md:grid-cols-2">
             <div>
@@ -211,15 +208,15 @@ export default function MicrosoftPowerBIPageContent() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {uaeReasons.map((item) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-amber-200 hover:shadow-sm"
+                  className="p-1"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-slate-50">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50">
                     <Icon className="h-5 w-5 text-amber-500" />
                   </div>
                   <h3 className="mt-4 text-sm font-semibold text-slate-900">{item.title}</h3>
@@ -232,8 +229,8 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── OUR SERVICES ── */}
-      <section className="px-4 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer">
+        <div>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-600">What we offer</p>
@@ -246,11 +243,11 @@ export default function MicrosoftPowerBIPageContent() {
                 decision-making.
               </p>
             </div>
-            <div className="space-y-4 lg:col-span-8">
+            <div className="space-y-8 lg:col-span-8">
               {ourServices.map((s) => (
                 <div
                   key={s.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-amber-200 hover:shadow-sm"
+                  className="flex gap-5"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-xs font-bold text-amber-500">
                     {s.num}
@@ -267,8 +264,8 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="border-y border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-6xl">
+      <section className="templateContainer">
+        <div>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-600">Why Researchers</p>
@@ -288,9 +285,9 @@ export default function MicrosoftPowerBIPageContent() {
               </Link>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-8">
               {whyChooseUs.map((r, i) => (
-                <div key={r.title} className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6">
+                <div key={r.title} className="flex gap-5">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-amber-200 bg-amber-50 text-xs font-bold text-amber-600">
                     0{i + 1}
                   </span>
@@ -306,7 +303,7 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="px-4 py-20 md:px-10 md:py-28">
+      <section className="templateContainer">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-600">FAQ</p>
@@ -318,11 +315,11 @@ export default function MicrosoftPowerBIPageContent() {
             {faqItems.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-2xl border border-slate-200 bg-white px-6 py-5 open:border-amber-200 open:bg-amber-50/30"
+                className="group border-b border-slate-200 px-1 py-5 open:border-amber-200"
               >
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-sm font-semibold text-slate-900 md:text-base">
                   {faq.question}
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition group-open:rotate-45 group-open:border-amber-400 group-open:text-amber-600">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-slate-400 transition group-open:rotate-45 group-open:text-amber-600">
                     +
                   </span>
                 </summary>
@@ -334,10 +331,10 @@ export default function MicrosoftPowerBIPageContent() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="border-t border-slate-100 bg-slate-50 px-4 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-amber-200 bg-linear-to-br from-amber-50 via-yellow-50 to-white">
+      <section className="templateContainer">
+        <div className="">
           <div className="grid lg:grid-cols-2">
-            <div className="px-8 py-12 md:px-12 md:py-16">
+            <div className="py-12 md:py-16">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-600">
                 Are you a UAE business owner?
               </p>
@@ -364,7 +361,7 @@ export default function MicrosoftPowerBIPageContent() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center gap-5 border-t border-amber-100 px-8 py-10 md:px-12 lg:border-l lg:border-t-0">
+            <div className="flex flex-col justify-center gap-5 border-t border-amber-100 py-10 lg:border-l lg:border-t-0 lg:pl-10">
               {[
                 { label: "Tool",     value: "Microsoft Power BI" },
                 { label: "Scope",    value: "Dubai, UAE & Gulf Region" },

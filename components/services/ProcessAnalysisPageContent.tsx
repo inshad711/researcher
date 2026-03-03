@@ -19,9 +19,9 @@ const stages = [
 
 export default function ProcessAnalysisPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
-      <section className="px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
+    <main className="bg-slate-50 pb-12 pt-36 text-slate-900">
+      <section className="templateContainer">
+        <div className="grid gap-6 rounded-[1.75rem]  p-6 md:p-0  md:grid-cols-12 ">
           <div className="md:col-span-8">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">Business Analysis</p>
             <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Process Analysis</h1>
@@ -68,8 +68,8 @@ export default function ProcessAnalysisPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer mt-4">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/blockchain-1024x683.jpg"
@@ -97,8 +97,8 @@ export default function ProcessAnalysisPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer mt-4">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="order-2 rounded-2xl border border-slate-200 bg-white p-6 lg:order-1 lg:col-span-7 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">We will assist you.</h2>
             <ul className="mt-5 space-y-3">
@@ -121,8 +121,8 @@ export default function ProcessAnalysisPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer mt-4">
+        <div className="grid gap-6 lg:grid-cols-12">
           <article className="rounded-2xl border border-slate-200 bg-white p-2 lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Data-Processing-1024x917.jpg"
@@ -149,3 +149,4 @@ export default function ProcessAnalysisPageContent() {
     </main>
   );
 }
+

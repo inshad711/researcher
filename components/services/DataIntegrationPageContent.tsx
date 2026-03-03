@@ -12,9 +12,9 @@ const integrationBenefits = [
 
 export default function DataIntegrationPageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-12">
+    <main className="pb-20 pt-24 text-slate-900">
+      <section className="templateContainer !py-0">
+        <div className="p-8 md:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">Data Integration</p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">Data Integration</h1>
 
@@ -42,7 +42,7 @@ export default function DataIntegrationPageContent() {
             </Link>
             <Link
               href="/services/analytics"
-              className="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
+              className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
             >
               Back to Analytics Services
             </Link>
@@ -50,8 +50,8 @@ export default function DataIntegrationPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-6 md:grid-cols-12 md:p-8">
+      <section className="mt-14 templateContainer !py-0">
+        <div className="grid gap-6 p-6 md:grid-cols-12 md:p-8">
           <article className="md:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2022/11/Data-Preparation-scaled.jpg"
@@ -71,12 +71,12 @@ export default function DataIntegrationPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl border border-slate-200 bg-white p-6 md:grid-cols-12 md:p-8">
+      <section className="mt-14 templateContainer !py-0">
+        <div className="grid gap-6 p-6 md:grid-cols-12 md:p-8">
           <article className="md:col-span-7">
             <ul className="space-y-3">
               {integrationBenefits.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <li key={item} className="flex items-start gap-3 p-4">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
                   <span className="text-sm leading-6 text-slate-700 md:text-base">{item}</span>
                 </li>
@@ -96,3 +96,5 @@ export default function DataIntegrationPageContent() {
     </main>
   );
 }
+
+

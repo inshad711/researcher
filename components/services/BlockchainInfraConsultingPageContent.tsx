@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import type { ComponentType } from "react";
 import {
@@ -19,7 +20,6 @@ import {
   ShieldCheck,
   SlidersHorizontal,
   TrendingUp,
-  Zap,
 } from "lucide-react";
 
 type IconItem = {
@@ -181,7 +181,7 @@ const faqSchema = {
 
 export default function BlockchainInfraConsultingPageContent() {
   return (
-    <main className="pt-32 pb-20 text-slate-900">
+    <main className="pb-20 pt-24 text-slate-900">
       <Script
         id="blockchain-infra-consulting-faq-schema"
         type="application/ld+json"
@@ -190,15 +190,17 @@ export default function BlockchainInfraConsultingPageContent() {
       </Script>
 
       {/* Hero */}
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-stone-50 to-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.07)] overflow-hidden">
+      <section className="templateContainer !pt-12">
+        <div className="overflow-hidden rounded-[2rem] border border-slate-300/70 bg-gradient-to-br from-cyan-50 via-white to-emerald-50 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
           <div className="grid lg:grid-cols-12">
             {/* Image */}
-            <div className="relative lg:col-span-5">
-              <img
+            <div className="relative h-64 lg:col-span-5 lg:h-auto">
+              <Image
                 src="https://www.researchers.me/wp-content/uploads/2023/06/pexels-rdne-stock-project-8-768x639.png"
                 alt="Blockchain Infrastructure Consulting"
-                className="h-64 w-full object-cover lg:h-full"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-50/20 lg:bg-gradient-to-l" />
             </div>
@@ -222,16 +224,16 @@ export default function BlockchainInfraConsultingPageContent() {
                 efficient blockchain network architecture.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <div className="rounded-xl border border-slate-300/70 bg-slate-900/[0.03] px-4 py-3 text-sm text-slate-700 backdrop-blur-sm">
                   Network scalability &amp; architecture
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <div className="rounded-xl border border-slate-300/70 bg-slate-900/[0.03] px-4 py-3 text-sm text-slate-700 backdrop-blur-sm">
                   Consensus protocol design
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <div className="rounded-xl border border-slate-300/70 bg-slate-900/[0.03] px-4 py-3 text-sm text-slate-700 backdrop-blur-sm">
                   Security &amp; compliance frameworks
                 </div>
-                <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                <div className="rounded-xl border border-slate-300/70 bg-slate-900/[0.03] px-4 py-3 text-sm text-slate-700 backdrop-blur-sm">
                   Performance optimization
                 </div>
               </div>
@@ -256,9 +258,9 @@ export default function BlockchainInfraConsultingPageContent() {
       </section>
 
       {/* Role of Blockchain Infrastructure */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer !pt-2">
+        <div>
+          <div className="rounded-2xl border border-cyan-200/80 bg-gradient-to-br from-cyan-50/80 via-white/60 to-emerald-50/80 p-6 md:p-8">
             <h2 className="text-2xl font-semibold md:text-3xl">
               The Role of Blockchain Infrastructure in Business
             </h2>
@@ -280,9 +282,9 @@ export default function BlockchainInfraConsultingPageContent() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                  className="rounded-2xl border border-slate-300/70 bg-gradient-to-b from-white/30 to-slate-100/50 p-5 backdrop-blur-sm"
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300/70 bg-slate-900/[0.04]">
                     <Icon className="h-4 w-4 text-slate-700" />
                   </div>
                   <h3 className="mt-4 text-sm font-semibold leading-snug text-slate-900">
@@ -297,10 +299,10 @@ export default function BlockchainInfraConsultingPageContent() {
       </section>
 
       {/* Blockchain Infrastructure Consultancy + Our Approach */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
+      <section className="templateContainer !pt-2">
+        <div className="grid gap-6 lg:grid-cols-12">
           {/* Consultancy overview */}
-          <article className="rounded-2xl border border-slate-100 bg-slate-50 p-6 lg:col-span-4 md:p-8">
+          <article className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/70 via-lime-50/40 to-cyan-50/60 p-6 lg:col-span-4 md:p-8">
             <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">
               Blockchain Infrastructure Consultancy
             </h2>
@@ -342,7 +344,7 @@ export default function BlockchainInfraConsultingPageContent() {
           </article>
 
           {/* Our Approach */}
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-8 md:p-8">
+          <article className="rounded-2xl border border-slate-300/70 bg-gradient-to-br from-slate-50/85 to-cyan-50/55 p-6 lg:col-span-8 md:p-8">
             <h2 className="text-xl font-semibold text-slate-900 md:text-2xl">Our Approach</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               We follow a structured methodology to design, deploy, and optimize your blockchain
@@ -354,7 +356,7 @@ export default function BlockchainInfraConsultingPageContent() {
                 return (
                   <div
                     key={item.title}
-                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4"
+                    className="flex items-start gap-4 rounded-xl border border-slate-300/70 bg-slate-900/[0.03] p-4"
                   >
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
                       {index + 1}
@@ -377,8 +379,8 @@ export default function BlockchainInfraConsultingPageContent() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer !pt-2">
+        <div className="rounded-2xl border border-slate-300/70 bg-gradient-to-br from-white/70 via-cyan-50/50 to-slate-100/70 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Why Choose Researchers.me
           </h2>
@@ -392,9 +394,9 @@ export default function BlockchainInfraConsultingPageContent() {
               return (
                 <article
                   key={item.title}
-                  className="flex items-start gap-4 rounded-xl border border-slate-200 bg-slate-50 p-5"
+                  className="flex items-start gap-4 rounded-xl border border-slate-300/70 bg-slate-900/[0.03] p-5"
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-300/70 bg-slate-100/60">
                     <Icon className="h-4 w-4 text-slate-700" />
                   </div>
                   <div>
@@ -413,8 +415,8 @@ export default function BlockchainInfraConsultingPageContent() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer !pt-2">
+        <div className="rounded-2xl border border-cyan-200/80 bg-gradient-to-br from-cyan-50/70 via-white/60 to-emerald-50/70 p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions
           </h2>
@@ -425,7 +427,7 @@ export default function BlockchainInfraConsultingPageContent() {
             {faqItems.map((faq) => (
               <details
                 key={faq.question}
-                className="rounded-xl border border-slate-200 bg-slate-50 p-4"
+                className="rounded-xl border border-slate-300/70 bg-white/35 p-4 backdrop-blur-sm"
               >
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">
                   {faq.question}
@@ -438,20 +440,20 @@ export default function BlockchainInfraConsultingPageContent() {
       </section>
 
       {/* CTA */}
-      <section className="mt-16 px-6 md:px-10">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 px-6 py-10 md:px-10 md:py-14">
-          <div className="pointer-events-none absolute -right-16 -top-12 h-52 w-52 rounded-full bg-white/5 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 left-8 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
+      <section className="templateContainer !pt-4">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-300 bg-slate-100 px-6 py-10 md:px-10 md:py-14">
+          <div className="pointer-events-none absolute -right-16 -top-12 h-52 w-52 rounded-full bg-slate-200/60 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 left-8 h-48 w-48 rounded-full bg-slate-200/60 blur-3xl" />
 
           <div className="relative grid gap-6 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
+              <p className="inline-flex rounded-full border border-slate-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700">
                 Empower Your Business
               </p>
-              <h2 className="mt-4 text-2xl font-semibold leading-tight text-white md:text-4xl">
+              <h2 className="mt-4 text-2xl font-semibold leading-tight text-slate-900 md:text-4xl">
                 Empower your business with blockchain infrastructure
               </h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-white/70 md:text-base">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
                 Maximize the potential of blockchain technology for your business with Researchers.
                 Simplify complex infrastructure and leverage the benefits of decentralization,
                 security, and efficiency.
@@ -466,7 +468,7 @@ export default function BlockchainInfraConsultingPageContent() {
                 </Link>
                 <Link
                   href="/services/technology/blockchain"
-                  className="inline-flex items-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white"
                 >
                   Explore Blockchain Services
                 </Link>
@@ -474,19 +476,19 @@ export default function BlockchainInfraConsultingPageContent() {
             </div>
 
             <div className="grid gap-3 md:col-span-4">
-              <div className="rounded-xl border border-white/20 bg-white/10 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
+              <div className="rounded-xl border border-slate-300 bg-white/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                   Scope
                 </p>
-                <p className="mt-1 text-sm font-medium text-white">
+                <p className="mt-1 text-sm font-medium text-slate-800">
                   Design, deploy &amp; optimize — end-to-end
                 </p>
               </div>
-              <div className="rounded-xl border border-white/20 bg-white/10 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
+              <div className="rounded-xl border border-slate-300 bg-white/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                   Region
                 </p>
-                <p className="mt-1 text-sm font-medium text-white">
+                <p className="mt-1 text-sm font-medium text-slate-800">
                   UAE, Dubai &amp; the Gulf Region
                 </p>
               </div>

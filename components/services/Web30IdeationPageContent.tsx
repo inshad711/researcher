@@ -7,28 +7,31 @@ export default function Web30IdeationPageContent() {
 
   return (
     <main className="bg-slate-100 pb-20 pt-32 text-slate-900">
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white px-6 py-10 shadow-[0_20px_50px_rgba(15,23,42,0.06)] md:px-10 md:py-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Web 3.0</p>
-          <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">Ideation</h1>
-          <div className="mt-7 h-px w-full bg-slate-200" />
+      <section className="templateContainer !pb-4">
+        <div className="grid gap-8 border-b border-slate-300 pb-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Web 3.0 Service</p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">Ideation</h1>
+          </div>
+          <p className="max-w-xl text-sm leading-7 text-slate-700 lg:col-span-4">
+            Structured concept design for Web 3.0 products, focused on user needs, feasibility, and clear validation steps.
+          </p>
         </div>
       </section>
 
-      <section className="mt-10 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-12">
-          <article className="overflow-hidden rounded-[1.5rem] p-2  border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.05)] lg:col-span-5">
-            <div className="relative h-full min-h-[320px]">
+      <section className="templateContainer !pt-2">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="overflow-hidden rounded-[1.5rem] border border-slate-300 p-2 lg:col-span-5">
+            <div className="relative h-full min-h-[320px] overflow-hidden rounded-[1.2rem]">
               <img
                 src="https://www.researchers.me/wp-content/uploads/2023/06/pexels-andrea-piacquadio-3758105-modified-768x674.jpg"
                 alt="andrea"
-                className="h-full w-full rounded-2xl object-cover"
+                className="h-full w-full object-cover grayscale"
               />
-             
             </div>
           </article>
 
-          <article className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.05)] md:p-8 lg:col-span-7">
+          <article className="rounded-[1.5rem] border border-slate-300 p-6 md:p-8 lg:col-span-7">
             <h2 className="text-2xl font-semibold leading-tight md:text-3xl">Ideation</h2>
             <div className="mt-5 space-y-4">
               {contentParagraphs.map((paragraph) => (
@@ -37,6 +40,26 @@ export default function Web30IdeationPageContent() {
                 </p>
               ))}
             </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="templateContainer !pt-2">
+        <div className="grid gap-4 md:grid-cols-3">
+          <article className="rounded-2xl border border-slate-300 p-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-500">01</p>
+            <h3 className="mt-2 text-xl font-semibold">Discovery Mapping</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-700">Collect user pains, behavior patterns, and constraints before idea generation starts.</p>
+          </article>
+          <article className="rounded-2xl border border-slate-300 p-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-500">02</p>
+            <h3 className="mt-2 text-xl font-semibold">Concept Framing</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-700">Turn raw ideas into actionable product narratives with utility, token flow, and journey clarity.</p>
+          </article>
+          <article className="rounded-2xl border border-slate-300 p-5">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-500">03</p>
+            <h3 className="mt-2 text-xl font-semibold">Validation Loops</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-700">Use MVP and proof-of-concept cycles to test value assumptions and refine direction quickly.</p>
           </article>
         </div>
       </section>

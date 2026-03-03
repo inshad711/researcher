@@ -128,13 +128,10 @@ const faqSchema = {
 
 export default function ArtificialIntelligencePageContent() {
   return (
-    <main className="bg-slate-50 pb-20 pt-24 text-slate-900">
-      <Script id="artificial-intelligence-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </Script>
-
-      <section className="px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-12 md:p-10">
+    <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
+   
+      <section className="templateContainer">
+        <div className="grid gap-6 rounded-[1.75rem] px-4  md:grid-cols-12 md:p-0">
           <div className="order-2 md:order-1 md:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/jj-ying-8bghKxNU1j0-unsplash-1-768x576.png"
@@ -174,8 +171,8 @@ export default function ArtificialIntelligencePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl space-y-4">
+      <section className="templateContainer">
+        <div className="space-y-4">
           {impactSections.map((item) => (
             <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
               <h2 className="text-2xl font-semibold md:text-3xl">{item.title}</h2>
@@ -185,8 +182,8 @@ export default function ArtificialIntelligencePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Artificial Intelligence Services</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             At Researchers, we specialize in harnessing the power of AI to drive innovation, efficiency, and growth for your business. Our team of seasoned experts is dedicated to delivering top-notch AI solutions across various industries, empowering you to stay ahead in today's competitive landscape.
@@ -205,8 +202,8 @@ export default function ArtificialIntelligencePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Why Choose Us?</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             We understand that embracing AI can be demanding. That's why we offer:
@@ -248,8 +245,8 @@ export default function ArtificialIntelligencePageContent() {
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions (FAQs) on AI Solutions</h2>
           <div className="mt-5 space-y-3">
             {faqItems.map((faq) => (

@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from 'react';
+import React from "react";
 
 const WhatsAppIcon = () => (
   <svg 
@@ -12,55 +11,32 @@ const WhatsAppIcon = () => (
 );
 
 const WhatsAppFloatingButton = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Configuration
-  const phoneNumber = "1234567890"; // Enter number without + or 00
+  const phoneNumber = "1234567890";
   const message = "Hi! I'd like to ask about...";
-  
-  const handleClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-8 right-8 z-[9999] flex items-center gap-3">
-      {/* Tooltip label */}
-      <div 
-        className={`
-          bg-white px-4 py-2 rounded-lg shadow-xl border border-gray-100 transition-all duration-300 transform
-          ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}
-        `}
-      >
+    <div className="group fixed bottom-8 right-8 z-[9999] flex items-center gap-3">
+      <div className="pointer-events-none translate-x-4 rounded-lg border border-gray-100 bg-white px-4 py-2 opacity-0 shadow-xl transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
         <p className="text-gray-700 font-semibold text-sm whitespace-nowrap">
           Chat with us!
         </p>
       </div>
 
-      {/* Main Button Container */}
       <div className="relative group">
-        {/* Animated Background Pulse */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping group-hover:animate-none"></span>
-        
-        {/* The Button */}
-        <button
-          onClick={handleClick}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className={`
-            relative cursor-pointer flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300
-            bg-gradient-to-tr from-[#20ba5a] to-[#25D366] text-white
-            hover:scale-110 active:scale-95 hover:rotate-6
-          `}
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-gradient-to-tr from-[#20ba5a] to-[#25D366] text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-6 active:scale-95"
           aria-label="Contact via WhatsApp"
         >
           <WhatsAppIcon />
-          
-          {/* Subtle Shine Effect */}
           <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
             <div className="absolute -top-full -left-full w-[200%] h-[200%] bg-gradient-to-br from-white/20 to-transparent rotate-45 group-hover:animate-shine"></div>
           </div>
-        </button>
+        </a>
       </div>
 
       <style>{`

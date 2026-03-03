@@ -1,4 +1,5 @@
 import Script from "next/script";
+import Link from "next/link";
 
 type FaqItem = {
   question: string;
@@ -46,6 +47,65 @@ const faqSchema = {
   })),
 };
 
+const significancePoints = [
+  {
+    title: "Customer-Centric Approach",
+    description:
+      "UI/UX design places the user at the center of product development, ensuring needs, preferences, and experiences guide the full journey.",
+  },
+  {
+    title: "Enhanced User Engagement",
+    description:
+      "Clear navigation and intuitive interaction patterns help users engage more often and complete critical actions with less friction.",
+  },
+  {
+    title: "Positive Brand Perception",
+    description:
+      "Strong usability and visual consistency improve trust, credibility, and the way users evaluate your overall brand quality.",
+  },
+  {
+    title: "Business Growth and Retention",
+    description:
+      "Better experiences improve conversion, reduce drop-offs, and increase long-term customer loyalty and advocacy.",
+  },
+];
+
+const serviceFocus = [
+  {
+    title: "UI Design",
+    description:
+      "We design layouts, typography, visual hierarchy, and interaction patterns that align with your brand and support fast comprehension.",
+  },
+  {
+    title: "UX Design",
+    description:
+      "We apply research, journey mapping, and usability principles to make digital products easier, faster, and more satisfying to use.",
+  },
+  {
+    title: "Prototyping and Testing",
+    description:
+      "We validate ideas early through iterative prototypes and user testing so your final product is refined before launch.",
+  },
+];
+
+const whyChoosePoints = [
+  {
+    title: "Expertise and Innovation",
+    description:
+      "Our team combines practical product experience with modern design thinking to deliver work that is both useful and distinctive.",
+  },
+  {
+    title: "User-Centric Approach",
+    description:
+      "Each decision is grounded in real user behavior and business objectives, not assumptions or trend-driven visuals.",
+  },
+  {
+    title: "Tailored Solutions",
+    description:
+      "We shape every UI/UX engagement to your domain, audience, and brand identity for consistency across all touchpoints.",
+  },
+];
+
 export default function UiUxPageContent() {
   return (
     <main className="bg-slate-50 pb-20 pt-36 text-slate-900">
@@ -53,123 +113,112 @@ export default function UiUxPageContent() {
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="px-6 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">UI / UX</p>
-          <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">UI/UX DESIGN</h1>
-        </div>
-      </section>
-
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-            <p className="text-sm leading-7 text-slate-700 md:text-base">
+      <section className="templateContainer">
+        <div className="grid gap-8 md:grid-cols-12">
+          <article className="md:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">UI / UX</p>
+            <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">UI/UX Design</h1>
+            <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
               The demand for exceptional user experiences has become synonymous with business success in the modern marketplace.
             </p>
             <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-              User Interface (UI) and User Experience (UX) design have emerged as indispensable elements for companies striving to stay competitive in the market.
-            </p>
-            <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-              Businesses across industries recognize the pivotal role of UI/UX in shaping customer perceptions, influencing engagement, and ultimately driving growth and profitability.
+              UI and UX design are now core requirements for companies that want better engagement, stronger retention, and sustainable growth.
             </p>
             <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
               As a{" "}
               <a className="font-semibold underline" href="https://www.researchers.me/">
                 market research firm
               </a>
-              , Researchers play a valuable role in helping you optimize your UI/UX to deliver exceptional digital experiences.
+              , Researchers helps you design digital experiences that are clear, useful, and aligned with your business goals.
             </p>
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2023/06/amelie-mourichon-h3kEAHMl1k4-unsplash-1024x845.png"
-              alt="Amelie Mourichon"
-              className="mt-6 h-full max-h-[420px] w-full rounded-xl object-cover"
-            />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              >
+                Start Consultation
+              </Link>
+              <Link
+                href="/services/technology/digital-transformation"
+                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
+              >
+                Back to Digital Transformation
+              </Link>
+            </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+          <aside className="space-y-3 md:col-span-5">
+            <div className="rounded-xl border border-slate-200 bg-slate-100 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Service</p>
+              <p className="mt-1 text-sm font-medium text-slate-800">UI/UX Design</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-100 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Focus</p>
+              <p className="mt-1 text-sm font-medium text-slate-800">Usability, clarity, and conversion</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-100 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Method</p>
+              <p className="mt-1 text-sm font-medium text-slate-800">Research, prototyping, and iterative testing</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="templateContainer pt-0">
+        <div className="grid gap-6 lg:grid-cols-12">
+          <article className="lg:col-span-5">
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/06/faizur-rehman-dJpupM4LiS4-unsplash-e1686342991137-1024x786.png"
-              alt=""
-              className="h-full max-h-[360px] w-full rounded-xl object-cover"
+              alt="UI UX workflow"
+              className="h-full max-h-[420px] w-full rounded-xl object-cover"
             />
-            <h2 className="mt-6 text-2xl font-semibold leading-tight md:text-3xl">
-              UNDERSTANDING UI/UX DESIGN
-            </h2>
+          </article>
+          <article className="lg:col-span-7">
+            <h2 className="text-2xl font-semibold md:text-3xl">Understanding UI/UX Design</h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              UI/UX design is the backbone of engaging and intuitive digital experiences. It amalgamates the user interface (UI) and user experience (UX) to create seamless interactions between users and your digital products or services.
+              UI/UX design is the backbone of intuitive digital experiences, bringing interface design and user journey planning together to create seamless interactions.
             </p>
+            <div className="mt-6 space-y-4 border-l-2 border-slate-300 pl-4">
+              {significancePoints.map((item, index) => (
+                <div key={item.title}>
+                  <p className="text-sm font-semibold text-slate-900 md:text-base">
+                    {index + 1}. {item.title}
+                  </p>
+                  <p className="mt-1 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </article>
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">The Significance of UI/UX in Business</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-            The importance of UI/UX design lies in its ability to profoundly impact various facets of a business:
-          </p>
-
-          <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-            <strong>1. Customer-Centric Approach:</strong> UI/UX design focuses on placing the user at the center of{" "}
-            <a className="font-semibold underline" href="https://www.researchers.me/product-analysis/">
-              product development
-            </a>
-            , ensuring that their needs, preferences, and experiences guide the design process. This customer-centric approach is fundamental in building products that resonate with and delight users.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-            <strong>2. Enhanced User Engagement:</strong> Exceptional UI/UX design fosters higher user engagement by providing intuitive interfaces and delightful experiences, encouraging users to interact more frequently and extensively with the product or service.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-            <strong>3. Positive Brand Perception:</strong> A well-crafted UI/UX design creates positive impressions, leading to enhanced brand perception. Users tend to associate ease of use and aesthetic appeal with the overall brand quality and credibility.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-            <strong>4. Business Growth and Retention:</strong> Investing in superior UI/UX design directly impacts business growth by improving conversion rates, customer retention, and satisfaction. Satisfied users are more likely to become loyal customers and advocates for the brand.
-          </p>
-
-          <h3 className="mt-8 text-xl font-semibold md:text-2xl">Our UI/UX Design Services</h3>
+      <section className="templateContainer pt-0">
+        <div className="border-y border-slate-300 py-8">
+          <h3 className="text-xl font-semibold md:text-2xl">Our UI/UX Design Services</h3>
           <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
             At Researchers, our UI/UX Design services are crafted to elevate your digital presence by focusing on user-centric experiences and visually appealing interfaces. From conceptualization to implementation, we ensure your digital platforms stand out in today's competitive landscape.
           </p>
-
-          <h3 className="mt-6 text-lg font-semibold md:text-xl">Our Focus:</h3>
-          <h4 className="mt-3 text-base font-semibold md:text-lg">UI Design</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            Our UI design services emphasize the visual elements of your digital interfaces. We meticulously craft layouts, typography, colors, and graphic elements to create visually appealing and user-friendly designs that resonate with your brand identity.
-          </p>
-
-          <h4 className="mt-4 text-base font-semibold md:text-lg">UX Design</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            User experience is at the core of our services. We conduct in-depth research, user testing, and analysis to ensure optimal usability and accessibility. Our UX design aims to enhance user satisfaction by improving the usability, accessibility, and pleasure in the interaction between users and your product.
-          </p>
-
-          <h4 className="mt-4 text-base font-semibold md:text-lg">Prototyping and Testing</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            We believe in refining ideas through prototyping and rigorous testing. Our iterative approach involves creating prototypes to visualize the design and conducting user testing to gather valuable feedback, ensuring the final product meets user expectations.
-          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {serviceFocus.map((item) => (
+              <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-100 p-4">
+                <h4 className="text-base font-semibold text-slate-900 md:text-lg">{item.title}</h4>
+                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
+              </article>
+            ))}
+          </div>
 
           <h3 className="mt-8 text-xl font-semibold md:text-2xl">Why Choose Researchers.me for UI/UX Design?</h3>
           <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
             At Researchers, we specialize in creating impactful UI/UX designs tailored to elevate your business:
           </p>
-
-          <h4 className="mt-4 text-base font-semibold md:text-lg">Expertise and Innovation</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            Our team comprises skilled professionals passionate about innovation. We blend expertise with creative flair to deliver designs that not only meet industry standards but also exceed expectations.
-          </p>
-
-          <h4 className="mt-4 text-base font-semibold md:text-lg">User-Centric Approach</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            We prioritize understanding your audience to create designs that resonate with their preferences and behavior. Our user-centric approach ensures that every design decision is made with the end-user in mind.
-          </p>
-
-          <h4 className="mt-4 text-base font-semibold md:text-lg">Tailored Solutions</h4>
-          <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-            We believe in personalized solutions. Our designs are tailored to your{" "}
-            <a className="font-semibold underline" href="https://www.researchers.me/brand-positioning-benchmarking/">
-              brand identity
-            </a>
-            , ensuring consistency and a unique digital footprint across all platforms.
-          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {whyChoosePoints.map((item) => (
+              <article key={item.title} className="rounded-xl border border-slate-200 bg-slate-100 p-4">
+                <h4 className="text-base font-semibold text-slate-900 md:text-lg">{item.title}</h4>
+                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">{item.description}</p>
+              </article>
+            ))}
+          </div>
 
           <h3 className="mt-8 text-xl font-semibold md:text-2xl">Let's Elevate Your Digital Presence</h3>
           <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -178,11 +227,19 @@ export default function UiUxPageContent() {
           <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
             Ready to revolutionize your digital journey? Contact us today to embark on a design journey that sets your brand apart.
           </p>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="mt-14 px-6 md:px-10">
-        <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+      <section className="templateContainer pt-0">
+        <div className="border-t border-slate-300 pt-6">
           <h2 className="text-2xl font-semibold md:text-3xl">
             Frequently Asked Questions (FAQs) about UI/UX Design
           </h2>

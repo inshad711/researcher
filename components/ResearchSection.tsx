@@ -242,9 +242,9 @@ Entering Dubai’s competitive landscape requires more than surface-level data. 
           {/* --- Right Side: Image Reveal --- */}
           <div className="order-1 lg:order-2">
             <RevealImage
-              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp" // Replace with an image of your lab or prototyping process
+              src="/image/7660.webp" // Replace with an image of your lab or prototyping process
               alt="Packaging Material Research"
-              className="aspect-[4/3]  shadow-lg"
+              className="aspect-[4/3] shadow-lg"
             />
           </div>
         </div>

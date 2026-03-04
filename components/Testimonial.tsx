@@ -1,7 +1,6 @@
 
 
-
-// /////////new
+// /////////new content
 // "use client";
 
 // import React, { useState, useEffect, useCallback } from 'react';
@@ -139,16 +138,17 @@
 //           <div className="max-w-2xl">
 //             <div className="flex items-center gap-2 mb-4">
 //               <div className="w-4 h-4 rounded-full border-4 border-[#051145]"></div>
-//               <span className="font-medium uppercase tracking-wider text-sm">Student Testimonials</span>
+//               <span className="font-medium uppercase tracking-wider text-sm">SUCCESS STORIES</span>
 //             </div>
 //             <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
-//               What Our Students <br className="hidden md:block" /> Are Saying
+//               What Our Clients  <br className="hidden md:block" /> Experience
 //             </h2>
 //           </div>
           
 //           <div className="max-w-md md:text-right flex flex-col md:items-end gap-6">
 //             <p className="font-sans">
-//               Explore experiences from our global community of learners who have accelerated their growth.
+//             See how businesses across Dubai and the UAE turn our market research and feasibility insights into smarter strategies and measurable growth.
+
 //             </p>
 //             <div className="flex gap-3">
 //               <button 
@@ -168,8 +168,15 @@
 //         </div>
 
 //         <div className="relative">
-//           <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
-//           <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div>
+//           {/* <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
+//           <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div> */}
+//           <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] 
+// bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
+// rounded-[30px] z-0 hidden lg:block"></div>
+
+// <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] 
+// bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
+// rounded-2xl z-0 lg:hidden"></div>
 
 //           <div className="relative z-10 overflow-hidden">
 //             <div 
@@ -190,37 +197,19 @@
 //               ))}
 //             </div>
 //           </div>
-          
-//           {/* <div className="flex justify-center items-center gap-3 mt-12 relative z-10">
-//             {testimonials.map((_, idx) => {
-//               const adjustedIndex = (currentIndex - itemsToClone + testimonials.length) % testimonials.length;
-//               return (
-//                 <div
-//                   key={idx}
-//                   className={`transition-all duration-300 rounded-full h-2 ${
-//                     adjustedIndex === idx ? 'w-10 bg-blue-400' : 'w-2 bg-gray-400 opacity-50'
-//                   }`}
-//                 />
-//               );
-//             })}
-//           </div> */}
 //         </div>
 //       </div>
 //     </div>
 //   );
 // }
 
-
-
-
-
-/////////new content
+////new 
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// 1. Define the Interface for Testimonials
+// ... (TestimonialData and testimonials array remain the same)
 interface TestimonialData {
   id: number;
   name: string;
@@ -274,9 +263,8 @@ const extendedTestimonials: TestimonialData[] = [
   ...testimonials.slice(0, itemsToClone)
 ];
 
-// 2. Component Prop Types
 const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({ testimonial }) => (
-  <div className="bg-gray-50 shadow-md rounded-xl p-6 flex flex-col gap-6  transition-all duration-300 hover:-translate-y-2 h-full mx-3 border border-transparent hover:border-blue-100">
+  <div className="bg-gray-50 shadow-md rounded-xl p-6 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 h-full mx-2 border border-transparent hover:border-blue-100 select-none">
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
         <Star key={i} size={18} className="fill-[#ff6b6b] text-[#ff6b6b]" />
@@ -288,11 +276,8 @@ const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({ testimoni
           <img 
             src={testimonial.image} 
             alt={testimonial.name} 
-            className="w-full h-full object-cover"
-            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { 
-              const target = e.target as HTMLImageElement;
-              target.src = "https://via.placeholder.com/150"; 
-            }}
+            className="w-full h-full object-cover pointer-events-none"
+            onError={(e) => { (e.target as HTMLImageElement).src = "https://via.placeholder.com/150"; }}
           />
         </div>
         <div>
@@ -314,6 +299,11 @@ export default function Testimonial() {
   const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
   const [isMoving, setIsMoving] = useState<boolean>(false);
 
+  // --- Swiping Logic Refs ---
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50; // Minimum distance in pixels to trigger a slide
+
   useEffect(() => {
     const updateVisibleItems = () => {
       if (window.innerWidth < 768) setVisibleItems(1);
@@ -334,19 +324,40 @@ export default function Testimonial() {
 
   const handleTransitionEnd = () => {
     setIsMoving(false);
-    
     if (currentIndex >= testimonials.length + itemsToClone) {
       setIsTransitioning(false);
       setCurrentIndex(itemsToClone);
-    } 
-    else if (currentIndex <= itemsToClone - 1) {
+    } else if (currentIndex <= itemsToClone - 1) {
       setIsTransitioning(false);
       setCurrentIndex(testimonials.length + itemsToClone - 1);
     }
   };
 
+  // --- Swipe Event Handlers ---
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      moveSlide('next');
+    } else if (isRightSwipe) {
+      moveSlide('prev');
+    }
+  };
+
   return (
-    <div className=" bg-white text-[#051145] overflow-x-hidden">
+    <div className="bg-white text-[#051145] overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-8">
           <div className="max-w-2xl">
@@ -355,14 +366,13 @@ export default function Testimonial() {
               <span className="font-medium uppercase tracking-wider text-sm">SUCCESS STORIES</span>
             </div>
             <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
-              What Our Clients  <br className="hidden md:block" /> Experience
+              What Our Clients <br className="hidden md:block" /> Experience
             </h2>
           </div>
           
           <div className="max-w-md md:text-right flex flex-col md:items-end gap-6">
             <p className="font-sans">
-            See how businesses across Dubai and the UAE turn our market research and feasibility insights into smarter strategies and measurable growth.
-
+              See how businesses across Dubai and the UAE turn our market research and feasibility insights into smarter strategies and measurable growth.
             </p>
             <div className="flex gap-3">
               <button 
@@ -382,17 +392,15 @@ export default function Testimonial() {
         </div>
 
         <div className="relative">
-          {/* <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-[#051145] rounded-[30px] z-0 hidden lg:block"></div>
-          <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-[#051145] rounded-2xl z-0 lg:hidden"></div> */}
-          <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] 
-bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
-rounded-[30px] z-0 hidden lg:block"></div>
+          <div className="absolute bottom-[-40px] left-[-20px] right-[-20px] top-[140px] bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 rounded-[30px] z-0 hidden lg:block"></div>
+          <div className="absolute bottom-[-20px] left-0 right-0 top-[180px] bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 rounded-2xl z-0 lg:hidden"></div>
 
-<div className="absolute bottom-[-20px] left-0 right-0 top-[180px] 
-bg-gradient-to-br from-blue-300 via-pink-50 to-blue-100 
-rounded-2xl z-0 lg:hidden"></div>
-
-          <div className="relative z-10 overflow-hidden">
+          <div 
+            className="relative z-10 overflow-hidden touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
               onTransitionEnd={handleTransitionEnd}
@@ -403,7 +411,7 @@ rounded-2xl z-0 lg:hidden"></div>
               {extendedTestimonials.map((t, idx) => (
                 <div 
                   key={`${t.id}-${idx}`} 
-                  className="flex-shrink-0 px-1 py-4"
+                  className="flex-shrink-0 py-4"
                   style={{ width: `${100 / visibleItems}%` }}
                 >
                   <TestimonialCard testimonial={t} />

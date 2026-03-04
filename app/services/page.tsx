@@ -151,9 +151,9 @@ export default function ServicesPage() {
               <Sparkles className="h-3.5 w-3.5" />
               Our Services
             </p>
-            <h1 className="mt-5 max-w-4xl text-2xl font-semibold leading-tight md:text-4xl">
+            <h2 className="mt-5 max-w-4xl text-2xl font-semibold leading-tight md:text-4xl">
               Empowering business growth with elegant research and strategic precision.
-            </h1>
+            </h2>
             <p className="mt-5 max-w-3xl font-sans">
               Comprehensive research, analytics, and consulting services tailored to drive sustainable
               success in the UAE and beyond.

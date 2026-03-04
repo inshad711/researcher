@@ -295,9 +295,9 @@ export default function ResearchSection() {
               </div>
               <span className="uppercase tracking-wider">Academic Research</span>
             </div>
-            <h1 className="text-3xl md:text-[44px] font-medium text-[#101010]">
+            <h2 className="text-3xl md:text-[44px] font-medium text-[#101010]">
               Pioneering Studies & Research Insights
-            </h1>
+            </h2>
           </div>
           
           <div className="flex flex-col items-start md:items-end gap-4 max-w-sm">

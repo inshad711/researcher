@@ -60,10 +60,10 @@ const SinglePageService = () => {
       <header className="max-w-7xl mx-auto px-4 pt-16 md:pt-8 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-8">
-            <h1 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
               A Disciplined Approach <br />
               to Capital Deployment
-            </h1>
+            </h2>
           </div>
           <div className="md:col-span-4 pt-2">
             <p className=" font-sans max-w-md">

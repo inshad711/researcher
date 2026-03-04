@@ -364,13 +364,13 @@ export default function MainAbout() {
                 <h5 className="tracking-wide font-sans">
                   Welcome to Researcher
                 </h5>
-                <h2 className="text-3xl md:text-[38px] font-heading font-normal text-[#101010] leading-[37.2px] md:leading-[40.2px] ">
+                <h1 className="text-3xl md:text-[38px] font-heading font-normal text-[#101010] leading-[37.2px] md:leading-[40.2px] ">
                   You can join with Edule and upgrade your skill for your{' '}
                   <span className="relative inline-block text-purple-600 ">
                     bright future.
                     {/* <SquiggleUnderline /> */}
                   </span>
-                </h2>
+                </h1>
                 <p className="font-sans max-w-xl">
                   Lorem Ipsum has been the industry's standard dummy text ever since unknown printer 
                   took galley type and scrambled make type specimen book. It has survived not only 

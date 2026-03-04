@@ -254,9 +254,9 @@ export default function ContactPage() {
 
           <section className="flex flex-col">
             <form onSubmit={onSubmit} className="h-full rounded-xl md:rounded-[1rem] border border-slate-200 bg-white py-6 px-4 md:p-10">
-              <h1 className="text-3xl md:text-3xl font-medium mb-8 leading-tight text-slate-900">
+              <h2 className="text-3xl md:text-3xl font-medium mb-8 leading-tight text-slate-900">
                 <span className="text-blue-900">Connect With Us</span>
-              </h1>
+              </h2>
 
               <AnimatePresence>
                 {notification?.type === "error" ? (

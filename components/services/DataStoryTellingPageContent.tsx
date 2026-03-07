@@ -42,7 +42,7 @@ const coreComponents: ComponentItem[] = [
   {
     title: "Strategic Data Visualization",
     description:
-      "Using advanced tools like Power BI, Tableau, and other visualization platforms, we create infographics, interactive dashboards, charts, graphs, executive presentations, and video-based data summaries.",
+      "Using advanced tools like Power BI, Tableau, and other visualization platforms, we create infographics, interactive dashboards, charts, graphs, executive presentations, and video-based data summaries.These visuals simplify complexity and improve stakeholder understanding.",
   },
   {
     title: "Context-Driven Data Analysis",
@@ -72,27 +72,33 @@ const storyTypes: StoryType[] = [
 const processSteps: ProcessStep[] = [
   {
     title: "Step 1: In-Depth Market Research",
-    detail: "We analyze your industry, competitors, and audience behavior in the UAE market.",
+    detail:
+      "We analyze your industry, competitors, and audience behavior in the UAE market.",
   },
   {
     title: "Step 2: Data Audit & Cleaning",
-    detail: "We review your datasets to ensure accuracy, relevance, and integrity.",
+    detail:
+      "We review your datasets to ensure accuracy, relevance, and integrity.",
   },
   {
     title: "Step 3: Insight Extraction",
-    detail: "Our analysts identify key trends, opportunities, and performance indicators.",
+    detail:
+      "Our analysts identify key trends, opportunities, and performance indicators.",
   },
   {
     title: "Step 4: Visualization & Story Creation",
-    detail: "We design compelling visuals and structured narratives tailored to your business goals.",
+    detail:
+      "We design compelling visuals and structured narratives tailored to your business goals.",
   },
   {
     title: "Step 5: Strategy Integration",
-    detail: "We help integrate insights into your marketing, sales, or operational strategy.",
+    detail:
+      "We help integrate insights into your marketing, sales, or operational strategy.",
   },
   {
     title: "Step 6: Continuous Optimization",
-    detail: "We track performance and refine storytelling elements to maximize impact.",
+    detail:
+      "We track performance and refine storytelling elements to maximize impact.",
   },
 ];
 
@@ -116,7 +122,8 @@ const benefits = [
 
 const faqItems: FaqItem[] = [
   {
-    question: "What makes data storytelling different from regular data visualization?",
+    question:
+      "What makes data storytelling different from regular data visualization?",
     answer:
       "Data visualization presents numbers visually. Data storytelling adds context, narrative, and business interpretation to drive action.",
   },
@@ -164,7 +171,7 @@ export default function DataStoryTellingPageContent() {
       </Script>
 
       <section>
-        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
               DATA STORY TELLING SERVICES IN UAE
@@ -173,13 +180,15 @@ export default function DataStoryTellingPageContent() {
               Raw data alone does not grow a business; clarity does.
             </h1>
             <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-              At Researchers, we help businesses across Dubai and the UAE transform complex datasets
-              into compelling visual stories that drive smarter decisions, stronger marketing
-              strategies, and measurable growth.
+              At Researchers, we help businesses across Dubai and the UAE
+              transform complex datasets into compelling visual stories that
+              drive smarter decisions, stronger marketing strategies, and
+              measurable growth.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Whether you are a startup building your foundation or an established enterprise
-              optimizing performance, our data storytelling experts turn insights into impact.
+              Whether you are a startup building your foundation or an
+              established enterprise optimizing performance, our data
+              storytelling experts turn insights into impact.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -189,28 +198,31 @@ export default function DataStoryTellingPageContent() {
                 Book a Consultation Today
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
-              >
-                Back to Services
-              </Link>
             </div>
           </div>
           <div className="lg:col-span-5">
             <img
               src="/image/people-office-analyzing-checking-finance-graphs.webp"
-              alt="Data storytelling consulting in Dubai and UAE"
-              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
+              alt="Feasibility study services in Dubai"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
           </div>
         </div>
       </section>
 
       <section className="mt-14 border-y border-slate-200 bg-slate-50">
-        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-start">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-5">
+            <img
+              src="/image/46908.webp"
+              alt="Teams reviewing analytics and business insights"
+              className="h-full min-h-[280px] w-full rounded-[5px]  object-cover"
+            />
+          </div>
           <div className="lg:col-span-7">
-            <h2 className="text-2xl font-semibold md:text-3xl">Why Data Storytelling Matters for UAE Businesses</h2>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Why Data Storytelling Matters for UAE Businesses
+            </h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               Many organizations collect large volumes of data but struggle to:
             </p>
@@ -223,33 +235,30 @@ export default function DataStoryTellingPageContent() {
               ))}
             </ul>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Without structured storytelling, even valuable data loses its power.
+              Without structured storytelling, even valuable data loses its
+              power.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Our data storytelling services bridge the gap between analytics and business strategy,
-              helping you communicate insights with clarity and confidence.
+              Our data storytelling services bridge the gap between analytics
+              and business strategy, helping you communicate insights with
+              clarity and confidence.
             </p>
-          </div>
-          <div className="lg:col-span-5">
-            <img
-              src="/image/46908.webp"
-              alt="Teams reviewing analytics and business insights"
-              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
-            />
           </div>
         </div>
       </section>
 
       <section className="mt-14">
-        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <article className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Definition
             </p>
-            <h2 className="mt-3 text-2xl font-semibold md:text-3xl">What Is Data Storytelling?</h2>
+            <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+              What Is Data Storytelling?
+            </h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Data storytelling is the strategic combination of data analysis, compelling narrative,
-              and impactful visualizations.
+              Data storytelling is the strategic combination of data analysis,
+              compelling narrative, and impactful visualizations.
             </p>
             <ul className="mt-5 space-y-2 text-sm leading-7 text-slate-700 md:text-base">
               <li className="flex items-start gap-2">
@@ -266,12 +275,13 @@ export default function DataStoryTellingPageContent() {
               </li>
             </ul>
             <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-              It transforms numbers into a clear business narrative that decision-makers can
-              understand and act upon.
+              It transforms numbers into a clear business narrative that
+              decision-makers can understand and act upon.
             </p>
             <p className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              At Researchers.me, we do not just visualize data; we interpret it, contextualize it
-              within the UAE market landscape, and present it in a way that drives results.
+              At Researchers.me, we do not just visualize data; we interpret it,
+              contextualize it within the UAE market landscape, and present it
+              in a way that drives results.
             </p>
           </article>
 
@@ -279,7 +289,7 @@ export default function DataStoryTellingPageContent() {
             <img
               src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
               alt="UAE business team discussing data narrative"
-              className="h-full min-h-[300px] w-full rounded-3xl object-cover"
+              className="h-full min-h-[300px] w-full rounded-[5px]  object-cover"
             />
           </div>
         </div>
@@ -287,12 +297,21 @@ export default function DataStoryTellingPageContent() {
 
       <section className="mt-14 border-y border-slate-200 bg-slate-50">
         <div className="templateContainer">
-          <h2 className="text-2xl font-semibold md:text-3xl">Core Components of Our Data Storytelling Process</h2>
+          <h2 className="text-2xl font-semibold md:text-center md:text-3xl">
+            Core Components of Our Data Storytelling Process
+          </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {coreComponents.map((component) => (
-              <article key={component.title} className="rounded-2xl bg-white px-5 py-5 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">{component.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">{component.description}</p>
+              <article
+                key={component.title}
+                className="rounded-2xl bg-white px-5 py-5 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {component.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  {component.description}
+                </p>
               </article>
             ))}
           </div>
@@ -301,12 +320,21 @@ export default function DataStoryTellingPageContent() {
 
       <section className="mt-14">
         <div className="templateContainer">
-          <h2 className="text-2xl font-semibold md:text-3xl">Types of Data Storytelling We Offer</h2>
+          <h2 className="text-2xl font-semibold md:text-center md:text-3xl">
+            Types of Data Storytelling We Offer
+          </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {storyTypes.map((type) => (
-              <article key={type.title} className="rounded-2xl border border-slate-200 px-5 py-5">
-                <h3 className="text-lg font-semibold text-slate-900">{type.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">{type.description}</p>
+              <article
+                key={type.title}
+                className="rounded-2xl border border-slate-200 px-5 py-5"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {type.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  {type.description}
+                </p>
               </article>
             ))}
           </div>
@@ -316,11 +344,15 @@ export default function DataStoryTellingPageContent() {
       <section className="mt-14 border-y border-slate-200 bg-slate-50">
         <div className="templateContainer grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 className="text-2xl font-semibold md:text-3xl">Our Data Storytelling Process in Dubai & UAE</h2>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Our Data Storytelling Process in Dubai & UAE
+            </h2>
             <ol className="mt-6 grid gap-3 text-sm leading-7 text-slate-700 md:grid-cols-2 md:text-base">
               {processSteps.map((step) => (
                 <li key={step.title} className="rounded-2xl bg-white px-5 py-4">
-                  <h3 className="text-base font-semibold text-slate-900 md:text-lg">{step.title}</h3>
+                  <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+                    {step.title}
+                  </h3>
                   <p className="mt-2">{step.detail}</p>
                 </li>
               ))}
@@ -330,60 +362,63 @@ export default function DataStoryTellingPageContent() {
             <img
               src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
               alt="Data analysts building visual dashboards"
-              className="h-full min-h-[340px] w-full rounded-3xl object-cover"
+              className="h-full min-h-[340px] w-full rounded-[5px] object-cover"
             />
           </div>
         </div>
       </section>
 
       <section className="mt-6">
-        <div className="templateContainer">
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200">
-            <div className="grid lg:grid-cols-12">
-              <article className="bg-slate-100 px-6 py-8 text-slate-900 md:px-10 md:py-10 lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Why Researchers.me
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-                  Why Choose Researchers.me for Data Storytelling in the UAE?
-                </h2>
-                <ul className="mt-5 space-y-2 text-sm leading-7 text-slate-700 md:text-base">
-                  {whyChoose.map((point) => (
-                    <li key={point} className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-                  We combine analytical precision with creative communication, ensuring your
-                  insights are not only accurate but also influential.
-                </p>
-              </article>
+        <div className="templateContainer rounded-[2rem] border border-slate-200 bg-slate-100 px-6 py-8 text-slate-900 md:px-10 md:py-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Why Researchers.me
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+            Why Choose Researchers.me for Data Storytelling in the UAE?
+          </h2>
+          <ul className="mt-5 grid gap-3 md:grid-cols-2">
+            {whyChoose.map((point) => (
+              <li
+                key={point}
+                className="flex items-start gap-2 rounded-2xl bg-white px-4 py-4 text-sm leading-7 text-slate-700 md:text-base"
+              >
+                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
+            We combine analytical precision with creative communication,
+            ensuring your insights are not only accurate but also influential.
+          </p>
+        </div>
+      </section>
 
-              <article className="bg-white px-6 py-8 md:px-10 md:py-10 lg:col-span-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  Outcome Focus
+      <section className="mt-6">
+        <div className="templateContainer rounded-[2rem] border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Outcome Focus
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-slate-900 md:text-3xl">
+            Business Benefits of Data Storytelling
+          </h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit}
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4"
+              >
+                <p className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{benefit}</span>
                 </p>
-                <h2 className="mt-3 text-2xl font-semibold text-slate-900 md:text-3xl">
-                  Business Benefits of Data Storytelling
-                </h2>
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {benefits.map((benefit) => (
-                    <div key={benefit} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
-                      <p className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
-                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
-                        <span>{benefit}</span>
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-                  When insights are communicated effectively, strategy becomes sharper.
-                </p>
-              </article>
-            </div>
+              </div>
+            ))}
           </div>
+          <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
+            When insights are communicated effectively, strategy becomes
+            sharper.
+          </p>
         </div>
       </section>
 
@@ -433,7 +468,9 @@ export default function DataStoryTellingPageContent() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openFaqIndex === index ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
+                      openFaqIndex === index
+                        ? "max-h-96 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
                     <p className="font-sans text-sm leading-7 text-slate-700 md:text-base">
@@ -447,26 +484,59 @@ export default function DataStoryTellingPageContent() {
         </div>
       </section>
 
-      <section className="mt-6">
-        <div className="templateContainer rounded-3xl border border-slate-200 bg-slate-900 px-6 py-10 text-white md:px-10">
-          <h2 className="text-2xl font-semibold md:text-4xl">Ready to Transform Your Data into Strategic Growth?</h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-200 md:text-base">
-            If your business is collecting data but not fully leveraging it, it is time to unlock
-            its true potential.
-          </p>
-          <p className="mt-2 max-w-4xl text-sm leading-7 text-slate-200 md:text-base">
-            Contact Researchers.me today for professional Data Storytelling services in Dubai and
-            across the UAE.
-          </p>
-          <div className="mt-7">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
-            >
-              Contact Researchers.me Today
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+      <section className="templateContainer mt-6 mb-8">
+        <div className="grid gap-5 lg:grid-cols-12">
+          <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 py-6 px-4 md:p-8 lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Partner With Us
+            </p>
+            <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
+              Ready to Transform Your Data into Strategic Growth?
+            </h2>
+            <p className="mt-3 max-w-2xl font-sans text-slate-700">
+              If your business is collecting data but not fully leveraging it,
+              it is time to unlock its true potential.
+            </p>
+            <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Clear stakeholder narratives
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Insight-led strategic decisions
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                UAE-ready reporting support
+              </p>
+            </div>
           </div>
+
+          <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white md:p-7 lg:col-span-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+              Next Step
+            </p>
+            <h3 className="mt-3 text-xl font-semibold leading-tight">
+              Start your data storytelling project.
+            </h3>
+            <p className="mt-3 font-sans text-white">
+              Contact Researchers.me today for professional Data Storytelling
+              services in Dubai and across the UAE.
+            </p>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+              >
+                Contact Researchers.me
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-slate-300"
+              >
+                Explore Services
+              </Link>
+            </div>
+          </aside>
         </div>
       </section>
     </main>

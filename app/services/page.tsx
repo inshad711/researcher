@@ -10,6 +10,10 @@ import {
 import ServiceCard from "@/components/ServiceCard";
 import MainService from "@/components/MainService";
 import SinglePageService from "@/components/SinglePageService";
+import ServiceCrausal, {
+  ServiceCarouselSection,
+  type ServiceCarouselItem,
+} from "@/components/ServiceCrausal";
 
 const stats = [
   { label: "Projects Completed", value: "500+" },
@@ -87,212 +91,252 @@ const allServices = [
   },
 ];
 
+const analyticsServices: ServiceCarouselItem[] = [
+  {
+    id: "dashboard-reporting",
+    title: "Dashboard & Reporting",
+    href: "/services/analytics/dashboard-reporting",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "data-analytics",
+    title: "Data Analytics",
+    href: "/services/analytics/data-analytics",
+    image:
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "master-data-management",
+    title: "Master Data Management",
+    href: "/services/analytics/master-data-management",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "data-quality",
+    title: "Data Quality",
+    href: "/services/analytics/data-quality",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "data-integration",
+    title: "Data Integration",
+    href: "/services/analytics/data-integration",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
+const businessIntelligenceServices: ServiceCarouselItem[] = [
+  {
+    id: "ibm-cognos-analytics",
+    title: "IBM Cognos Analytics",
+    href: "/services/business-intelligence/ibm-cognos-analytics",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "tableau",
+    title: "Tableau",
+    href: "/services/business-intelligence/tableau",
+    image:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "microsoft-power-bi",
+    title: "Microsoft Power BI",
+    href: "/services/business-intelligence/microsoft-power-bi",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "qlikview-qliksense",
+    title: "Qlikview/Qliksense",
+    href: "/services/business-intelligence/qlikview-qliksense",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
+const businessAnalysisServices: ServiceCarouselItem[] = [
+  {
+    id: "product-analysis",
+    title: "Product Analysis",
+    href: "/services/business-analysis/product-analysis",
+    image:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "process-analysis",
+    title: "Process Analysis",
+    href: "/services/business-analysis/process-analysis",
+    image:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
+const technologyServices: ServiceCarouselItem[] = [
+  {
+    id: "digital-transformation",
+    title: "Digital Transformation",
+    href: "/services/technology/digital-transformation",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "artificial-intelligence",
+    title: "Artificial Intelligence",
+    href: "/services/technology/artificial-intelligence",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "blockchain",
+    title: "Blockchain",
+    href: "/services/technology/blockchain",
+    image:
+      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    id: "web-3-0",
+    title: "Web 3.0",
+    href: "/services/technology/web-3-0",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
+const loyaltyServices: ServiceCarouselItem[] = [
+  {
+    id: "designing-implementation-loyalty-rewards-program",
+    title: "Designing & Implementation Loyalty & Rewards Programs",
+    href: "/services/loyalty/designing-implementation-loyalty-rewards-program",
+    image:
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
 export default function ServicesPage() {
   const primaryFeatured = featuredServices[0];
   const secondaryFeatured = featuredServices.slice(1);
 
   return (
     <div className="relative bg-[#fcfcfb] text-slate-900 pt-36">
-
       <div>
-        <MainService/>
+        <MainService />
       </div>
 
-<ServiceCard/>
-    
-
-       <section className="templateContainer relative mt-8 md:mt-4">
-  
-       <div className="flex flex-col items-center justify-center text-center space-y-4">
-  {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-medium text-slate-900">
-          What we do
-          </h2>
-  
-  {/* Description */}
-          <p className="max-w-lg font-sans">
-            Explore our curated selection of top-tier collections, designed to bring 
-            style and functionality to your everyday lifestyle.
-          </p>
-        </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {allServices.map((service) => (
-              <article
-                key={service.title}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                {/* <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  {service.category}
-                </p> */}
-                <h3 className="mt-3 text-[20px] md:text-[18px] font-sans font-medium">{service.title}</h3>
-                <p className="mt-3 font-sans">{service.description}</p>
-                <Link
-                  href="/contact"
-                  className="mt-5 inline-flex items-center gap-2 text-[18px] md:text-[16px] font-medium font-sans transition group-hover:gap-3"
-                >
-                  Learn More
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
-            ))}
-          </div>
-    
-      </section>
-
+      <ServiceCard />
       <div>
-        <SinglePageService/>
+        <ServiceCrausal />
       </div>
 
-        <section className="templateContainer relative">
-        <div className="">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_2px_2px_rgba(15,23,42,0.08)] md:py-12 md:px-10">
-            <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
-              <Sparkles className="h-3.5 w-3.5" />
-              Our Services
+      <div>
+        <ServiceCarouselSection
+          eyebrow="Data Intelligence"
+          title="Analytics"
+          description="Explore our analytics services with direct access to each page."
+          items={analyticsServices}
+        />
+      </div>
+
+      <div>
+        <ServiceCarouselSection
+          eyebrow="Reporting Systems"
+          title="Business Intelligence"
+          description="Explore our business intelligence services with direct access to each page."
+          items={businessIntelligenceServices}
+        />
+      </div>
+
+      <div>
+        <ServiceCarouselSection
+          eyebrow="Operational Insight"
+          title="Business Analysis"
+          description="Explore our business analysis services with direct access to each page."
+          items={businessAnalysisServices}
+        />
+      </div>
+
+      <div>
+        <ServiceCarouselSection
+          eyebrow="Emerging Systems"
+          title="Technology"
+          description="Explore our technology services with direct access to each page."
+          items={technologyServices}
+        />
+      </div>
+
+      <div>
+        <ServiceCarouselSection
+          eyebrow="Retention Strategy"
+          title="Loyalty"
+          description="Explore our loyalty services with direct access to each page."
+          items={loyaltyServices}
+        />
+      </div>
+
+      <div>
+        <SinglePageService />
+      </div>
+
+      <section className="templateContainer mb-8">
+        {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
+        <div className="grid gap-5 lg:grid-cols-12">
+          <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Partner With Us
             </p>
-            <h2 className="mt-5 max-w-4xl text-2xl font-semibold leading-tight md:text-4xl">
-              Empowering business growth with elegant research and strategic precision.
+            <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
+              Turn your next market question into a confident strategic move.
             </h2>
-            <p className="mt-5 max-w-3xl font-sans">
-              Comprehensive research, analytics, and consulting services tailored to drive sustainable
-              success in the UAE and beyond.
+            <p className="mt-3 max-w-2xl font-sans">
+              We align teams quickly, validate assumptions with evidence, and
+              deliver outputs built for action.
             </p>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((item) => (
-                <article
-                  key={item.label}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"
-                >
-                  <p className="text-2xl font-semibold text-slate-900">{item.value}</p>
-                  <p className="mt-1 text-sm text-slate-600">{item.label}</p>
-                </article>
-              ))}
+            <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Discovery in 48 hours
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Decision-focused reporting
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Hands-on implementation support
+              </p>
             </div>
           </div>
 
-          
-         
-        </div>
-      </section>
-
-      {/* <section className="templateContainer relative pt-0">
-        <div className="">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Featured Services
-              </p>
-              <h2 className="mt-2 text-2xl font-semibold md:text-3xl">
-                Explore high-impact solutions for transformation
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-12">
-            <article className="rounded-[1.9rem] border border-slate-200 bg-slate-50 p-7 lg:col-span-7">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
-                <BadgeCheck className="h-3.5 w-3.5" />
-                {primaryFeatured.badge}
-              </p>
-              <p className="mt-3 text-sm font-medium text-slate-600">{primaryFeatured.category}</p>
-              <h3 className="mt-4 max-w-lg text-3xl font-semibold leading-tight text-slate-900">
-                {primaryFeatured.title}
-              </h3>
-              <p className="mt-2 text-base font-medium text-slate-700">{primaryFeatured.subtitle}</p>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-700">{primaryFeatured.description}</p>
+          <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white lg:col-span-4 md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+              Next Step
+            </p>
+            <h3 className="mt-3 text-xl font-semibold leading-tight">
+              Book a strategic intake call.
+            </h3>
+            <p className="mt-3 text-white font-sans">
+              We&apos;ll define scope, timeline, and the right research model
+              for your goal.
+            </p>
+            <div className="mt-6 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-black"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
               >
-                Learn More
+                Become a Client
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </article>
-
-            <div className="grid gap-5 lg:col-span-5">
-              {secondaryFeatured.map((service) => {
-                const Icon = service.icon;
-
-                return (
-                  <article
-                    key={service.title}
-                    className="group rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-[0_10px_28px_rgba(15,23,42,0.06)]"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                          {service.category}
-                        </p>
-                        <h3 className="mt-3 text-xl font-semibold leading-tight text-slate-900">
-                          {service.title}
-                        </h3>
-                      </div>
-                      <span className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">
-                        <Icon className="h-5 w-5 text-slate-700" />
-                      </span>
-                    </div>
-                    <p className="mt-2 text-sm font-medium text-slate-800">{service.subtitle}</p>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
-                    <Link
-                      href="/contact"
-                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition group-hover:gap-3"
-                    >
-                      Learn More
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </article>
-                );
-              })}
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-slate-300"
+              >
+                Explore Services
+              </Link>
             </div>
-          </div>
+          </aside>
         </div>
-      </section> */}
-
-     
-
-       <section className="templateContainer mb-8">
-        {/* <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 md:p-8"> */}
-          <div className="grid gap-5 lg:grid-cols-12">
-            <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 p-6 lg:col-span-8 md:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Partner With Us</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
-                Turn your next market question into a confident strategic move.
-              </h2>
-              <p className="mt-3 max-w-2xl font-sans">
-                We align teams quickly, validate assumptions with evidence, and deliver outputs built for action.
-              </p>
-              <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
-                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Discovery in 48 hours</p>
-                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Decision-focused reporting</p>
-                <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">Hands-on implementation support</p>
-              </div>
-            </div>
-
-            <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white lg:col-span-4 md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">Next Step</p>
-              <h3 className="mt-3 text-xl font-semibold leading-tight">Book a strategic intake call.</h3>
-              <p className="mt-3 text-white font-sans">
-                We&apos;ll define scope, timeline, and the right research model for your goal.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
-                >
-                  Become a Client
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-slate-300"
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </aside>
-          </div>
         {/* </div> */}
       </section>
     </div>

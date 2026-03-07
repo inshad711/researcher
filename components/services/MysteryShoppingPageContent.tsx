@@ -1,24 +1,23 @@
-﻿import Link from "next/link";
-import Script from "next/script";
-import type { ComponentType } from "react";
-import {
-  ArrowRight,
-  BadgeCheck,
-  BarChart3,
-  CheckCircle2,
-  ClipboardCheck,
-  Eye,
-  MonitorSmartphone,
-  Phone,
-  Store,
-  Target,
-  Users,
-} from "lucide-react";
+"use client";
 
-type IconItem = {
+import { useState } from "react";
+import Link from "next/link";
+import Script from "next/script";
+import { ArrowRight, CheckCircle2, Plus } from "lucide-react";
+
+type BenefitItem = {
   title: string;
   description: string;
-  icon: ComponentType<{ className?: string }>;
+};
+
+type ServiceType = {
+  title: string;
+  description: string;
+};
+
+type ProcessStep = {
+  title: string;
+  detail: string;
 };
 
 type FaqItem = {
@@ -26,102 +25,125 @@ type FaqItem = {
   answer: string;
 };
 
-const keyCriteria = ["Quality of service", "Employee appearance", "Honesty", "Accuracy"];
+const evaluationPoints = [
+  "Quality of customer service",
+  "Employee appearance and professionalism",
+  "Honesty and ethical conduct",
+  "Accuracy of information shared",
+  "Compliance with SOPs and brand guidelines",
+];
 
-const benefits: IconItem[] = [
+const benefits: BenefitItem[] = [
   {
-    title: "Customer Experience Enhancement",
+    title: "Customer Experience Improvement",
     description:
-      "Identify service gaps early to improve satisfaction, loyalty, and long-term customer retention.",
-    icon: Users,
+      "Identify service gaps and improve customer satisfaction, loyalty, and retention with clear field-level evidence.",
   },
   {
     title: "Competitive Advantage",
     description:
-      "Understand how your experience compares with peers and where to differentiate your brand.",
-    icon: Target,
+      "Understand how your brand compares with competitors and uncover opportunities to outperform them in the UAE market.",
   },
   {
-    title: "Staff Training and Development",
+    title: "Staff Training & Development",
     description:
-      "Use real interaction feedback to design focused coaching and improve frontline performance.",
-    icon: ClipboardCheck,
+      "Use real customer feedback to design targeted training programs and strengthen frontline performance.",
   },
   {
-    title: "Compliance and SOP Adherence",
+    title: "Compliance & Brand Consistency",
     description:
-      "Monitor whether teams consistently follow standards, policies, and operational procedures.",
-    icon: BadgeCheck,
+      "Ensure policies, service standards, and brand promises are followed consistently across every location.",
   },
 ];
 
-const shoppingTypes: IconItem[] = [
+const serviceTypes: ServiceType[] = [
   {
     title: "In-Person Mystery Shopping",
     description:
-      "On-site evaluations covering service quality, cleanliness, product knowledge, and protocol adherence.",
-    icon: Store,
+      "On-site evaluations of customer service, cleanliness, staff knowledge, and adherence to SOPs and service standards.",
   },
   {
     title: "Telephone Mystery Shopping",
-    description: "Assessment of call handling, responsiveness, tone, and support quality across phone channels.",
-    icon: Phone,
+    description:
+      "Assessment of call handling, response quality, agent professionalism, and phone etiquette across customer touchpoints.",
   },
   {
     title: "Online Mystery Shopping",
     description:
-      "Review of websites, mobile experiences, and digital support journeys from a customer perspective.",
-    icon: MonitorSmartphone,
+      "Evaluation of websites, mobile apps, live chat, and digital support channels to assess online customer experience.",
   },
   {
     title: "Competitor Benchmarking",
-    description: "Comparative analysis against direct competitors to identify strengths and improvement priorities.",
-    icon: BarChart3,
+    description:
+      "Comparison of your service performance against direct competitors to identify strengths, weaknesses, and improvement areas.",
   },
 ];
 
-const differentiators = [
-  "Local UAE market expertise across industries and customer segments",
-  "Tailored mystery shopping programs aligned with business objectives",
-  "Trained and calibrated evaluators for objective, unbiased observations",
-  "Advanced reporting with clear findings and actionable recommendations",
-  "Continuous improvement model with measurable follow-up tracking",
-  "Flexible service delivery: on-site, phone, digital, and blended programs",
+const processSteps: ProcessStep[] = [
+  {
+    title: "Step 1: Customized Evaluation Framework",
+    detail:
+      "We define clear evaluation criteria based on your objectives, brand standards, and relevant industry benchmarks.",
+  },
+  {
+    title: "Step 2: Evaluator Selection & Training",
+    detail:
+      "Mystery shoppers are matched to your target customer profile and trained to deliver accurate, consistent assessments.",
+  },
+  {
+    title: "Step 3: Real-Time Data Collection & Reporting",
+    detail:
+      "Detailed feedback is submitted through our secure reporting platform for quick review and analysis.",
+  },
+  {
+    title: "Step 4: Insights & Recommendations",
+    detail:
+      "We translate findings into actionable recommendations that improve customer experience, service quality, and efficiency.",
+  },
 ];
 
-const methodology = [
-  "Define customized evaluation criteria based on your objectives and standards.",
-  "Select and train evaluators aligned with your target customer profile.",
-  "Execute mystery shopping visits or interactions across selected channels.",
-  "Capture real-time findings in structured reporting dashboards.",
-  "Deliver prioritized actions to improve service quality and operations.",
+const whyChoose = [
+  "Local market expertise with deep understanding of customer behavior and business dynamics in the UAE",
+  "Customized mystery shopping programs aligned with your operational priorities and business goals",
+  "Trained and experienced mystery shoppers delivering unbiased and professional feedback",
+  "Advanced reporting and analytics with structured insights for faster decision-making",
+  "Actionable recommendations that help improve service quality and day-to-day operations",
+  "Continuous improvement approach to monitor progress and sustain performance over time",
+];
+
+const outcomes = [
+  "Cost-effective mystery shopping solutions with competitive pricing",
+  "Proven track record across multiple industries in Dubai and the UAE",
+  "Dedicated client support throughout the entire research program",
+  "Comprehensive coverage across in-person, phone, online, and competitor evaluations",
 ];
 
 const faqItems: FaqItem[] = [
   {
-    question: "How does mystery shopping benefit my business in the UAE?",
+    question: "How does mystery shopping benefit businesses in the UAE?",
     answer:
-      "It provides objective visibility into customer experience, enabling improvements in service quality, staff performance, and competitive positioning.",
+      "It provides real customer insights that help improve service quality, staff performance, and competitive positioning.",
   },
   {
-    question: "Is mystery shopping suitable for both small businesses and large enterprises?",
+    question:
+      "Is mystery shopping suitable for small businesses and large enterprises?",
     answer:
-      "Yes. Programs can be scaled to different budgets, operating models, and branch/network sizes.",
+      "Yes. Mystery shopping programs can be scaled to fit the size, goals, and budget of any business.",
   },
   {
-    question: "How quickly can we see impact on business outcomes?",
+    question: "How quickly can I see results from mystery shopping?",
     answer:
-      "Many organizations observe measurable improvements within a few months when findings are translated into operational actions.",
+      "Many businesses notice improvements within a few months after implementing feedback-driven changes.",
   },
   {
-    question: "How do you ensure unbiased evaluations?",
+    question: "How do you ensure unbiased mystery shopping evaluations?",
     answer:
-      "We use structured evaluator selection, standardized scoring frameworks, and transparent reporting controls to maintain objectivity.",
+      "We use trained evaluators, standardized criteria, and transparent reporting to ensure objectivity and accuracy.",
   },
   {
-    question: "Can mystery shopping be run continuously?",
+    question: "Can mystery shopping be conducted regularly?",
     answer:
-      "Yes. Ongoing programs are recommended to monitor consistency, sustain standards, and track improvement over time.",
+      "Yes. Ongoing mystery shopping programs are ideal for continuous monitoring and long-term improvement.",
   },
 ];
 
@@ -139,252 +161,376 @@ const faqSchema = {
 };
 
 export default function MysteryShoppingPageContent() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   return (
-    <main className="pt-32 pb-20 text-slate-900">
+    <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
       <Script id="mystery-shopping-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>
 
-      <section className="templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="rounded-[2rem] border border-slate-300 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-100 px-6 py-14 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.12)] md:px-10 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-700">Mystery Shopping</p>
-          <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
-            Evaluate real customer experience with objective field intelligence
-          </h1>
-          <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
-            Mystery shopping is a practical market research tool used to assess real-world service delivery,
-            employee behavior, and adherence to brand promises and SOPs.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">Unbiased customer experience insight</div>
-            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">SOP and compliance visibility</div>
-            <div className="rounded-xl border border-slate-300 px-4 py-3 text-sm">Action-ready performance recommendations</div>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900"
-            >
-              Start Consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
-            >
-              Back to Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">Why Mystery Shopping</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Undercover evaluators interact with your business as real customers and provide structured feedback on
-              experience quality, service consistency, and frontline execution.
+      <section>
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              MYSTERY SHOPPING SERVICES IN DUBAI & UAE
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">
+              Measure real customer experience with structured, confidential
+              evaluations.
+            </h1>
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
+              Mystery shopping is a proven market research technique that helps
+              businesses evaluate how their products, services, and staff
+              perform in real-life customer interactions.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              This approach reveals issues not visible in standard reports and helps leadership teams prioritize
-              high-impact improvements.
+              At Researchers, we deliver professional mystery shopping services
+              across Dubai, the UAE, and the wider Gulf region, helping brands
+              ensure service excellence and operational consistency.
             </p>
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-5 md:p-8">
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Employee-engagement-1024x683.jpg"
-              alt="Mystery shopping employee engagement"
-              className="h-56 w-full rounded-xl object-cover"
-            />
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We measure whether internal processes, service standards, and customer-facing behaviors are delivered as designed.
+              As an experienced mystery shopping company, we conduct structured
+              and confidential evaluations to assess employee behavior, service
+              quality, and compliance with your brand standards and Standard
+              Operating Procedures.
             </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">Key Evaluation Criteria</h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {keyCriteria.map((item) => (
-                <div key={item} className="flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-3">
-                  <Eye className="h-4 w-4 text-slate-700" />
-                  <span className="text-sm font-medium text-slate-800">{item}</span>
-                </div>
-              ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              >
+                Book a Consultation Today
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-            <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-              Combined with detailed analysis, these criteria provide actionable insight to improve customer satisfaction,
-              brand trust, and operational consistency.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-slate-300 bg-slate-100 p-6 text-slate-900 lg:col-span-5 md:p-8">
-            <h3 className="text-lg font-semibold">Program Outcomes</h3>
-            <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
-                <span>Clear visibility into frontline service quality</span>
-              </li>
-              <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
-                <span>Early detection of compliance and SOP gaps</span>
-              </li>
-              <li className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
-                <span>Targeted improvement actions with measurable impact</span>
-              </li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="rounded-2xl border border-slate-200 p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">Benefits of Mystery Shopping in UAE</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {benefits.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title} className="rounded-xl border border-slate-200 p-4">
-                  <Icon className="h-5 w-5 text-slate-800" />
-                  <h3 className="mt-3 text-base font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">{item.description}</p>
-                </article>
-              );
-            })}
+          </div>
+          <div className="lg:col-span-5">
+            <img
+              src="/image/46908.webp"
+              alt="Mystery shopping services in Dubai and UAE"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">Types of Mystery Shopping</h2>
-            <div className="mt-5 space-y-3">
-              {shoppingTypes.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="rounded-xl border border-slate-200 p-4">
-                    <div className="flex items-start gap-3">
-                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-slate-800" />
-                      <div>
-                        <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-slate-700">{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-5 md:p-8">
+      <section className="mt-14 border-y border-slate-200 bg-slate-50">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Customer-experience-1024x682.jpg"
-              alt="Customer experience mystery shopping"
-              className="h-72 w-full rounded-xl object-cover"
+              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
+              alt="Team reviewing customer experience performance"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
+          </div>
+          <div className="lg:col-span-7">
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Why Mystery Shopping Matters
+            </h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We combine channel-level assessment with competitor benchmarking to provide a complete picture of customer experience performance.
+              Mystery shopping provides unbiased, first-hand insights into the
+              actual customer journey. Trained mystery shoppers act as real
+              customers and objectively assess every interaction, enabling
+              businesses to identify gaps and improvement opportunities.
             </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-300 bg-slate-100 p-6 text-slate-900 lg:col-span-5 md:p-8">
-            <h3 className="text-lg font-semibold">Why Choose Researchers.me</h3>
-            <ul className="mt-4 space-y-3">
-              {differentiators.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-700" />
-                  <span>{item}</span>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              A mystery shopper typically evaluates:
+            </p>
+            <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700 md:text-base">
+              {evaluationPoints.map((point) => (
+                <li key={point} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 p-6 lg:col-span-7 md:p-8">
-            <h2 className="text-2xl font-semibold md:text-3xl">How We Conduct Mystery Shopping Research</h2>
-            <div className="mt-5 space-y-3">
-              {methodology.map((step, index) => (
-                <div key={step} className="flex items-start gap-3 rounded-xl border border-slate-200 p-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-white">
-                    {index + 1}
-                  </span>
-                  <p className="text-sm leading-6 text-slate-700">{step}</p>
-                </div>
-              ))}
-            </div>
-          </article>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              This secret shopper research approach reveals how internal
+              processes perform on the ground and supports data-driven
+              decisions to improve customer satisfaction and brand loyalty.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="mt-14 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="rounded-2xl border border-slate-200 p-6 md:p-8">
-          <h2 className="text-2xl font-semibold md:text-3xl">Frequently Asked Questions</h2>
-          <div className="mt-4 space-y-3">
-            {faqItems.map((faq) => (
-              <details key={faq.question} className="rounded-xl border border-slate-200 p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-slate-900 md:text-base">{faq.question}</summary>
-                <p className="mt-2 text-sm leading-7 text-slate-700">{faq.answer}</p>
-              </details>
+      <section className="mt-14">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <article className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              UAE Market Context
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+              Benefits of Mystery Shopping in the UAE Market
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              The UAE is one of the world&apos;s most competitive and
+              fast-evolving business environments. With rising customer
+              expectations and intense competition, mystery shopping has become
+              an essential research tool for businesses operating in Dubai and
+              across the UAE.
+            </p>
+            <p className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
+              The strongest programs connect customer experience, competitive
+              benchmarking, staff coaching, and compliance monitoring into one
+              measurable improvement cycle.
+            </p>
+          </article>
+
+          <div className="lg:col-span-5">
+            <img
+              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              alt="UAE market research and customer experience analysis"
+              className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-14 border-y border-slate-200 bg-slate-50">
+        <div className="templateContainer">
+          <h2 className="text-2xl font-semibold md:text-center md:text-3xl">
+            Key Benefits of Mystery Shopping
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {benefits.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl bg-white px-5 py-5 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  {item.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mt-16 templateContainer !py-0 md:!py-0 lg:!py-0">
-        <div className="relative overflow-hidden rounded-[2rem] border border-slate-300 bg-gradient-to-br from-slate-100 via-stone-100 to-zinc-100 px-6 py-10 md:px-10 md:py-14">
-          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-slate-300/40 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-zinc-300/40 blur-3xl" />
+      <section className="mt-14">
+        <div className="templateContainer">
+          <h2 className="text-2xl font-semibold md:text-center md:text-3xl">
+            Types of Mystery Shopping We Offer
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {serviceTypes.map((type) => (
+              <article
+                key={type.title}
+                className="rounded-2xl border border-slate-200 px-5 py-5"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {type.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  {type.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="relative grid gap-6 md:grid-cols-12 md:items-end">
-            <div className="md:col-span-8">
-              <p className="inline-flex rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700">
-                Ready To Improve
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold leading-tight text-slate-900 md:text-4xl">
-                Need objective visibility into customer experience?
+      <section className="mt-14 border-y border-slate-200 bg-slate-50">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Our Mystery Shopping Research Process
+            </h2>
+            <ol className="mt-6 grid gap-3 text-sm leading-7 text-slate-700 md:grid-cols-2 md:text-base">
+              {processSteps.map((step) => (
+                <li key={step.title} className="rounded-2xl bg-white px-5 py-4">
+                  <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2">{step.detail}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="lg:col-span-5">
+            <img
+              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              alt="Mystery shopping reporting and field research process"
+              className="h-full min-h-[340px] w-full rounded-[5px] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-6">
+        <div className="templateContainer rounded-[2rem] border border-slate-200 bg-slate-100 px-6 py-8 text-slate-900 md:px-10 md:py-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Why Researchers
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+            Why Choose Researchers for Mystery Shopping in Dubai & UAE?
+          </h2>
+          <ul className="mt-5 grid gap-3 md:grid-cols-2">
+            {whyChoose.map((point) => (
+              <li
+                key={point}
+                className="flex items-start gap-2 rounded-2xl bg-white px-4 py-4 text-sm leading-7 text-slate-700 md:text-base"
+              >
+                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="mt-6">
+        <div className="templateContainer rounded-[2rem] border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Outcome Focus
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-slate-900 md:text-3xl">
+            What You Gain From the Program
+          </h2>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {outcomes.map((benefit) => (
+              <div
+                key={benefit}
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4"
+              >
+                <p className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-emerald-600" />
+                  <span>{benefit}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
+            Our tailored mystery shopping solutions help businesses across
+            Dubai, the UAE, and the Gulf region elevate customer experience and
+            operational performance.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-slate-200 bg-white">
+        <div className="templateContainer grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+          <div className="self-start lg:col-span-4 lg:sticky lg:top-32">
+            <div className="relative mb-6 inline-block">
+              <h2 className="relative z-10 text-2xl font-medium leading-relaxed text-slate-900 md:text-3xl">
+                Frequently Ask Questions
               </h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
-                Partner with our team to design a mystery shopping program that identifies service gaps,
-                improves execution quality, and strengthens customer loyalty.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900"
-                >
-                  Contact Us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/services/market-research-measurement"
-                  className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
-                >
-                  Explore Market Research Services
-                </Link>
-              </div>
+              <svg
+                className="absolute bottom-[-1rem] left-0 w-full"
+                viewBox="0 0 300 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 15 Q150 0 298 15"
+                  stroke="#9333EA"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
             </div>
+            <h3 className="max-w-sm font-sans text-slate-700">
+              Expert answers to common mystery shopping research questions.
+            </h3>
+          </div>
 
-            <div className="grid gap-3 md:col-span-4">
-              <div className="rounded-xl border border-slate-300 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">Focus</p>
-                <p className="mt-1 text-sm font-medium text-slate-800">Service consistency by touchpoint</p>
-              </div>
-              <div className="rounded-xl border border-slate-300 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">Output</p>
-                <p className="mt-1 text-sm font-medium text-slate-800">Action-ready performance roadmap</p>
-              </div>
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-slate-300">
+              {faqItems.map((item, index) => (
+                <div key={item.question} className="py-0">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="group flex w-full cursor-pointer items-center justify-between py-5 text-left transition-colors hover:text-blue-600 focus:outline-none"
+                  >
+                    <span className="pr-8 text-lg font-light text-black md:text-xl">
+                      {item.question}
+                    </span>
+                    <Plus
+                      className={`h-6 w-6 shrink-0 transform text-black transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-45" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaqIndex === index
+                        ? "max-h-96 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="font-sans text-sm leading-7 text-slate-700 md:text-base">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="templateContainer mb-8 mt-6">
+        <div className="grid gap-5 lg:grid-cols-12">
+          <div className="rounded-[1.4rem] border border-slate-200 bg-slate-50 px-4 py-6 md:p-8 lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Choose Us
+            </p>
+            <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight md:text-4xl">
+              Need a reliable mystery shopping partner in Dubai and the UAE?
+            </h2>
+            <p className="mt-3 max-w-2xl font-sans text-slate-700">
+              By choosing Researchers, you gain a research partner focused on
+              service excellence, operational consistency, and measurable
+              results.
+            </p>
+            <div className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Customer journey visibility
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Targeted service improvements
+              </p>
+              <p className="rounded-xl border border-slate-200 bg-[#fff7ed] px-4 py-3">
+                Ongoing performance monitoring
+              </p>
+            </div>
+          </div>
+
+          <aside className="rounded-[1.4rem] border border-slate-900 bg-slate-900 p-6 text-white md:p-7 lg:col-span-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+              Next Step
+            </p>
+            <h3 className="mt-3 text-xl font-semibold leading-tight">
+              Start your mystery shopping program.
+            </h3>
+            <p className="mt-3 font-sans text-white">
+              Contact Researchers today for professional mystery shopping
+              services across Dubai, the UAE, and the wider Gulf region.
+            </p>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+              >
+                Contact Researchers
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-slate-300"
+              >
+                Explore Services
+              </Link>
+            </div>
+          </aside>
         </div>
       </section>
     </main>

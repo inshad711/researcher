@@ -21,23 +21,28 @@ type ProcessStep = {
 const processSteps: ProcessStep[] = [
   {
     title: "Project Understanding",
-    detail: "We begin by understanding your idea, objectives, and success criteria.",
+    detail:
+      "We begin by understanding your idea, objectives, and success criteria.",
   },
   {
     title: "Market Analysis",
-    detail: "We assess market demand, target audience, competition, and industry trends.",
+    detail:
+      "We assess market demand, target audience, competition, and industry trends.",
   },
   {
     title: "Technical & Operational Assessment",
-    detail: "We evaluate technology requirements, resources, systems, and team readiness.",
+    detail:
+      "We evaluate technology requirements, resources, systems, and team readiness.",
   },
   {
     title: "Financial Evaluation",
-    detail: "We analyze costs, revenue potential, funding needs, and profitability.",
+    detail:
+      "We analyze costs, revenue potential, funding needs, and profitability.",
   },
   {
     title: "Risk & Compliance Review",
-    detail: "We identify operational, legal, and regulatory risks that may impact the project.",
+    detail:
+      "We identify operational, legal, and regulatory risks that may impact the project.",
   },
   {
     title: "Final Report & Recommendations",
@@ -67,7 +72,11 @@ const studyTypes: StudyType[] = [
     title: "Technical Feasibility",
     description:
       "Technical feasibility examines whether your project can be built using available technology, tools, and expertise.",
-    points: ["Technical requirements", "Infrastructure and resources", "Team capabilities"],
+    points: [
+      "Technical requirements",
+      "Infrastructure and resources",
+      "Team capabilities",
+    ],
     example:
       "Evaluating whether a new software platform can be developed using existing systems and technical skills.",
     image:
@@ -87,8 +96,13 @@ const studyTypes: StudyType[] = [
   },
   {
     title: "Financial / Economic Feasibility",
-    description: "Financial feasibility focuses on whether the project makes economic sense.",
-    points: ["Cost estimation", "Revenue projections", "Profitability and return on investment"],
+    description:
+      "Financial feasibility focuses on whether the project makes economic sense.",
+    points: [
+      "Cost estimation",
+      "Revenue projections",
+      "Profitability and return on investment",
+    ],
     example:
       "Assessing whether a startup idea can generate enough revenue to cover expenses and achieve profitability.",
     image:
@@ -155,7 +169,7 @@ export default function FeasibilityStudiesPageContent() {
   return (
     <main className="bg-white pb-24 pt-28 text-slate-900 md:pt-32">
       <section>
-        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
               FEASIBILITY STUDIES
@@ -164,14 +178,15 @@ export default function FeasibilityStudiesPageContent() {
               Feasibility Study Services in Dubai, UAE
             </h1>
             <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-              Launching a new idea, product, or business always involves risk. The biggest
-              mistakes usually happen at the planning stage, when decisions are made without
-              clear data or market validation.
+              Launching a new idea, product, or business always involves risk.
+              The biggest mistakes usually happen at the planning stage, when
+              decisions are made without clear data or market validation.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Our feasibility study services help you understand whether your idea is practical,
-              profitable, and worth pursuing before you invest time, money, and resources. We
-              provide clear, easy-to-understand insights that help founders, investors, and
+              Our feasibility study services help you understand whether your
+              idea is practical, profitable, and worth pursuing before you
+              invest time, money, and resources. We provide clear,
+              easy-to-understand insights that help founders, investors, and
               businesses move forward with confidence.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -179,14 +194,8 @@ export default function FeasibilityStudiesPageContent() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
               >
-                Get in Touch
+                Book a consultation today
                 <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
-              >
-                Back to Services
               </Link>
             </div>
           </div>
@@ -194,19 +203,28 @@ export default function FeasibilityStudiesPageContent() {
             <img
               src="https://www.researchers.me/wp-content/uploads/2023/02/feasib-image.jpg"
               alt="Feasibility study services in Dubai"
-              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
           </div>
         </div>
       </section>
 
       <section className="mt-14 border-y border-slate-200 bg-slate-50">
-        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-start">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-5">
+            <img
+              src="https://www.researchers.me/wp-content/uploads/2023/02/rese-12.jpg"
+              alt="Business planning and market validation"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
+            />
+          </div>
           <div className="lg:col-span-7">
-            <h2 className="text-2xl font-semibold md:text-3xl">What Is a Feasibility Study?</h2>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              What Is a Feasibility Study?
+            </h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              A feasibility study is a detailed evaluation of whether a proposed project or
-              idea can realistically succeed.
+              A feasibility study is a detailed evaluation of whether a proposed
+              project or idea can realistically succeed.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               It helps answer important questions such as:
@@ -218,16 +236,9 @@ export default function FeasibilityStudiesPageContent() {
               <li>Are there operational, legal, or regulatory challenges?</li>
             </ul>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Instead of relying on assumptions, feasibility studies provide data-backed
-              clarity so you can make informed decisions.
+              Instead of relying on assumptions, feasibility studies provide
+              data-backed clarity so you can make informed decisions.
             </p>
-          </div>
-          <div className="lg:col-span-5">
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2023/02/rese-12.jpg"
-              alt="Business planning and market validation"
-              className="h-full min-h-[280px] w-full rounded-3xl object-cover"
-            />
           </div>
         </div>
       </section>
@@ -238,10 +249,12 @@ export default function FeasibilityStudiesPageContent() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               WHY IT MATTERS
             </p>
-            <h2 className="mt-3 text-2xl font-semibold md:text-4xl">Why You Need a Feasibility Study</h2>
+            <h2 className="mt-3 text-2xl font-semibold md:text-4xl">
+              Why You Need a Feasibility Study
+            </h2>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Many projects fail not because the idea is bad, but because potential risks were
-              not identified early.
+              Many projects fail not because the idea is bad, but because
+              potential risks were not identified early.
             </p>
           </div>
 
@@ -260,33 +273,40 @@ export default function FeasibilityStudiesPageContent() {
             <article className="rounded-3xl border border-blue-100 bg-white p-5 md:p-6">
               <h3 className="text-2xl font-semibold md:text-3xl">What We Do</h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                At Researchers, we help businesses evaluate ideas and projects through complete,
-                data-driven feasibility studies.
+                At Researchers, we help businesses evaluate ideas and projects
+                through complete, data-driven feasibility studies.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                We work with startups, investors, and established companies, especially in web3,
-                emerging technologies, and innovative industries, to assess project viability from
-                every important angle.
+                We work with startups, investors, and established companies,
+                especially in web3, emerging technologies, and innovative
+                industries, to assess project viability from every important
+                angle.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                Our studies combine market research, financial analysis, operational assessment,
-                and risk evaluation to give you a clear picture of what will work, what may not,
-                and what can be improved.
+                Our studies combine market research, financial analysis,
+                operational assessment, and risk evaluation to give you a clear
+                picture of what will work, what may not, and what can be
+                improved.
               </p>
             </article>
 
             <article className="rounded-3xl border border-blue-100 bg-white p-5 md:p-6">
-              <h3 className="text-2xl font-semibold md:text-3xl">Our Expertise</h3>
+              <h3 className="text-2xl font-semibold md:text-3xl">
+                Our Expertise
+              </h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                New and innovative projects, particularly in web3 and startup environments, come
-                with unique challenges.
+                New and innovative projects, particularly in web3 and startup
+                environments, come with unique challenges.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                Our team brings strong industry knowledge and hands-on experience to help you
-                navigate these challenges. We go beyond basic feasibility checks by providing
-                practical insights that support real-world decision-making.
+                Our team brings strong industry knowledge and hands-on
+                experience to help you navigate these challenges. We go beyond
+                basic feasibility checks by providing practical insights that
+                support real-world decision-making.
               </p>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">Our approach is:</p>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                Our approach is:
+              </p>
               <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700 md:text-base">
                 {approachHighlights.map((item) => (
                   <li key={item} className="rounded-xl bg-white px-4 py-3">
@@ -301,18 +321,25 @@ export default function FeasibilityStudiesPageContent() {
 
       <section className="mt-14">
         <div className="templateContainer">
-          <h2 className="text-2xl font-semibold md:text-3xl">Our Feasibility Study Process</h2>
+          <h2 className="text-2xl font-semibold md:text-3xl">
+            Our Feasibility Study Process
+          </h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-            We follow a structured yet flexible process to ensure every study delivers
-            relevant and actionable insights.
+            We follow a structured yet flexible process to ensure every study
+            delivers relevant and actionable insights.
           </p>
           <ol className="mt-6 grid gap-3 text-sm leading-7 text-slate-700 md:grid-cols-2 md:text-base">
             {processSteps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl bg-slate-50 px-5 py-4">
+              <li
+                key={step.title}
+                className="rounded-2xl bg-slate-50 px-5 py-4"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Step {index + 1}
                 </p>
-                <h3 className="mt-2 text-base font-semibold text-slate-900 md:text-lg">{step.title}</h3>
+                <h3 className="mt-2 text-base font-semibold text-slate-900 md:text-lg">
+                  {step.title}
+                </h3>
                 <p className="mt-2">{step.detail}</p>
               </li>
             ))}
@@ -322,32 +349,45 @@ export default function FeasibilityStudiesPageContent() {
 
       <section className="mt-14 border-y border-slate-200 bg-slate-50">
         <div className="templateContainer">
-          <h2 className="text-2xl font-semibold md:text-3xl">
+          <h2 className="text-2xl font-semibold text-center md:text-3xl">
             Types of Feasibility Studies We Conduct
           </h2>
           <div className="mt-8 grid gap-8">
             {studyTypes.map((study, index) => (
-              <article key={study.title} className="grid gap-6 lg:grid-cols-12 lg:items-center">
-                <div className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <article
+                key={study.title}
+                className="grid gap-6 lg:grid-cols-12 lg:items-center"
+              >
+                <div
+                  className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-2" : ""}`}
+                >
                   <img
                     src={study.image}
                     alt={study.imageAlt}
-                    className="h-full min-h-[250px] w-full rounded-3xl object-cover"
+                    className="h-full min-h-[250px] w-full rounded-[5px] object-cover"
                   />
                 </div>
-                <div className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <h3 className="text-xl font-semibold md:text-2xl">{study.title}</h3>
+                <div
+                  className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+                >
+                  <h3 className="text-xl font-semibold md:text-2xl">
+                    {study.title}
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
                     {study.description}
                   </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">It focuses on:</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                    It focuses on:
+                  </p>
                   <ul className="mt-2 list-disc space-y-1 pl-6 text-sm leading-7 text-slate-700 md:text-base">
                     {study.points.map((point) => (
                       <li key={point}>{point}</li>
                     ))}
                   </ul>
                   <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                    <span className="font-semibold text-slate-900">Example: </span>
+                    <span className="font-semibold text-slate-900">
+                      Example:{" "}
+                    </span>
                     {study.example}
                   </p>
                 </div>
@@ -374,7 +414,9 @@ export default function FeasibilityStudiesPageContent() {
             </ul>
           </div>
           <div className="lg:col-span-6">
-            <h2 className="text-2xl font-semibold md:text-3xl">Why Choose Researchers</h2>
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Why Choose Researchers
+            </h2>
             <ul className="mt-4 list-disc space-y-2 pl-6 text-sm leading-7 text-slate-700 md:text-base">
               <li>Experienced team with industry-specific expertise</li>
               <li>Customized feasibility studies, not generic templates</li>
@@ -386,7 +428,7 @@ export default function FeasibilityStudiesPageContent() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-slate-200 bg-white py-16">
+      <section className="mt-14 border-t border-slate-200 bg-white pt-6">
         <div className="templateContainer grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
           <div className="self-start lg:col-span-4 lg:sticky lg:top-32">
             <div className="relative mb-6 inline-block">
@@ -432,7 +474,9 @@ export default function FeasibilityStudiesPageContent() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openFaqIndex === index ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
+                      openFaqIndex === index
+                        ? "max-h-96 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
                     <p className="font-sans text-sm leading-7 text-slate-700 md:text-base">

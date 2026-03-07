@@ -1,80 +1,199 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Script from "next/script";
+import { Plus } from "lucide-react";
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+const faqItems: FaqItem[] = [
+  {
+    question: "What is IBM Cognos Analytics used for?",
+    answer:
+      "IBM Cognos Analytics is a business intelligence platform used for reporting, dashboards, and data analysis to help organizations make data-driven decisions.",
+  },
+  {
+    question: "Can IBM Cognos Analytics connect to multiple data sources?",
+    answer:
+      "Yes, IBM Cognos Analytics can connect to various data sources such as databases, data warehouses, and enterprise applications.",
+  },
+  {
+    question: "Is IBM Cognos Analytics suitable for large organizations?",
+    answer:
+      "Yes, it is widely used by enterprises because it supports large data environments and provides advanced reporting and analytics capabilities.",
+  },
+  {
+    question: "Can users access IBM Cognos Analytics on mobile devices?",
+    answer:
+      "Yes, Cognos Analytics can be accessed through both desktop and mobile devices, allowing users to view dashboards and reports anytime.",
+  },
+  {
+    question: "Do you provide IBM Cognos Analytics implementation services?",
+    answer:
+      "Yes, we provide IBM Cognos Analytics implementation, configuration, dashboard development, and reporting solutions for organizations.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 export default function IbmCognosAnalyticsPageContent() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   return (
-    <main className="bg-stone-50 pb-20 pt-36 text-slate-900">
-      <section className="templateContainer !py-0">
-        <div className="p-8 md:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-600">IBM Cognos Analytics</p>
-          <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">IBM Cognos Analytics</h1>
+    <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
+      <Script id="ibm-cognos-analytics-faq-schema" type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </Script>
 
-          <p className="mt-6 max-w-5xl text-sm leading-7 text-slate-700 md:text-base">
-            IBM Cognos Analytics is an integrated business intelligence (BI) solution. It offers a wide range of
-            features, including reporting, analysis, dashboards, stories, modeling, and event organization to better
-            understand the data in your company.
-          </p>
-          <p className="mt-4 max-w-5xl text-sm leading-7 text-slate-700 md:text-base">
-            Everyone in an organization can use IBM Cognos BI to view or create business reports, analyze data, and
-            monitor events and metrics so that they can make effective business decisions.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
-            >
-              Start Consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/services/business-intelligence"
-              className="inline-flex items-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-stone-500"
-            >
-              Back to BI Services
-            </Link>
+      <section>
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              IBM COGNOS ANALYTICS
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">
+              IBM Cognos Analytics
+            </h1>
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
+              IBM Cognos Analytics is a powerful business intelligence (BI)
+              platform that helps organizations analyze data and generate
+              meaningful insights. It provides tools for reporting, dashboards,
+              data visualization, and analytics that allow businesses to better
+              understand their operational and business data.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              IBM Cognos Analytics enables users across an organization to
+              create reports, analyze information, and monitor key business
+              metrics. With access to accurate data and reports, businesses can
+              make informed decisions and improve overall performance.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <Image
+              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              alt="IBM Cognos Analytics"
+              width={1200}
+              height={800}
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mt-8 templateContainer">
-        <div className="mx-auto grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-stone-200 p-2 lg:col-span-5">
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/calculator-1024x683.jpg"
-              alt="Microsoft Power BI"
-              className="h-full max-h-[420px] w-full rounded-xl object-cover"
+      <section className="mt-14">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-5">
+            <Image
+              src="/image/46908.webp"
+              alt="IBM Cognos Analytics dashboard and reports"
+              width={1200}
+              height={800}
+              className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
             />
-          </article>
-
-          <article className="rounded-2xl border border-stone-200 p-6 md:p-8 lg:col-span-7">
-            <p className="text-sm leading-7 text-slate-700 md:text-base">
-              Cognos Analytic allows users to access the portal from either a desktop or mobile device. Whether
-              you&apos;re an analyst, report author, data modeler, or administrator, you can get started yourself by
-              uploading local files and creating visualizations in dashboards or stories.
+          </div>
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              IBM Cognos Analytics
             </p>
-          </article>
+            <h2 className="mt-3 text-2xl font-semibold leading-tight text-slate-900 md:text-3xl">
+              IBM Cognos Analytics dashboard and reports
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              Cognos Analytics can be accessed through both desktop and mobile
+              devices, allowing users to work with data from anywhere.
+              Analysts, report authors, data modelers, and administrators can
+              upload data files, connect to multiple data sources, and create
+              dashboards or visualizations to present insights clearly.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              After installation and configuration, administrators can manage
+              security settings and connect enterprise data sources. The
+              platform provides different access levels and interfaces based on
+              user roles, ensuring secure and controlled access to business
+              data.
+            </p>
+            <p className="mt-6 text-sm font-medium uppercase tracking-[0.14em] text-slate-500">
+              IBM Cognos Analytics dashboard and reports
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="templateContainer">
-        <div className="mx-auto grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="order-2 rounded-2xl border border-stone-200 p-6 md:p-8 lg:order-1 lg:col-span-7">
-            <p className="text-sm leading-7 text-slate-700 md:text-base">
-              It runs without any issues. After installing and configuring Cognos Analytics, administrators set up
-              security and link data sources. The application is then ready to be explored. It comes with different
-              user interfaces and different levels of permission depending on your role in the organization, access
-              permissions, customizations, or type of offering.
-            </p>
-          </article>
+      <section className="border-slate-200 bg-white">
+        <div className="templateContainer grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+          <div className="self-start lg:col-span-4 lg:sticky lg:top-32">
+            <div className="relative mb-6 inline-block">
+              <h2 className="relative z-10 text-2xl font-medium leading-relaxed text-slate-900 md:text-3xl">
+                Frequently Ask Questions
+              </h2>
+              <svg
+                className="absolute bottom-[-1rem] left-0 w-full"
+                viewBox="0 0 300 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 15 Q150 0 298 15"
+                  stroke="#9333EA"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+          </div>
 
-          <article className="order-1 rounded-2xl border border-stone-200 p-2 lg:order-2 lg:col-span-5">
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Business-Intelligence-1024x683.jpg"
-              alt="Brand Positioning"
-              className="h-full max-h-[420px] w-full rounded-xl object-cover"
-            />
-          </article>
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-slate-300">
+              {faqItems.map((item, index) => (
+                <div key={item.question} className="py-0">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="group flex w-full cursor-pointer items-center justify-between py-5 text-left transition-colors hover:text-blue-600 focus:outline-none"
+                  >
+                    <span className="pr-8 text-lg font-light text-black md:text-xl">
+                      {item.question}
+                    </span>
+                    <Plus
+                      className={`h-6 w-6 shrink-0 transform text-black transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-45" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaqIndex === index
+                        ? "max-h-96 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="font-sans text-sm leading-7 text-slate-700 md:text-base">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -1,108 +1,199 @@
-﻿import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import Script from "next/script";
+import { Plus } from "lucide-react";
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+const faqItems: FaqItem[] = [
+  {
+    question: "What is Tableau used for?",
+    answer:
+      "Tableau is a data visualization and business intelligence platform used to create interactive dashboards, reports, and data visualizations for better analysis and decision-making.",
+  },
+  {
+    question: "Can Tableau connect to different data sources?",
+    answer:
+      "Yes, Tableau can connect to multiple data sources such as databases, spreadsheets, cloud platforms, and enterprise systems.",
+  },
+  {
+    question: "Is Tableau suitable for non-technical users?",
+    answer:
+      "Yes, Tableau offers a user-friendly drag-and-drop interface that allows business users to analyze data and build dashboards without advanced technical skills.",
+  },
+  {
+    question: "What types of dashboards can be created in Tableau?",
+    answer:
+      "Tableau allows users to create interactive dashboards for sales analysis, financial reporting, operational monitoring, and business performance tracking.",
+  },
+  {
+    question: "Do you provide Tableau implementation services?",
+    answer:
+      "Yes, we provide Tableau implementation, dashboard development, data integration, and ongoing support services for organizations.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 export default function TableauPageContent() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   return (
-    <main className="relative overflow-hidden bg-[#f6f7f9] pb-24 pt-36 text-slate-900">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,23,42,0.08),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(30,41,59,0.05),transparent_35%)]" />
+    <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
+      <Script id="tableau-faq-schema" type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </Script>
 
-      <section className="relative">
-        <div className="templateContainer grid max-w-6xl gap-8 rounded-[1.75rem]  p-7 md:grid-cols-12 md:p-10">
-          <div className="md:col-span-8">
-            <p className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
-              Business Intelligence
+      <section>
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              TABLEAU
             </p>
-            <h1 className="mt-5 text-3xl font-semibold leading-tight md:text-5xl">TABLEAU</h1>
-            <p className="mt-6 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-              Tableau helps people and organizations become more data-driven. Tableau is the market-leading choice for
-              modern business intelligence. It helps people and organizations become more data-driven.
-            </p>
-            <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-              It has a user-friendly interface that makes it easier for business owners to explore and manage data and
-              share beneficial insights about their businesses.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
-              >
-                Start Consultation
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services/business-intelligence"
-                className="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-500"
-              >
-                Back to BI Services
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid gap-3 md:col-span-4 md:content-start">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Positioning</p>
-              <p className="mt-2 text-sm font-medium text-slate-800">Market-leading modern BI platform</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Experience</p>
-              <p className="mt-2 text-sm font-medium text-slate-800">Drag-and-drop visual analysis workflow</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Capability</p>
-              <p className="mt-2 text-sm font-medium text-slate-800">Accessible augmented analytics</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative mt-2">
-        <div className="templateContainer grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="rounded-2xl border border-slate-200 p-2 lg:col-span-5">
-            <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Qualitative-Survey-1024x627.jpg"
-              alt="Qualitative Survey"
-              className="h-full max-h-[430px] w-full rounded-xl object-cover"
-            />
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 p-6 md:p-8 lg:col-span-7">
-            <h2 className="text-2xl font-semibold leading-tight md:text-3xl">TABLEAU</h2>
-            <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-              As the market-leading choice for modern business intelligence, the Tableau platform is known for taking
-              any kind of data from almost any system and turning it into actionable insights with speed and ease.
-            </p>
-            <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="flex items-start gap-2 text-sm leading-7 text-slate-700 md:text-base">
-                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-slate-700" />
-                <span>It's as simple as dragging and dropping.</span>
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="relative mt-2">
-        <div className="templateContainer grid max-w-6xl items-stretch gap-6 lg:grid-cols-12">
-          <article className="order-2 rounded-2xl border border-slate-200 p-6 md:p-8 lg:order-1 lg:col-span-7">
-            <h2 className="text-2xl font-semibold leading-tight md:text-3xl">Advanced Insight Discovery</h2>
-            <p className="mt-5 text-sm leading-7 text-slate-700 md:text-base">
-              Tableau enables limitless visual data exploration without interrupting the flow of analysis.
+            <h1 className="mt-3 text-3xl font-semibold leading-tight md:text-5xl">
+              Tableau
+            </h1>
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
+              Tableau is a leading business intelligence and data visualization
+              platform that helps organizations analyze data and turn it into
+              meaningful insights. It enables businesses to explore complex
+              datasets and present information through interactive dashboards
+              and visual reports.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-              It is characterized by augmented analytics innovations that help anyone-from data scientists to business
-              users-uncover insights faster with accessible machine learning, statistics, natural language, and smart
-              data preparation.
+              Tableau provides a user-friendly interface that allows business
+              users, analysts, and decision-makers to easily explore and manage
+              data. With simple drag-and-drop functionality, users can quickly
+              create visualizations and share insights across teams to support
+              better business decisions.
             </p>
-          </article>
-
-          <article className="order-1 rounded-2xl border border-slate-200 p-2 lg:order-2 lg:col-span-5">
+          </div>
+          <div className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2022/11/Dashboard-Reporting-1024x683.jpg"
-              alt="Tableau"
-              className="h-full max-h-[430px] w-full rounded-xl object-cover"
+              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              alt="Tableau business intelligence dashboards"
+              className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
-          </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-5">
+            <img
+              src="/image/46908.webp"
+              alt="Tableau data integration and analytics"
+              className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
+            />
+          </div>
+
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Tableau
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold leading-tight text-slate-900 md:text-3xl">
+              Tableau business intelligence dashboards
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              The Tableau platform can connect to multiple data sources,
+              including databases, cloud applications, and enterprise systems.
+              This allows organizations to combine data from different sources
+              and gain a complete view of their business performance.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+              Tableau supports advanced analytics features such as machine
+              learning, statistical analysis, natural language queries, and
+              smart data preparation. These capabilities help both technical
+              users and business users discover insights faster and improve
+              data-driven decision-making across the organization.
+            </p>
+
+            <p className="mt-6 text-sm font-medium uppercase tracking-[0.14em] text-slate-500">
+              Tableau data integration and analytics
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-slate-200 bg-white">
+        <div className="templateContainer grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
+          <div className="self-start lg:col-span-4 lg:sticky lg:top-32">
+            <div className="relative mb-6 inline-block">
+              <h2 className="relative z-10 text-2xl font-medium leading-relaxed text-slate-900 md:text-3xl">
+                Frequently Ask Questions
+              </h2>
+              <svg
+                className="absolute left-0 -bottom-4 w-full"
+                viewBox="0 0 300 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 15 Q150 0 298 15"
+                  stroke="#9333EA"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <h3 className="max-w-sm font-sans text-slate-700">
+              Expert answers to common Tableau questions.
+            </h3>
+          </div>
+
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-slate-300">
+              {faqItems.map((item, index) => (
+                <div key={item.question} className="py-0">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="group flex w-full cursor-pointer items-center justify-between py-5 text-left transition-colors hover:text-blue-600 focus:outline-none"
+                  >
+                    <span className="pr-8 text-lg font-light text-black md:text-xl">
+                      {item.question}
+                    </span>
+                    <Plus
+                      className={`h-6 w-6 shrink-0 transform text-black transition-transform duration-300 ${
+                        openFaqIndex === index ? "rotate-45" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaqIndex === index
+                        ? "max-h-96 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="font-sans text-sm leading-7 text-slate-700 md:text-base">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>

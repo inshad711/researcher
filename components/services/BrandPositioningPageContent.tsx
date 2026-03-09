@@ -213,7 +213,7 @@ export default function BrandPositioningPageContent() {
 
           <article className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/BrandPositioningBenchmarkSurveyCompanyDubai.webp"
               alt="Brand positioning and benchmarking research team"
               className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
             />
@@ -363,7 +363,7 @@ export default function BrandPositioningPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12">
           <article className="lg:col-span-6">
             <img
-              src="/image/46908.webp"
+              src="/service/StrongerRelevanceCompetitiveMarket.webp"
               alt="Dubai brand research discussion"
               className="h-full min-h-[320px] w-full rounded-3xl object-cover"
             />

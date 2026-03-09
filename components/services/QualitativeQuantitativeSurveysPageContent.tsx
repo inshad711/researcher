@@ -168,13 +168,6 @@ export default function QualitativeQuantitativeSurveysPageContent() {
 
   return (
     <main className="bg-white pb-16 pt-28 text-slate-900 md:pt-32">
-      <Script
-        id="qualitative-quantitative-surveys-faq-schema"
-        type="application/ld+json"
-      >
-        {JSON.stringify(faqSchema)}
-      </Script>
-
       <section>
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-7">
@@ -214,7 +207,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/QuantitativeandQualitativeSurveyAnalysisinDubai.webp"
               alt="Quantitative and qualitative survey analysis in Dubai"
               className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
             />
@@ -226,7 +219,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-5">
             <img
-              src="/image/46908.webp"
+              src="/service/WhatisQuantitativeandQualitativeResea.webp"
               alt="Team discussing survey findings and market trends"
               className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
             />
@@ -417,7 +410,7 @@ export default function QualitativeQuantitativeSurveysPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
+              src="/service/OurResearchProcess2.webp"
               alt="Structured survey research process and analysis"
               className="h-full min-h-[340px] w-full rounded-[5px] object-cover"
             />

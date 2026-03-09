@@ -90,8 +90,7 @@ const studyTypes: StudyType[] = [
     points: ["Process alignment", "Team readiness", "Workflow integration"],
     example:
       "Assessing whether a new project management system can be smoothly adopted by your teams.",
-    image:
-      "https://www.researchers.me/wp-content/uploads/2023/08/pexels-pixabay-159298-1024x684.jpg",
+    image: "/service/OperationalFeasibility.webp",
     imageAlt: "Operational planning and team readiness",
   },
   {
@@ -105,8 +104,7 @@ const studyTypes: StudyType[] = [
     ],
     example:
       "Assessing whether a startup idea can generate enough revenue to cover expenses and achieve profitability.",
-    image:
-      "https://www.researchers.me/wp-content/uploads/2023/08/pexels-energepiccom-159888-1024x768.jpg",
+    image: "/service/FinancialEconomicFeasibility.webp",
     imageAlt: "Financial projections and economic feasibility",
   },
   {
@@ -201,7 +199,7 @@ export default function FeasibilityStudiesPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2023/02/feasib-image.jpg"
+              src="/service/FeasibilityDubaiUAE.webp"
               alt="Feasibility study services in Dubai"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -213,7 +211,7 @@ export default function FeasibilityStudiesPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-5">
             <img
-              src="https://www.researchers.me/wp-content/uploads/2023/02/rese-12.jpg"
+              src="/service/Afeasibilitysucceed.webp"
               alt="Business planning and market validation"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />

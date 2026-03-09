@@ -211,7 +211,7 @@ export default function MysteryShoppingPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/46908.webp"
+              src="/service/MYSTERYSHOPPINGSERVICEsSINDUBAI&UAE.webp"
               alt="Mystery shopping services in Dubai and UAE"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -223,7 +223,7 @@ export default function MysteryShoppingPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-5">
             <img
-              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
+              src="/service/WhyMysteryShoppingMsatters.webp"
               alt="Team reviewing customer experience performance"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -251,8 +251,8 @@ export default function MysteryShoppingPageContent() {
             </ul>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               This secret shopper research approach reveals how internal
-              processes perform on the ground and supports data-driven
-              decisions to improve customer satisfaction and brand loyalty.
+              processes perform on the ground and supports data-driven decisions
+              to improve customer satisfaction and brand loyalty.
             </p>
           </div>
         </div>
@@ -283,7 +283,7 @@ export default function MysteryShoppingPageContent() {
 
           <div className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/UAEMarsketContext.webp"
               alt="UAE market research and customer experience analysis"
               className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
             />
@@ -356,7 +356,7 @@ export default function MysteryShoppingPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              src="/service/OurMysteryShoppingReseasrchProcess.webp"
               alt="Mystery shopping reporting and field research process"
               className="h-full min-h-[340px] w-full rounded-[5px] object-cover"
             />

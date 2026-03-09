@@ -170,7 +170,7 @@ export default function CompetitorAnalysisPageContent() {
           </article>
           <article className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/CompetitorMarketResearchAnalysisinUAE.webp"
               alt="Competitor and market research analysis in UAE"
               className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
             />
@@ -182,7 +182,7 @@ export default function CompetitorAnalysisPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <article className="lg:col-span-5 ">
             <img
-              src="/image/46908.webp"
+              src="/service/BenefitsofCompetitiveMarketResearch.webp"
               alt="Competitive market research discussion"
               className="h-full min-h-[300px] w-full rounded-[5px] object-cover"
             />
@@ -300,7 +300,7 @@ export default function CompetitorAnalysisPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12">
           <article className="lg:col-span-5">
             <img
-              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              src="/service/CompetitiveProductAnalysisforStartupsandSmallBusinesses.webp"
               alt="Competitive product analysis for startups and small businesses"
               className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
             />
@@ -356,7 +356,7 @@ export default function CompetitorAnalysisPageContent() {
           </article>
           <article className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/GatheringInsightsthroughCompetitiveAnalysisSurveys.webp"
               alt="Competitive analysis surveys and customer insights"
               className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
             />

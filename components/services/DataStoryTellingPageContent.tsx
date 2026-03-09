@@ -202,7 +202,7 @@ export default function DataStoryTellingPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/DATASTORYTELLINGSERVICES.webp"
               alt="Feasibility study services in Dubai"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -214,7 +214,7 @@ export default function DataStoryTellingPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-stretch">
           <div className="lg:col-span-5">
             <img
-              src="/image/46908.webp"
+              src="/service/WhyDataStorytellingMattersforUAE.webp"
               alt="Teams reviewing analytics and business insights"
               className="h-full min-h-[280px] w-full rounded-[5px]  object-cover"
             />
@@ -360,7 +360,7 @@ export default function DataStoryTellingPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              src="/service/OurDataStorytellingProcessinDubai&UAE.webp"
               alt="Data analysts building visual dashboards"
               className="h-full min-h-[340px] w-full rounded-[5px] object-cover"
             />

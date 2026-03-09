@@ -178,7 +178,7 @@ export default function CustomerExperienceHappinessPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/people-office-analyzing-checking-finance-graphs.webp"
+              src="/service/CustomerExperienceandHappiness.webp"
               alt="Customer experience strategy meeting"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -190,7 +190,7 @@ export default function CustomerExperienceHappinessPageContent() {
         <div className="templateContainer grid gap-8 lg:grid-cols-12 lg:items-strech">
           <article className="lg:col-span-5">
             <img
-              src="/image/46908.webp"
+              src="/service/WhatIsCustomerSatisfactionsd.webp"
               alt="Qualitative survey for customer experience"
               className="h-full min-h-[280px] w-full rounded-[5px] object-cover"
             />
@@ -243,7 +243,7 @@ export default function CustomerExperienceHappinessPageContent() {
               satisfaction often see better long-term results.
             </p>
             <img
-              src="/image/top-view-young-motivated-happy-hardworking-office-team-focused-one-issue-office-enviroment.webp"
+              src="/service/WhyMattersdsd.webp"
               alt="Customer retention and loyalty"
               className="mt-6 h-full min-h-[240px] w-full rounded-[5px] object-cover"
             />
@@ -376,7 +376,7 @@ export default function CustomerExperienceHappinessPageContent() {
           </div>
           <div className="lg:col-span-5">
             <img
-              src="/image/ef920cc1-46a3-4604-9dd1-3ea562976bd9.jpg"
+              src="/service/WhyChooseResearchersforCustomerSatisfactionServicesi.webp"
               alt="Customer experience consulting in Dubai"
               className="h-full min-h-[320px] w-full rounded-[5px] object-cover"
             />

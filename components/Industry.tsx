@@ -1,5 +1,3 @@
-
-
 // "use client"
 // import React from "react";
 // import { ArrowRight, Microscope } from "lucide-react"; // Added Microscope for a research feel
@@ -10,62 +8,62 @@
 //   {
 //     title: "Retail & Ecommerce",
 //     desc: "Scalable online stores with smooth shopping flow.",
-//     image: "/image/2328655_P9A0N90.webp", 
+//     image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Healthcare",
 //     desc: "Smart systems for clinics and patient care.",
-//    image: "/image/2328655_P9A0N90.webp", 
+//    image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Education & eLearning",
 //     desc: "Interactive platforms for modern learning.",
-//    image: "/image/2328655_P9A0N90.webp", 
+//    image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Travel & Tourism",
 //     desc: "Booking and travel platforms that convert.",
-//   image: "/image/2328655_P9A0N90.webp", 
+//   image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Finance & Banking",
 //     desc: "Secure fintech built for scale.",
-//     image: "/image/2328655_P9A0N90.webp", 
+//     image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Technology & Consultancy",
 //     desc: "Digital solutions for fast-growing brands.",
-//  image: "/image/2328655_P9A0N90.webp", 
+//  image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Logistics & Transportation",
 //     desc: "Tracking and supply systems simplified.",
-//  image: "/image/2328655_P9A0N90.webp", 
+//  image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Hospitality & Entertainment",
 //     desc: "Experience-driven booking platforms.",
-//    image: "/image/2328655_P9A0N90.webp", 
+//    image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Automotive",
 //     desc: "Showroom and service booking solutions.",
-//    image: "/image/2328655_P9A0N90.webp", 
+//    image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Sports",
 //     desc: "Club and fitness management systems.",
-//     image: "/image/2328655_P9A0N90.webp", 
+//     image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Real Estate",
 //     desc: "Property platforms that drive leads.",
-//    image: "/image/2328655_P9A0N90.webp", 
+//    image: "/image/2328655_P9A0N90.webp",
 //   },
 //   {
 //     title: "Research & Development",
 //     desc: "Data-driven insights and experimental tech prototyping.",
-//  image: "/image/2328655_P9A0N90.webp", 
+//  image: "/image/2328655_P9A0N90.webp",
 //   },
 // ];
 
@@ -73,7 +71,7 @@
 //   return (
 //     <section className="">
 //       <div className="templateContainer flex flex-col-reverse lg:flex-row w-full gap-10 md:gap-12 lg:gap-20">
-        
+
 //         {/* LEFT SIDE: Grid of Cards */}
 //         <div className="w-full lg:w-1/2 pt-0 pb-10 lg:py-16">
 //           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -107,7 +105,7 @@
 //                     <path d="M5 15 Q 50 25 95 15" stroke="#6c6bcf" strokeWidth="2" fill="transparent" />
 //                   </svg>
 //                 </span>
-             
+
 //               </h2>
 //             </div>
 //             <div className="space-y-4 font-sans">
@@ -118,7 +116,7 @@
 //                 Our R&D team stays ahead of emerging trends, ensuring that the solutions we deliver are not only modern but future-proofed against shifting industry standards.
 //               </p>
 //             </div>
-            
+
 //             <div className="pt-4">
 //                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full text-sm font-medium hover:bg-slate-800 transition-colors">
 //                 Start a Project
@@ -138,10 +136,10 @@
 //       {/* Background Image */}
 //       {image && (
 //         <div className="absolute inset-0 z-0">
-//           <Image 
-//             src={image} 
-//             alt={title} 
-//             fill 
+//           <Image
+//             src={image}
+//             alt={title}
+//             fill
 //             className="object-cover group-hover:scale-110 transition-transform duration-700"
 //           />
 //           {/* Gradient Overlay for better text readability */}
@@ -163,7 +161,7 @@
 //           href="/projects"
 //           className="text-white font-medium text-xs inline-flex items-center gap-1 group/link bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg hover:bg-white/20 transition-all"
 //         >
-//           View Case Study 
+//           View Case Study
 //           <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
 //         </Link>
 //       </div>
@@ -173,12 +171,9 @@
 
 // export default Industry;
 
+///// new content
 
-
-///// new content 
-
-
-"use client"
+"use client";
 import React from "react";
 import { ArrowRight, Microscope } from "lucide-react"; // Added Microscope for a research feel
 import Link from "next/link";
@@ -188,62 +183,62 @@ const industries = [
   {
     title: "Retail & Ecommerce",
     desc: "Scalable online stores with smooth shopping flow.",
-    image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/441459.webp",
   },
   {
     title: "Healthcare",
     desc: "Smart systems for clinics and patient care.",
-   image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/135.webp",
   },
   {
     title: "Education & eLearning",
     desc: "Interactive platforms for modern learning.",
-   image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/EducationeLearning.webp",
   },
   {
     title: "Travel & Tourism",
     desc: "Booking and travel platforms that convert.",
-  image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/169.webp",
   },
   {
     title: "Finance & Banking",
     desc: "Secure fintech built for scale.",
-    image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/finace.webp",
   },
   {
     title: "Technology & Consultancy",
     desc: "Digital solutions for fast-growing brands.",
- image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/TechnologyConsultancy.webp",
   },
   {
     title: "Logistics & Transportation",
     desc: "Tracking and supply systems simplified.",
- image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/LogisticsTransportation.webp",
   },
   {
     title: "Hospitality & Entertainment",
     desc: "Experience-driven booking platforms.",
-   image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/HospitalityEntertainment.webp",
   },
   {
     title: "Automotive",
     desc: "Showroom and service booking solutions.",
-   image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/Automotive.webp",
   },
   {
     title: "Sports",
     desc: "Club and fitness management systems.",
-    image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/Sports.webp",
   },
   {
     title: "Real Estate",
     desc: "Property platforms that drive leads.",
-   image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/RealEstate.webp",
   },
   {
     title: "Research & Development",
     desc: "Data-driven insights and experimental tech prototyping.",
- image: "/image/2328655_P9A0N90.webp", 
+    image: "/industries/ResearchDevelopment.webp",
   },
 ];
 
@@ -251,7 +246,6 @@ const Industry = () => {
   return (
     <section className="">
       <div className="templateContainer flex flex-col-reverse lg:flex-row w-full gap-10 md:gap-12 lg:gap-20">
-        
         {/* LEFT SIDE: Grid of Cards */}
         <div className="w-full lg:w-1/2 pt-0 pb-10 lg:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -276,31 +270,46 @@ const Industry = () => {
         <div className="w-full lg:w-1/2 lg:sticky lg:top-0 lg:h-screen flex items-center pt-10 lg:py-0">
           <div className="lg:max-w-lg space-y-8">
             <div className="space-y-4">
-              <p className="text-[12px] text-slate-500 tracking-widest ">INDUSTRY FOCUS</p>
+              <p className="text-[12px] text-slate-500 tracking-widest ">
+                INDUSTRY FOCUS
+              </p>
               <h2 className="text-3xl md:text-[38px] font-normal text-[#101010] leading-[42.2px]">
-             Industries Driven by Insight, Not{" "}
+                Industries Driven by Insight, Not{" "}
                 <span className="relative inline-block">
-                Assumptions
-                  <svg className="absolute -left-2.5 top-full w-[110%] h-4 -rotate-180" viewBox="0 0 100 20" preserveAspectRatio="none">
-                    <path d="M5 15 Q 50 25 95 15" stroke="#6c6bcf" strokeWidth="2" fill="transparent" />
+                  Assumptions
+                  <svg
+                    className="absolute -left-2.5 top-full w-[110%] h-4 -rotate-180"
+                    viewBox="0 0 100 20"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M5 15 Q 50 25 95 15"
+                      stroke="#6c6bcf"
+                      strokeWidth="2"
+                      fill="transparent"
+                    />
                   </svg>
                 </span>
-             
               </h2>
             </div>
             <div className="space-y-4 font-sans">
               <p>
-            Every industry in Dubai and the UAE operates differently — which is why our market research and feasibility studies are tailored to your specific sector. 
-
+                Every industry in Dubai and the UAE operates differently — which
+                is why our market research and feasibility studies are tailored
+                to your specific sector.
               </p>
               <p>
-      We deliver industry-focused competitive analysis and strategic insights that help businesses enter new markets, reduce risk, and scale with confidence.
+                We deliver industry-focused competitive analysis and strategic
+                insights that help businesses enter new markets, reduce risk,
+                and scale with confidence.
               </p>
-              
             </div>
-            
+
             <div className="pt-4">
-               <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full text-sm font-medium hover:bg-slate-800 transition-colors">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full text-sm font-medium hover:bg-slate-800 transition-colors"
+              >
                 Start a Project
                 <ArrowRight size={16} />
               </Link>
@@ -318,10 +327,10 @@ const IndustryCard = ({ title, desc, image }: any) => {
       {/* Background Image */}
       {image && (
         <div className="absolute inset-0 z-0">
-          <Image 
-            src={image} 
-            alt={title} 
-            fill 
+          <Image
+            src={image}
+            alt={title}
+            fill
             className="object-cover group-hover:scale-110 transition-transform duration-700"
           />
           {/* Gradient Overlay for better text readability */}
@@ -339,13 +348,16 @@ const IndustryCard = ({ title, desc, image }: any) => {
           {desc}
         </p>
 
-        <Link
+        {/* <Link
           href="/projects"
           className="text-white font-medium text-xs inline-flex items-center gap-1 group/link bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-lg hover:bg-white/20 transition-all"
         >
-          View Case Study 
-          <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-        </Link>
+          View Case Study
+          <ArrowRight
+            size={14}
+            className="group-hover/link:translate-x-1 transition-transform"
+          />
+        </Link> */}
       </div>
     </div>
   );
